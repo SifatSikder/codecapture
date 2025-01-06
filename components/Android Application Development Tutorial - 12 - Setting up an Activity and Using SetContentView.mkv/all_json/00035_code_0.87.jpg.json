@@ -1,0 +1,44 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "package com.thenewboston.travis;",
+      "vertice": {
+        "x_min": 29.0,
+        "y_min": 9.0,
+        "x_max": 686.0,
+        "y_max": 43.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "import android.app.Activity:",
+      "vertice": {
+        "x_min": 31.0,
+        "y_min": 95.0,
+        "x_max": 600.0,
+        "y_max": 131.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "public class Splash extehids Activity{",
+      "vertice": {
+        "x_min": 28.0,
+        "y_min": 182.0,
+        "x_max": 794.0,
+        "y_max": 221.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "}",
+      "vertice": {
+        "x_min": 22.0,
+        "y_min": 270.0,
+        "x_max": 52.0,
+        "y_max": 310.0
+      }
+    }
+  ]
+}

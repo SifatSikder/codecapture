@@ -1,0 +1,174 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "<uses-sdk android:minSdkVersion-\"8\"/",
+      "vertice": {
+        "x_min": 19.0,
+        "y_min": 7.0,
+        "x_max": 629.0,
+        "y_max": 29.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "<application android:icon-\"@drawable/icon\" android:label-\"@string/app_name\"",
+      "vertice": {
+        "x_min": 19.0,
+        "y_min": 76.0,
+        "x_max": 1252.0,
+        "y_max": 103.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "<activity android:name-\".Splash\"android:label-\"@string/app_name\">",
+      "vertice": {
+        "x_min": 83.0,
+        "y_min": 110.0,
+        "x_max": 1155.0,
+        "y_max": 137.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "<intent-filter>",
+      "vertice": {
+        "x_min": 149.0,
+        "y_min": 147.0,
+        "x_max": 387.0,
+        "y_max": 170.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "<action android:name-\"android.intent.action.MAIN\"/>",
+      "vertice": {
+        "x_min": 212.0,
+        "y_min": 179.0,
+        "x_max": 1075.0,
+        "y_max": 205.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "<category android:name- android.intent.category.LAuNcHER\"/>",
+      "vertice": {
+        "x_min": 209.0,
+        "y_min": 214.0,
+        "x_max": 1192.0,
+        "y_max": 243.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "</intent-filter>",
+      "vertice": {
+        "x_min": 148.0,
+        "y_min": 248.0,
+        "x_max": 407.0,
+        "y_max": 277.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "</activity>",
+      "vertice": {
+        "x_min": 83.0,
+        "y_min": 281.0,
+        "x_max": 257.0,
+        "y_max": 315.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "<activity android:name-.startingPoint\"android:label-\"@string/app_name\"",
+      "vertice": {
+        "x_min": 81.0,
+        "y_min": 319.0,
+        "x_max": 1267.0,
+        "y_max": 349.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "<intent-filter>",
+      "vertice": {
+        "x_min": 149.0,
+        "y_min": 357.0,
+        "x_max": 385.0,
+        "y_max": 380.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "<action android:name- com.thenewboston.travis.STARTINGpoINT\"",
+      "vertice": {
+        "x_min": 213.0,
+        "y_min": 393.0,
+        "x_max": 1199.0,
+        "y_max": 413.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "/7",
+      "vertice": {
+        "x_min": 1220.0,
+        "y_min": 393.0,
+        "x_max": 1252.0,
+        "y_max": 413.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "<category android:name- android.intent.category.DEFAuLT\"/>",
+      "vertice": {
+        "x_min": 212.0,
+        "y_min": 426.0,
+        "x_max": 1173.0,
+        "y_max": 453.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "</intent-filter>",
+      "vertice": {
+        "x_min": 149.0,
+        "y_min": 463.0,
+        "x_max": 404.0,
+        "y_max": 486.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "</activity>",
+      "vertice": {
+        "x_min": 83.0,
+        "y_min": 491.0,
+        "x_max": 257.0,
+        "y_max": 526.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "</application>",
+      "vertice": {
+        "x_min": 17.0,
+        "y_min": 531.0,
+        "x_max": 241.0,
+        "y_max": 559.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "anifest>",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 567.0,
+        "x_max": 127.0,
+        "y_max": 592.0
+      }
+    }
+  ]
+}

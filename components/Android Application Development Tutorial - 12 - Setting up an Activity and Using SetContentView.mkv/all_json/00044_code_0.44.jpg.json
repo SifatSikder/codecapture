@@ -1,0 +1,164 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Quick Fix",
+      "vertice": {
+        "x_min": 21.0,
+        "y_min": 3.0,
+        "x_max": 167.0,
+        "y_max": 30.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "91",
+      "vertice": {
+        "x_min": 683.0,
+        "y_min": 0.0,
+        "x_max": 739.0,
+        "y_max": 33.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Source",
+      "vertice": {
+        "x_min": 18.0,
+        "y_min": 45.0,
+        "x_max": 128.0,
+        "y_max": 77.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Laes",
+      "vertice": {
+        "x_min": 559.0,
+        "y_min": 44.0,
+        "x_max": 645.0,
+        "y_max": 77.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Refactor",
+      "vertice": {
+        "x_min": 20.0,
+        "y_min": 87.0,
+        "x_max": 153.0,
+        "y_max": 121.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "CHT",
+      "vertice": {
+        "x_min": 557.0,
+        "y_min": 88.0,
+        "x_max": 649.0,
+        "y_max": 118.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Local History",
+      "vertice": {
+        "x_min": 20.0,
+        "y_min": 130.0,
+        "x_max": 224.0,
+        "y_max": 168.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "References",
+      "vertice": {
+        "x_min": 21.0,
+        "y_min": 204.0,
+        "x_max": 193.0,
+        "y_max": 237.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Declarations",
+      "vertice": {
+        "x_min": 22.0,
+        "y_min": 251.0,
+        "x_max": 214.0,
+        "y_max": 279.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Add to Snippets..",
+      "vertice": {
+        "x_min": 26.0,
+        "y_min": 323.0,
+        "x_max": 345.0,
+        "y_max": 358.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Run As",
+      "vertice": {
+        "x_min": 20.0,
+        "y_min": 399.0,
+        "x_max": 131.0,
+        "y_max": 430.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "Debug As",
+      "vertice": {
+        "x_min": 19.0,
+        "y_min": 442.0,
+        "x_max": 172.0,
+        "y_max": 479.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Validate",
+      "vertice": {
+        "x_min": 18.0,
+        "y_min": 488.0,
+        "x_max": 147.0,
+        "y_max": 519.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "Team",
+      "vertice": {
+        "x_min": 18.0,
+        "y_min": 529.0,
+        "x_max": 108.0,
+        "y_max": 567.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "Compare With",
+      "vertice": {
+        "x_min": 21.0,
+        "y_min": 577.0,
+        "x_max": 241.0,
+        "y_max": 608.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "Replace With",
+      "vertice": {
+        "x_min": 20.0,
+        "y_min": 621.0,
+        "x_max": 222.0,
+        "y_max": 651.0
+      }
+    }
+  ]
+}

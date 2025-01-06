@@ -1,0 +1,34 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Insertion point",
+      "vertice": {
+        "x_min": 18.0,
+        "y_min": 20.0,
+        "x_max": 216.0,
+        "y_max": 47.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "First member",
+      "vertice": {
+        "x_min": 38.0,
+        "y_min": 73.0,
+        "x_max": 214.0,
+        "y_max": 100.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Generate method comments",
+      "vertice": {
+        "x_min": 45.0,
+        "y_min": 142.0,
+        "x_max": 431.0,
+        "y_max": 170.0
+      }
+    }
+  ]
+}

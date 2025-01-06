@@ -1,0 +1,154 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "ston",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 15.0,
+        "x_max": 43.0,
+        "y_max": 38.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "nenewboston.travis",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 76.0,
+        "x_max": 185.0,
+        "y_max": 98.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "ash.java",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 108.0,
+        "x_max": 79.0,
+        "y_max": 130.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "rtingPoint.java",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 138.0,
+        "x_max": 139.0,
+        "y_max": 159.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "erated Java Files]",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 171.0,
+        "x_max": 163.0,
+        "y_max": 191.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "nenewboston.travis",
+      "vertice": {
+        "x_min": 2.0,
+        "y_min": 202.0,
+        "x_max": 186.0,
+        "y_max": 222.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "2.2",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 229.0,
+        "x_max": 30.0,
+        "y_max": 256.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "ble-hdpi",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 324.0,
+        "x_max": 86.0,
+        "y_max": 348.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "n.png",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 357.0,
+        "x_max": 58.0,
+        "y_max": 384.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "ash_background.png",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 385.0,
+        "x_max": 202.0,
+        "y_max": 412.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "ble-ldpi",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 416.0,
+        "x_max": 80.0,
+        "y_max": 443.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "ble-mdpi",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 447.0,
+        "x_max": 92.0,
+        "y_max": 475.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "in.xml",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 510.0,
+        "x_max": 64.0,
+        "y_max": 535.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "ash.xml",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 543.0,
+        "x_max": 78.0,
+        "y_max": 565.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "-land",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 572.0,
+        "x_max": 58.0,
+        "y_max": 598.0
+      }
+    }
+  ]
+}

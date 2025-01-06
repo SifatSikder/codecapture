@@ -1,0 +1,104 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "vis;",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 8.0,
+        "x_max": 79.0,
+        "y_max": 52.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Actifity",
+      "vertice": {
+        "x_min": 2.0,
+        "y_min": 94.0,
+        "x_max": 182.0,
+        "y_max": 140.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Activity cannot be resolved to a typ",
+      "vertice": {
+        "x_min": 17.0,
+        "y_min": 164.0,
+        "x_max": 609.0,
+        "y_max": 203.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "9 quick fixes available",
+      "vertice": {
+        "x_min": 19.0,
+        "y_min": 234.0,
+        "x_max": 374.0,
+        "y_max": 261.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Import'Activity'(android.app)",
+      "vertice": {
+        "x_min": 97.0,
+        "y_min": 293.0,
+        "x_max": 564.0,
+        "y_max": 327.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Create class'Activity",
+      "vertice": {
+        "x_min": 98.0,
+        "y_min": 344.0,
+        "x_max": 424.0,
+        "y_max": 379.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Change to'ActivityGroup'(andro",
+      "vertice": {
+        "x_min": 100.0,
+        "y_min": 402.0,
+        "x_max": 607.0,
+        "y_max": 430.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Change to'Activitylnfo (android",
+      "vertice": {
+        "x_min": 101.0,
+        "y_min": 456.0,
+        "x_max": 604.0,
+        "y_max": 481.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Change to'ActivityManager'(and",
+      "vertice": {
+        "x_min": 99.0,
+        "y_min": 508.0,
+        "x_max": 608.0,
+        "y_max": 536.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Change to'ActivityMonitor(and",
+      "vertice": {
+        "x_min": 100.0,
+        "y_min": 554.0,
+        "x_max": 607.0,
+        "y_max": 584.0
+      }
+    }
+  ]
+}

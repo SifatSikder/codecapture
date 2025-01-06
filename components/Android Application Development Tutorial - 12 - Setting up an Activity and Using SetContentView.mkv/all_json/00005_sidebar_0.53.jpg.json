@@ -1,0 +1,64 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "TheN",
+      "vertice": {
+        "x_min": 83.0,
+        "y_min": 70.0,
+        "x_max": 157.0,
+        "y_max": 96.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "src",
+      "vertice": {
+        "x_min": 116.0,
+        "y_min": 110.0,
+        "x_max": 155.0,
+        "y_max": 136.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "ger",
+      "vertice": {
+        "x_min": 118.0,
+        "y_min": 225.0,
+        "x_max": 157.0,
+        "y_max": 249.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Ano",
+      "vertice": {
+        "x_min": 118.0,
+        "y_min": 300.0,
+        "x_max": 157.0,
+        "y_max": 323.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "ass",
+      "vertice": {
+        "x_min": 117.0,
+        "y_min": 338.0,
+        "x_max": 157.0,
+        "y_max": 362.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "res",
+      "vertice": {
+        "x_min": 118.0,
+        "y_min": 376.0,
+        "x_max": 155.0,
+        "y_max": 399.0
+      }
+    }
+  ]
+}

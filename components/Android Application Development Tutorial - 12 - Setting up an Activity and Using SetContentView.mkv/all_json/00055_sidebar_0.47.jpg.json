@@ -1,0 +1,94 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "onContextMenuClosed(Menu)",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 15.0,
+        "x_max": 570.0,
+        "y_max": 39.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "onCreate(Bundle)",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 56.0,
+        "x_max": 407.0,
+        "y_max": 80.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "onCreateCCntextMenu(ContextMenu,View,ContextMen",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 97.0,
+        "x_max": 913.0,
+        "y_max": 122.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "onCreateDescriptiono",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 140.0,
+        "x_max": 468.0,
+        "y_max": 164.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "onCreateDialog(int,Bundle)",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 182.0,
+        "x_max": 543.0,
+        "y_max": 206.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "onCreateDialog(int)",
+      "vertice": {
+        "x_min": 186.0,
+        "y_min": 224.0,
+        "x_max": 437.0,
+        "y_max": 248.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "onCreateOptionsMenu(Menu)",
+      "vertice": {
+        "x_min": 185.0,
+        "y_min": 264.0,
+        "x_max": 565.0,
+        "y_max": 289.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "onCreatePanelMenu(int,Menu)",
+      "vertice": {
+        "x_min": 185.0,
+        "y_min": 306.0,
+        "x_max": 582.0,
+        "y_max": 330.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "onCreatePanelView(int)",
+      "vertice": {
+        "x_min": 185.0,
+        "y_min": 348.0,
+        "x_max": 482.0,
+        "y_max": 371.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Toggle Comment",
+      "vertice": {
+        "x_min": 54.0,
+        "y_min": 61.0,
+        "x_max": 330.0,
+        "y_max": 92.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Remove Block Comment",
+      "vertice": {
+        "x_min": 56.0,
+        "y_min": 105.0,
+        "x_max": 438.0,
+        "y_max": 132.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Generate Element Comment",
+      "vertice": {
+        "x_min": 56.0,
+        "y_min": 149.0,
+        "x_max": 497.0,
+        "y_max": 176.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Correct Indentation",
+      "vertice": {
+        "x_min": 54.0,
+        "y_min": 218.0,
+        "x_max": 359.0,
+        "y_max": 250.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Format",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 263.0,
+        "x_max": 167.0,
+        "y_max": 295.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Add Import",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 334.0,
+        "x_max": 235.0,
+        "y_max": 370.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Organize Imports",
+      "vertice": {
+        "x_min": 54.0,
+        "y_min": 381.0,
+        "x_max": 328.0,
+        "y_max": 414.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Sort Members...",
+      "vertice": {
+        "x_min": 54.0,
+        "y_min": 426.0,
+        "x_max": 302.0,
+        "y_max": 456.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Clean Up...",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 468.0,
+        "x_max": 225.0,
+        "y_max": 504.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Override/Implement Method",
+      "vertice": {
+        "x_min": 55.0,
+        "y_min": 543.0,
+        "x_max": 511.0,
+        "y_max": 573.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Generate Getters and Setters",
+      "vertice": {
+        "x_min": 56.0,
+        "y_min": 587.0,
+        "x_max": 508.0,
+        "y_max": 616.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "Generate Delegate Methods.",
+      "vertice": {
+        "x_min": 55.0,
+        "y_min": 629.0,
+        "x_max": 508.0,
+        "y_max": 661.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "package com.thenewboston.travis;",
+      "vertice": {
+        "x_min": 31.0,
+        "y_min": 6.0,
+        "x_max": 317.0,
+        "y_max": 19.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Bimport android.app.Activity;",
+      "vertice": {
+        "x_min": 15.0,
+        "y_min": 44.0,
+        "x_max": 282.0,
+        "y_max": 58.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "import android.os.Bundle;",
+      "vertice": {
+        "x_min": 31.0,
+        "y_min": 63.0,
+        "x_max": 256.0,
+        "y_max": 78.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "public class Splash extends Activity[",
+      "vertice": {
+        "x_min": 31.0,
+        "y_min": 102.0,
+        "x_max": 366.0,
+        "y_max": 116.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "@Override",
+      "vertice": {
+        "x_min": 66.0,
+        "y_min": 139.0,
+        "x_max": 150.0,
+        "y_max": 156.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "protected void onCreate(Bundle TravisLoveBacon){",
+      "vertice": {
+        "x_min": 65.0,
+        "y_min": 159.0,
+        "x_max": 513.0,
+        "y_max": 176.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "// ToDo Auto-generated method stub",
+      "vertice": {
+        "x_min": 103.0,
+        "y_min": 181.0,
+        "x_max": 411.0,
+        "y_max": 195.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "super.onCreate(TravisLoveBacon);",
+      "vertice": {
+        "x_min": 103.0,
+        "y_min": 198.0,
+        "x_max": 393.0,
+        "y_max": 215.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "setContentView(R.layout.splash);",
+      "vertice": {
+        "x_min": 103.0,
+        "y_min": 218.0,
+        "x_max": 396.0,
+        "y_max": 236.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "}",
+      "vertice": {
+        "x_min": 64.0,
+        "y_min": 238.0,
+        "x_max": 77.0,
+        "y_max": 255.0
+      }
+    }
+  ]
+}

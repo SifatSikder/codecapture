@@ -1,0 +1,84 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "get Mode: using existing emulator 'emulator-5554' running compatible AvD 'Dro",
+      "vertice": {
+        "x_min": 4.0,
+        "y_min": 8.0,
+        "x_max": 1267.0,
+        "y_max": 34.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "New Boston.apk onto device 'emulator-5554",
+      "vertice": {
+        "x_min": 4.0,
+        "y_min": 42.0,
+        "x_max": 704.0,
+        "y_max": 66.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "e New Boston.apk..",
+      "vertice": {
+        "x_min": 5.0,
+        "y_min": 77.0,
+        "x_max": 305.0,
+        "y_max": 104.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "vity com.thenewboston.travis.startingPoint on device emulator-5554",
+      "vertice": {
+        "x_min": 5.0,
+        "y_min": 147.0,
+        "x_max": 1083.0,
+        "y_max": 172.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "er: Starting: Intent { act-android.intent.action.MAIN cat-[android.intent.cat",
+      "vertice": {
+        "x_min": 4.0,
+        "y_min": 182.0,
+        "x_max": 1267.0,
+        "y_max": 207.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Writable",
+      "vertice": {
+        "x_min": 617.0,
+        "y_min": 328.0,
+        "x_max": 721.0,
+        "y_max": 352.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Smart Insert",
+      "vertice": {
+        "x_min": 860.0,
+        "y_min": 325.0,
+        "x_max": 1017.0,
+        "y_max": 355.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "6:1",
+      "vertice": {
+        "x_min": 1089.0,
+        "y_min": 326.0,
+        "x_max": 1151.0,
+        "y_max": 354.0
+      }
+    }
+  ]
+}

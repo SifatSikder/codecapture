@@ -1,0 +1,84 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "<activity android:name-\".st",
+      "vertice": {
+        "x_min": 169.0,
+        "y_min": 78.0,
+        "x_max": 714.0,
+        "y_max": 106.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "sintent-filters",
+      "vertice": {
+        "x_min": 253.0,
+        "y_min": 123.0,
+        "x_max": 546.0,
+        "y_max": 147.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "<action android:nam",
+      "vertice": {
+        "x_min": 334.0,
+        "y_min": 164.0,
+        "x_max": 713.0,
+        "y_max": 194.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "<category android:n",
+      "vertice": {
+        "x_min": 333.0,
+        "y_min": 208.0,
+        "x_max": 713.0,
+        "y_max": 242.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "</intent-filter>",
+      "vertice": {
+        "x_min": 251.0,
+        "y_min": 250.0,
+        "x_max": 568.0,
+        "y_max": 283.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "</activity",
+      "vertice": {
+        "x_min": 168.0,
+        "y_min": 291.0,
+        "x_max": 381.0,
+        "y_max": 330.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "</application>",
+      "vertice": {
+        "x_min": 88.0,
+        "y_min": 338.0,
+        "x_max": 364.0,
+        "y_max": 371.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "/manifest>",
+      "vertice": {
+        "x_min": 11.0,
+        "y_min": 383.0,
+        "x_max": 220.0,
+        "y_max": 411.0
+      }
+    }
+  ]
+}

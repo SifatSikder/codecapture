@@ -1,0 +1,84 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Add Import",
+      "vertice": {
+        "x_min": 52.0,
+        "y_min": 29.0,
+        "x_max": 233.0,
+        "y_max": 61.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Organize Imports",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 74.0,
+        "x_max": 326.0,
+        "y_max": 105.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Sort Members..",
+      "vertice": {
+        "x_min": 52.0,
+        "y_min": 118.0,
+        "x_max": 296.0,
+        "y_max": 146.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Clean Up...",
+      "vertice": {
+        "x_min": 51.0,
+        "y_min": 159.0,
+        "x_max": 223.0,
+        "y_max": 198.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Overridemplement Method",
+      "vertice": {
+        "x_min": 52.0,
+        "y_min": 236.0,
+        "x_max": 511.0,
+        "y_max": 266.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Generate Getters andSetters",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 280.0,
+        "x_max": 507.0,
+        "y_max": 309.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Generate Delegate Methods..",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 323.0,
+        "x_max": 507.0,
+        "y_max": 354.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Generate hashCodeOand eg",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 366.0,
+        "x_max": 506.0,
+        "y_max": 390.0
+      }
+    }
+  ]
+}

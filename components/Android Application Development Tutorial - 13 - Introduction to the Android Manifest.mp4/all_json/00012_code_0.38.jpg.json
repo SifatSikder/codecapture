@@ -1,0 +1,64 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "<action android:name-",
+      "vertice": {
+        "x_min": 303.0,
+        "y_min": 0.0,
+        "x_max": 627.0,
+        "y_max": 20.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "<category android:name-android.intent.category.LAuNcHER\"/>",
+      "vertice": {
+        "x_min": 299.0,
+        "y_min": 26.0,
+        "x_max": 1230.0,
+        "y_max": 54.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "</intent-filter>",
+      "vertice": {
+        "x_min": 239.0,
+        "y_min": 61.0,
+        "x_max": 484.0,
+        "y_max": 87.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "</activity>",
+      "vertice": {
+        "x_min": 177.0,
+        "y_min": 91.0,
+        "x_max": 343.0,
+        "y_max": 124.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "</application>",
+      "vertice": {
+        "x_min": 113.0,
+        "y_min": 128.0,
+        "x_max": 328.0,
+        "y_max": 155.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "</manifest>",
+      "vertice": {
+        "x_min": 53.0,
+        "y_min": 161.0,
+        "x_max": 219.0,
+        "y_max": 188.0
+      }
+    }
+  ]
+}
