@@ -92,24 +92,46 @@ def extract_text_from_image():
                         texts.append(text)
             create_json_file(bounding_boxes, texts,json_path)
 
+def rectify_code_structures(extracted_code_structures):
+    genai.configure(api_key="AIzaSyBM3HtmWkfS-Wu_fsk-JfnGHzoNLsLYjfQ")
+    generation_config = {"temperature": 0.85,"top_p": 0.75,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
+    chat_session = model.start_chat(history=[])
+    prompt = f"""   
+    Check the code structure: {extracted_code_structures}.
+    Then carefully check whether the activeFile name corresponds to the code portion. If not, correct the activeFile name.
+    Then carefully check whether there is any mistake in the code portion such as missing import,syntax error etc. If found any mistake rectify code portion.
+    Put your final extracted rectified_code_structures within \\rectified_code_structures{{''}}.
+    The final extracted rectified_code_structures must be start with \\rectified_code_structures{{ and end with }}.
+    """
+    print("Sending API request to rectify existing code structures if there is any mistake...Please wait...")
+    response = chat_session.send_message(prompt)
+    print("API response received.")
+    return response.text
+
 def extract_sidebars_files_codes_codes_structures(response):
     sidebar_pattern = r'\\sidebar\s*\{(\s*\[.*?\]\s*)\}'
-    active_files_pattern = r'\\activeFiles\s*\{(\s*\[.*?\]\s*)\}'
-    codes_pattern = r'\\codes\s*\{(\s*\[.*?\]\s*)\}'
-    code_structures_pattern = r'\\code_structures\s*\{(\s*\[.*?\]\s*)\}'
     extracted_sidebar = re.search(sidebar_pattern, response, re.DOTALL)
     extracted_sidebar = extracted_sidebar.group(1).strip() if extracted_sidebar else "Not found"
     
+    active_files_pattern = r'\\activeFiles\s*\{(\s*\[.*?\]\s*)\}'
     extracted_active_files = re.search(active_files_pattern, response, re.DOTALL)
     extracted_active_files = extracted_active_files.group(1).strip() if extracted_active_files else "Not found"
     
+    codes_pattern = r'\\codes\s*\{(\s*\[.*?\]\s*)\}'
     extracted_codes = re.search(codes_pattern, response, re.DOTALL)
     extracted_codes = extracted_codes.group(1).strip() if extracted_codes else "Not found"
     
+    code_structures_pattern = r'\\code_structures\s*\{(\s*\[.*?\]\s*)\}'
     extracted_code_structures = re.search(code_structures_pattern, response, re.DOTALL)
     extracted_code_structures = extracted_code_structures.group(1).strip() if extracted_code_structures else "Not found"
     
-    return extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures
+    rectified_code_structures = rectify_code_structures(extracted_code_structures)
+    rectified_code_structures_pattern = r'\\rectified_code_structures\s*\{(\s*\[.*?\]\s*)\}'
+    extracted_rectified_code_structures = re.search(rectified_code_structures_pattern, rectified_code_structures, re.DOTALL)
+    extracted_rectified_code_structures = extracted_rectified_code_structures.group(1).strip() if extracted_rectified_code_structures else "Not found"
+    
+    return extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures,extracted_rectified_code_structures
 
 def read_json_text(file_path):
     with open(file_path, 'r') as file:
@@ -169,7 +191,7 @@ def compile_code(sidebars,activeFiles,codes):
     print("API response received.")
     return response.text
 
-def cluster_classes (components_folder):
+def code_generation (components_folder):
     for root, _ , files in os.walk(components_folder):
         if os.path.basename(root) == 'all_json':
             sidebars = []
@@ -185,15 +207,15 @@ def cluster_classes (components_folder):
 
             print(f'Video: {os.path.abspath(root)}')
             response = compile_code(sidebars,activeFiles,codes)
-            extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures = extract_sidebars_files_codes_codes_structures(response)
+            extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures,extracted_rectified_code_structures = extract_sidebars_files_codes_codes_structures(response)
 
             print("Sidebar:", extracted_sidebar)
             print("ActiveFiles:", extracted_active_files)
             print("Codes:", extracted_codes)
             print("Code Structures:", extracted_code_structures)
+            print("Rectified Code Structures:", extracted_rectified_code_structures)
 
 # extract_components()
 # extract_text_from_image()
-# combine_filename_and_code()
 # merge_all_json("components")
-cluster_classes("components")
+code_generation("components")
