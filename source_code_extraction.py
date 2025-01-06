@@ -107,6 +107,7 @@ def rectify_code_structures(extracted_code_structures):
     print("Sending API request to rectify existing code structures if there is any mistake...Please wait...")
     response = chat_session.send_message(prompt)
     print("API response received.")
+    print(f'rectified_code_structures: {response.text}')
     return response.text
 
 def extract_sidebars_files_codes_codes_structures(response):
@@ -191,7 +192,20 @@ def compile_code(sidebars,activeFiles,codes):
     print("API response received.")
     return response.text
 
-def code_generation (components_folder):
+
+def create_hierarchy_json(video_name,extracted_sidebar):
+    os.makedirs("hierarchy",exist_ok=True)
+    file_path = os.path.join("hierarchy", f"{video_name}.json")
+    with open(file_path, "w", encoding="utf-8") as json_file:
+        json.dump(extracted_sidebar, json_file, indent=4)
+
+def create_code_json(video_name,extracted_rectified_code_structures):
+    os.makedirs("code",exist_ok=True)
+    file_path = os.path.join("code", f"{video_name}.json")
+    with open(file_path, "w", encoding="utf-8") as json_file:
+        json.dump(extracted_rectified_code_structures, json_file, indent=4)    
+
+def hierarchy_and_code_generation (components_folder):
     for root, _ , files in os.walk(components_folder):
         if os.path.basename(root) == 'all_json':
             sidebars = []
@@ -205,7 +219,8 @@ def code_generation (components_folder):
                 if pieces[1] == 'code': codes.append({'image_num':pieces[0], 'probability':pieces[2], 'texts':read_json_text(file_path),})
                 if pieces[1] == 'sidebar': sidebars.append({'image_num':pieces[0], 'probability':pieces[2], 'texts':read_json_text(file_path),})
 
-            print(f'Video: {os.path.abspath(root)}')
+            video_name = os.path.abspath(root).split("\\")[-2]
+            print(f'Video: {video_name}')
             response = compile_code(sidebars,activeFiles,codes)
             extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures,extracted_rectified_code_structures = extract_sidebars_files_codes_codes_structures(response)
 
@@ -215,7 +230,10 @@ def code_generation (components_folder):
             print("Code Structures:", extracted_code_structures)
             print("Rectified Code Structures:", extracted_rectified_code_structures)
 
+            create_hierarchy_json(video_name,extracted_sidebar)
+            create_code_json(video_name,extracted_rectified_code_structures)
+
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
-code_generation("components")
+hierarchy_and_code_generation("components")
