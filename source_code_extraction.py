@@ -3,6 +3,7 @@ import json
 import cv2
 import shutil
 import re
+import ast
 from ultralytics import YOLO
 from paddleocr import PaddleOCR
 import google.generativeai as genai
@@ -162,10 +163,11 @@ def compile_code(sidebars,activeFiles,codes):
     chat_session = model.start_chat(history=[])
     prompt = f"""
     Generate the folder structure from the sidebar OCR texts: {sidebars}. An example of generated format of folder structure is shown below:
-    \\sidebar{{'id':1, 'text': 'The New Boston', 'level':0, 'parent_id':null}}
-    \\sidebar{{'id':2, 'text': 'Chapter 1', 'level':1, 'parent_id':1}}
-    \\sidebar{{'id':3, 'text': 'Chapter 1.1', 'level':2, 'parent_id':'}}
-    \\sidebar{{'id':4, 'text': 'Chapter 1.2', 'level':2, 'parent_id':2}}
+    \\sidebar{{'id':1, 'text': 'The New Boston', 'level':0, 'parent_id':null, 'type':'folder'}},
+    \\sidebar{{'id':2, 'text': 'Chapter 1', 'level':1, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':3, 'text': 'Chapter 1.1', 'level':2, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':4, 'text': 'a.txt', 'level':2, 'parent_id':2, 'type':'file'}},
+    \\sidebar{{'id':5, 'text': 'hello.java', 'level':2, 'parent_id':2, 'type':'file'}},
     Put your final extracted structure within \\sidebar{{''}}.
     The final extracted structure must be start with \\sidebar{{ and end with }}.
     
@@ -233,7 +235,41 @@ def hierarchy_and_code_generation (components_folder):
             create_hierarchy_json(video_name,extracted_sidebar)
             create_code_json(video_name,extracted_rectified_code_structures)
 
+def create_folder_hierarchy_from_json(json_file):
+    
+    def create_structure(item, parent_path):
+        full_path = os.path.join(parent_path, item['text'])
+        if item['type'] == 'folder': os.makedirs(full_path, exist_ok=True)
+        elif item['type'] == 'file':
+            with open(full_path, 'w') as file: pass
+        return full_path
+    
+    os.makedirs("final_results",exist_ok=True)
+    base_name = os.path.splitext(os.path.basename(json_file))[0]
+    base_folder = f"final_results/src_{base_name}"
+    os.makedirs(base_folder,exist_ok=True)
+    with open(json_file, 'r') as file:
+        raw_data = file.read()
+        raw_data = raw_data.replace("'", '"').replace("null", "None")
+        # print("Raw data:", raw_data)
+        regex_pattern = r'\{.*?\}'
+        matches = re.findall(regex_pattern, raw_data)
+        cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
+        print('cleaned_list',cleaned_list)
+        # print('type(cleaned_list[0])',type(cleaned_list[0]))
+        
+        id_to_path = {}
+        for i,item in enumerate(cleaned_list):
+            print(i,item['parent_id'])
+            if item['parent_id'] is None:
+                path = create_structure(item, base_folder)
+            else:
+                parent_path = id_to_path[item['parent_id']]
+                path = create_structure(item, parent_path)
+            id_to_path[item['id']] = path
+
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
-hierarchy_and_code_generation("components")
+# hierarchy_and_code_generation("components")
+# create_folder_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
