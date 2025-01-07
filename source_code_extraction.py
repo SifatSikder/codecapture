@@ -3,7 +3,6 @@ import json
 import cv2
 import shutil
 import re
-import ast
 from ultralytics import YOLO
 from paddleocr import PaddleOCR
 import google.generativeai as genai
@@ -196,18 +195,20 @@ def compile_code(sidebars,activeFiles,codes):
 
 
 def create_hierarchy_json(video_name,extracted_sidebar):
-    os.makedirs("hierarchy",exist_ok=True)
-    file_path = os.path.join("hierarchy", f"{video_name}.json")
+    folder_name = "hierarchy_json"
+    os.makedirs(folder_name,exist_ok=True)
+    file_path = os.path.join(folder_name, f"{video_name}.json")
     with open(file_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_sidebar, json_file, indent=4)
 
 def create_code_json(video_name,extracted_rectified_code_structures):
-    os.makedirs("code",exist_ok=True)
-    file_path = os.path.join("code", f"{video_name}.json")
+    folder_name = "code_json"
+    os.makedirs(folder_name,exist_ok=True)
+    file_path = os.path.join(folder_name, f"{video_name}.json")
     with open(file_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_rectified_code_structures, json_file, indent=4)    
 
-def hierarchy_and_code_generation (components_folder):
+def hierarchy_and_code_json_generation (components_folder):
     for root, _ , files in os.walk(components_folder):
         if os.path.basename(root) == 'all_json':
             sidebars = []
@@ -235,7 +236,7 @@ def hierarchy_and_code_generation (components_folder):
             create_hierarchy_json(video_name,extracted_sidebar)
             create_code_json(video_name,extracted_rectified_code_structures)
 
-def create_folder_hierarchy_from_json(json_file):
+def create_hierarchy_from_json(json_file):
     
     def create_structure(item, parent_path):
         full_path = os.path.join(parent_path, item['text'])
@@ -246,7 +247,7 @@ def create_folder_hierarchy_from_json(json_file):
     
     os.makedirs("final_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
-    base_folder = f"final_results/src_{base_name}"
+    base_folder = f"final_results/{base_name}"
     os.makedirs(base_folder,exist_ok=True)
     with open(json_file, 'r') as file:
         raw_data = file.read()
@@ -260,16 +261,22 @@ def create_folder_hierarchy_from_json(json_file):
         
         id_to_path = {}
         for i,item in enumerate(cleaned_list):
-            print(i,item['parent_id'])
             if item['parent_id'] is None:
                 path = create_structure(item, base_folder)
             else:
                 parent_path = id_to_path[item['parent_id']]
                 path = create_structure(item, parent_path)
             id_to_path[item['id']] = path
+    hierarchy_folder = os.path.join(base_folder, "hierarchy")   
+    os.makedirs(hierarchy_folder, exist_ok=True)
+    for item in os.listdir(base_folder):
+        item_path = os.path.join(base_folder, item)
+        if item_path != hierarchy_folder: shutil.move(item_path, hierarchy_folder)
+
 
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
-# hierarchy_and_code_generation("components")
-# create_folder_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
+# hierarchy_and_code_json_generation("components")
+# create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
+create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
