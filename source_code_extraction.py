@@ -273,10 +273,52 @@ def create_hierarchy_from_json(json_file):
         item_path = os.path.join(base_folder, item)
         if item_path != hierarchy_folder: shutil.move(item_path, hierarchy_folder)
 
+def create_code_from_json(json_file):
+    os.makedirs("final_results",exist_ok=True)
+    base_name = os.path.splitext(os.path.basename(json_file))[0]
+    base_folder = f"final_results/{base_name}"
+    os.makedirs(base_folder,exist_ok=True)
+    with open(json_file, 'r') as file:
+        raw_data = file.read()
+        raw_data = raw_data.replace("'", '"')
+        print("Raw data:", raw_data)
+        print("Type of Raw data:", type(raw_data))
+        try:
+            code_data = json.loads(raw_data)
+        except json.JSONDecodeError:
+            raise ValueError("Invalid JSON string")
+        
+        print("Code data:", code_data)
+        print("Type of code data:", type(code_data))
+        print("Code data:", code_data[:10])
+        
+        # pattern = r'"activeFile":\s*"([^"]+)",\s*"code":\s*"([^"]+)"'
+        pattern = r'"activeFile":\s*"([^"]+)",\s*"code":\s*"((?:\\.|[^\\"])*)"'
+        matches = re.findall(pattern, code_data, re.DOTALL)
+        extracted_data = {}
+        for active_file, code in matches:
+            code = bytes(code, "utf-8").decode("unicode_escape")
+            extracted_data[active_file] = code
+        print("extracted_data",extracted_data.keys())
+        print("extracted_data",extracted_data.values())
+        
+        
+        
+        
+        # transformed_data = [{"activeFile": entry["activeFile"], "codes": entry["code"]} for entry in code_data]
+        # print(transformed_data)
+        # return transformed_data
+        # regex_pattern = r'\{.*?\}'
+        # matches = re.findall(regex_pattern, raw_data)
+        # cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
+        # print('cleaned_list',cleaned_list)
+        # print('type(cleaned_list[0])',type(cleaned_list[0]))
 
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
 # hierarchy_and_code_json_generation("components")
 # create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
-create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
+# create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
+create_code_from_json('code/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
+create_code_from_json('code/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
