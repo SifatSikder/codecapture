@@ -193,7 +193,6 @@ def compile_code(sidebars,activeFiles,codes):
     print("API response received.")
     return response.text
 
-
 def create_hierarchy_json(video_name,extracted_sidebar):
     folder_name = "hierarchy_json"
     os.makedirs(folder_name,exist_ok=True)
@@ -321,11 +320,69 @@ def create_code_from_json(json_file):
         # print('cleaned_list',cleaned_list)
         # print('type(cleaned_list[0])',type(cleaned_list[0]))
 
+def create_hierarchies(hierarchy_folder):
+    for root, _, files in os.walk(hierarchy_folder):
+        for file in files:
+            file_path = os.path.join(root, file)
+            create_hierarchy_from_json(file_path)
+
+def create_codes(code_folder):
+    for root, _, files in os.walk(code_folder):
+        for file in files:
+            file_path = os.path.join(root, file)
+            create_code_from_json(file_path)
+
+def copy_everything_from_source_to_destination(source, destination):
+    def add_long_path_prefix(path):
+        if os.name == 'nt': return f"\\\\?\\{os.path.abspath(path)}"
+        return path
+    source = add_long_path_prefix(source)
+    destination = add_long_path_prefix(destination)
+    for item in os.listdir(source):
+        source = os.path.join(source, item)
+        destination = os.path.join(destination, item)
+        if os.path.isdir(source): shutil.copytree(source, destination, dirs_exist_ok=True)
+        else: shutil.copy2(source, destination)
+
+def replace_matching_files(hierarchy_code_paths):
+    for paths in hierarchy_code_paths:
+        code_path = paths['code_path']
+        hierarchy_path = paths['hierarchy_path']
+
+        for root, dirs, files in os.walk(hierarchy_path):
+            for file in files:
+                hierarchy_file = os.path.abspath(os.path.join(root, file))
+                if len(hierarchy_file) > 260: hierarchy_file = f"\\\\?\\{hierarchy_file}"
+                code_file = os.path.abspath(os.path.join(code_path, file))
+                if len(code_file) > 260: code_file = f"\\\\?\\{code_file}"
+
+                if os.path.exists(code_file):
+                    os.remove(hierarchy_file)
+                    shutil.copy(code_file, hierarchy_file)
+                    print(f"Replaced {hierarchy_file} with {code_file}")
+
+def hierarchies_with_codes(final_results_folder):
+    hierarchy_code_paths = []
+    for video in os.listdir(final_results_folder):
+        video_path = os.path.join(final_results_folder, video)
+        hierarchy_with_code_path = os.path.join(video_path, "hierarchy_with_code")
+        os.makedirs(hierarchy_with_code_path,exist_ok=True)
+        if os.path.isdir(video_path):
+            hierarchy_code_path = {}
+            for folder_inside_video in os.listdir(video_path):
+                if folder_inside_video == 'hierarchy':
+                    hierarchy_path = os.path.join(video_path, folder_inside_video)
+                    copy_everything_from_source_to_destination(hierarchy_path, hierarchy_with_code_path) 
+                if folder_inside_video == 'code': hierarchy_code_path['code_path'] = os.path.join(video_path, folder_inside_video)
+                if folder_inside_video == 'hierarchy_with_code': hierarchy_code_path['hierarchy_path'] = os.path.join(video_path, folder_inside_video)
+            hierarchy_code_paths.append(hierarchy_code_path)
+
+    replace_matching_files(hierarchy_code_paths)            
+
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
 # hierarchy_and_code_json_generation("components")
-# create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
-# create_hierarchy_from_json('hierarchy/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
-create_code_from_json('code/Android Application Development Tutorial - 12 - Setting up an Activity and Using SetContentView.mkv.json')
-create_code_from_json('code/Android Application Development Tutorial - 13 - Introduction to the Android Manifest.mp4.json')
+create_hierarchies("hierarchy")
+create_codes("code")
+hierarchies_with_codes("final_results")
