@@ -301,6 +301,13 @@ def create_code_from_json(json_file):
             extracted_data[active_file] = code
         print("extracted_data",extracted_data.keys())
         print("extracted_data",extracted_data.values())
+        code_folder = os.path.join(base_folder, "code")
+        os.makedirs(code_folder,exist_ok=True)
+        for filename, code in extracted_data.items():
+            file_path = os.path.join(code_folder, filename)
+            with open(file_path, 'w') as file: file.write(code)
+            print(f"Created file: {filename} with code:\n{code}\n")
+            
         
         
         
