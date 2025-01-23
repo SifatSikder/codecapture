@@ -236,17 +236,20 @@ def hierarchy_and_code_json_generation (components_folder):
             create_code_json(video_name,extracted_rectified_code_structures)
 
 def create_hierarchy_from_json(json_file):
-    
+    def add_long_path_prefix(path):
+        if os.name == 'nt': return f"\\\\?\\{os.path.abspath(path)}"
+        return path
     def create_structure(item, parent_path):
         full_path = os.path.join(parent_path, item['text'])
+        if len(os.path.abspath(full_path)) >= 260: full_path = add_long_path_prefix(full_path)
         if item['type'] == 'folder': os.makedirs(full_path, exist_ok=True)
         elif item['type'] == 'file':
             with open(full_path, 'w') as file: pass
         return full_path
     
-    os.makedirs("final_results",exist_ok=True)
+    os.makedirs("individual_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
-    base_folder = f"final_results/{base_name}"
+    base_folder = f"individual_results/{base_name}"
     os.makedirs(base_folder,exist_ok=True)
     with open(json_file, 'r') as file:
         raw_data = file.read()
@@ -273,9 +276,9 @@ def create_hierarchy_from_json(json_file):
         if item_path != hierarchy_folder: shutil.move(item_path, hierarchy_folder)
 
 def create_code_from_json(json_file):
-    os.makedirs("final_results",exist_ok=True)
+    os.makedirs("individual_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
-    base_folder = f"final_results/{base_name}"
+    base_folder = f"individual_results/{base_name}"
     os.makedirs(base_folder,exist_ok=True)
     with open(json_file, 'r') as file:
         raw_data = file.read()
@@ -379,10 +382,66 @@ def hierarchies_with_codes(final_results_folder):
 
     replace_matching_files(hierarchy_code_paths)            
 
+def create_merged_hierarchy_json(merged_hierarchy):
+    file_path = os.path.join("merged_results", "merged_hierarchy.json")
+    with open(file_path, "w", encoding="utf-8") as json_file:
+        json.dump(merged_hierarchy, json_file, indent=4)
+
+def create_merged_hierarchies(hierarchy_folder):
+    hierarchies = []
+    for filename in os.listdir(hierarchy_folder):
+        if filename.endswith(".json"):
+            file_path = os.path.join(hierarchy_folder, filename)
+            with open(file_path, "r", encoding="utf-8") as file:
+                json_data = json.load(file)
+                hierarchies.append(json.dumps(json_data))
+    
+    genai.configure(api_key="AIzaSyCdgzxZnTZTemEPy8y3CZBGnCDHY4gnzyM")
+    generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
+    chat_session = model.start_chat(history=[])
+    prompt = f"""
+    Take the list of hierarchies: {hierarchies}.
+    next try to predict whether the hierarchies are mergeable or not.
+    Give the mergeability prediction as a boolean value.
+    put the answer within \\mergeability{{''}}.
+    Next if it is mergeable then merge the hierarchies. An example of generated format of hierarchies is shown below:
+    \\sidebar{{'id':1, 'text': 'The New Boston', 'level':0, 'parent_id':null, 'type':'folder'}},
+    \\sidebar{{'id':2, 'text': 'Chapter 1', 'level':1, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':3, 'text': 'Chapter 1.1', 'level':2, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':4, 'text': 'a.txt', 'level':2, 'parent_id':2, 'type':'file'}},
+    \\sidebar{{'id':5, 'text': 'hello.java', 'level':2, 'parent_id':2, 'type':'file'}},
+    Put your final extracted structure within \\merged_hierarchy{{''}}.
+    The final extracted structure must be start with \\merged_hierarchy{{ and end with }}.
+    """
+    response = chat_session.send_message(prompt)
+    print("API response received.")
+    print(f'Merged Hierarchies: {response.text}')
+    
+    mergeability_match = re.search(r"\\mergeability\{(true|false)\}", response.text)
+    mergeability = mergeability_match.group(1) if mergeability_match else None
+
+    merged_hierarchy_match = re.search(r"\\merged_hierarchy\{(.*)\}", response.text, re.DOTALL)
+    merged_hierarchy = merged_hierarchy_match.group(1).strip() if merged_hierarchy_match else None
+    
+    if mergeability:
+        os.makedirs("merged_results",exist_ok=True)
+        create_merged_hierarchy_json(merged_hierarchy)
+
+    print("Mergeability Value:", mergeability)
+    print("Merged Hierarchies:\n", merged_hierarchy)
+    
+    return response.text
+
+def create_merged_codes(code_folder):
+    pass
+
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
-# hierarchy_and_code_json_generation("components")
-create_hierarchies("hierarchy")
-create_codes("code")
-hierarchies_with_codes("final_results")
+hierarchy_and_code_json_generation("components")
+create_hierarchies("hierarchy_json")
+create_codes("code_json")
+hierarchies_with_codes("individual_results")
+create_merged_hierarchies("hierarchy_json")
+# create_merged_codes("code_json")
