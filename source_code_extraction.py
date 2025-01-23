@@ -3,9 +3,11 @@ import json
 import cv2
 import shutil
 import re
+from pathlib import Path
+import google.generativeai as genai
 from ultralytics import YOLO
 from paddleocr import PaddleOCR
-import google.generativeai as genai
+from collections import Counter
 
 def extract_sidebar(model_path,image_path,image_name,save_path):
 
@@ -431,17 +433,81 @@ def create_merged_hierarchies(hierarchy_folder):
     print("Mergeability Value:", mergeability)
     print("Merged Hierarchies:\n", merged_hierarchy)
     
+
+def create_merge_version(versions):
+    genai.configure(api_key="AIzaSyBDg5VSfQ7e1dfcYRzEsJwIZu_Uch5vNm8")
+    generation_config = {"temperature": 1,"top_p": 0.95,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
+    model = genai.GenerativeModel(model_name="gemini-1.5-pro",generation_config=generation_config)
+    chat_session = model.start_chat(history=[])
+    prompt = f"""
+    Take the versions of a code: {versions}.
+    Your task is to create a merged final version of this code.
+    You must not write any comments in the final merged version.
+    Put your final merged version within \\merged_version{{''}}.
+    The final merged version must be start with \\merged_version{{ and end with }}.
+
+    """
+    response = chat_session.send_message(prompt)
+    print("response = ",response.text)
+    print("API response received.")
     return response.text
 
 def create_merged_codes(code_folder):
-    pass
+    os.makedirs("merged_results",exist_ok=True)
+    os.makedirs("merged_results/merged_codes",exist_ok=True)
+    codes = []
+    for filename in os.listdir(code_folder):
+        if filename.endswith(".json"):
+            file_path = os.path.join(code_folder, filename)
+            with open(file_path, "r", encoding="utf-8") as file:
+                json_data = json.load(file)
+                codes.append(json.dumps(json_data))
+    parsed_data = []
+    for code in codes:
+        json_string = code.strip('"')
+        json_string = json_string.encode('utf-8').decode('unicode_escape')
+        parsed_data.extend(json.loads(json_string))
+
+    active_files = [item['activeFile'] for item in parsed_data if 'activeFile' in item]
+    file_counts = Counter(active_files)
+    unique_active_files = [file for file, count in file_counts.items() if count == 1]
+    repeated_active_files = [file for file, count in file_counts.items() if count > 1]
+
+    print("Unique Active Files:", unique_active_files)
+    print("Repeated Active Files:", repeated_active_files)
+    root = Path('./individual_results')
+    files_in_code = []
+    for code_folder in root.rglob("code"):
+        if code_folder.is_dir():
+            files_in_code.extend([file for file in code_folder.iterdir() if file.is_file()])
+    repeated_active_file_dict = {}
+    for repeated_file in repeated_active_files:
+        repeated_active_file_dict[repeated_file] = []
+    for file in files_in_code:
+        if file.name in unique_active_files:  
+            destination_path = f"merged_results/merged_codes/ {file.name}" 
+            shutil.copy(file, destination_path)
+            print(f"Copied {file} to {destination_path}")
+        if file.name in repeated_active_files:
+            if file.exists() and file.is_file():
+                with open(file, 'r', encoding='utf-8') as f:
+                    repeated_active_file_dict[file.name].append(f.read())
+    for filename, versions in repeated_active_file_dict.items():
+        print("filename",filename)
+        print("versions",versions)
+        merged_version = create_merge_version(versions)
+        destination_path = f"merged_results/merged_codes/{filename}"
+        with open(destination_path, 'w', encoding='utf-8') as f:
+            f.write(merged_version)
+            
+
 
 # extract_components()
 # extract_text_from_image()
 # merge_all_json("components")
-hierarchy_and_code_json_generation("components")
-create_hierarchies("hierarchy_json")
-create_codes("code_json")
-hierarchies_with_codes("individual_results")
-create_merged_hierarchies("hierarchy_json")
-# create_merged_codes("code_json")
+# hierarchy_and_code_json_generation("components")
+# create_hierarchies("hierarchy_json")
+# create_codes("code_json")
+# hierarchies_with_codes("individual_results")
+# create_merged_hierarchies("hierarchy_json")
+create_merged_codes("code_json")
