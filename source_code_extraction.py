@@ -237,18 +237,19 @@ def hierarchy_and_code_json_generation (components_folder):
             create_hierarchy_json(video_name,extracted_sidebar)
             create_code_json(video_name,extracted_rectified_code_structures)
 
+def add_long_path_prefix(path):
+    if os.name == 'nt': return f"\\\\?\\{os.path.abspath(path)}"
+    return path
+
+def create_structure(item, parent_path):
+    full_path = os.path.join(parent_path, item['text'])
+    if len(os.path.abspath(full_path)) >= 260: full_path = add_long_path_prefix(full_path)
+    if item['type'] == 'folder': os.makedirs(full_path, exist_ok=True)
+    elif item['type'] == 'file':
+        with open(full_path, 'w') as file: pass
+    return full_path
+
 def create_hierarchy_from_json(json_file):
-    def add_long_path_prefix(path):
-        if os.name == 'nt': return f"\\\\?\\{os.path.abspath(path)}"
-        return path
-    def create_structure(item, parent_path):
-        full_path = os.path.join(parent_path, item['text'])
-        if len(os.path.abspath(full_path)) >= 260: full_path = add_long_path_prefix(full_path)
-        if item['type'] == 'folder': os.makedirs(full_path, exist_ok=True)
-        elif item['type'] == 'file':
-            with open(full_path, 'w') as file: pass
-        return full_path
-    
     os.makedirs("individual_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
     base_folder = f"individual_results/{base_name}"
@@ -360,7 +361,6 @@ def replace_matching_files(hierarchy_code_paths):
                 if len(hierarchy_file) > 260: hierarchy_file = f"\\\\?\\{hierarchy_file}"
                 code_file = os.path.abspath(os.path.join(code_path, file))
                 if len(code_file) > 260: code_file = f"\\\\?\\{code_file}"
-
                 if os.path.exists(code_file):
                     os.remove(hierarchy_file)
                     shutil.copy(code_file, hierarchy_file)
@@ -389,7 +389,7 @@ def create_merged_hierarchy_json(merged_hierarchy):
     with open(file_path, "w", encoding="utf-8") as json_file:
         json.dump(merged_hierarchy, json_file, indent=4)
 
-def create_merged_hierarchies(hierarchy_folder):
+def create_merged_hierarchies_json(hierarchy_folder):
     hierarchies = []
     for filename in os.listdir(hierarchy_folder):
         if filename.endswith(".json"):
@@ -432,6 +432,28 @@ def create_merged_hierarchies(hierarchy_folder):
 
     print("Mergeability Value:", mergeability)
     print("Merged Hierarchies:\n", merged_hierarchy)
+    
+def create_merged_hierarchies(merged_hierarchy_json_folder):
+    base_folder = f"{merged_hierarchy_json_folder}/merged_hierarchy"
+    os.makedirs(base_folder,exist_ok=True)
+    for filename in os.listdir(merged_hierarchy_json_folder):
+        if filename.endswith(".json"):
+            file_path = os.path.join(merged_hierarchy_json_folder, filename)
+            with open(file_path, 'r') as file:
+                raw_data = file.read()
+                raw_data = raw_data.replace("'", '"').replace("null", "None")
+                regex_pattern = r'\{.*?\}'
+                matches = re.findall(regex_pattern, raw_data)
+                cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
+                print('cleaned_list',cleaned_list)
+                id_to_path = {}
+                for i,item in enumerate(cleaned_list):
+                    if item['parent_id'] is None:
+                        path = create_structure(item, base_folder)
+                    else:
+                        parent_path = id_to_path[item['parent_id']]
+                        path = create_structure(item, parent_path)
+                    id_to_path[item['id']] = path
     
 
 def create_merge_version(versions):
@@ -485,7 +507,7 @@ def create_merged_codes(code_folder):
         repeated_active_file_dict[repeated_file] = []
     for file in files_in_code:
         if file.name in unique_active_files:  
-            destination_path = f"merged_results/merged_codes/ {file.name}" 
+            destination_path = f"merged_results/merged_codes/{file.name}" 
             shutil.copy(file, destination_path)
             print(f"Copied {file} to {destination_path}")
         if file.name in repeated_active_files:
@@ -500,14 +522,26 @@ def create_merged_codes(code_folder):
         with open(destination_path, 'w', encoding='utf-8') as f:
             f.write(merged_version)
             
+def create_merged_hierarchies_with_codes(merged_hierarchy_json_folder):
+    hierarchy_with_code_path = os.path.join(merged_hierarchy_json_folder, "merged_hierarchy_with_code")
+    os.makedirs(hierarchy_with_code_path,exist_ok=True)
+    hierarchy_code_path = {}
+    for folder_inside_video in os.listdir(merged_hierarchy_json_folder):
+        if folder_inside_video == 'merged_hierarchy':
+            hierarchy_path = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
+            copy_everything_from_source_to_destination(hierarchy_path, hierarchy_with_code_path) 
+        if folder_inside_video == 'merged_codes': hierarchy_code_path['code_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
+        if folder_inside_video == 'merged_hierarchy_with_code': hierarchy_code_path['hierarchy_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
+    replace_matching_files([hierarchy_code_path])
 
-
-# extract_components()
-# extract_text_from_image()
-# merge_all_json("components")
-# hierarchy_and_code_json_generation("components")
-# create_hierarchies("hierarchy_json")
-# create_codes("code_json")
-# hierarchies_with_codes("individual_results")
-# create_merged_hierarchies("hierarchy_json")
+extract_components()
+extract_text_from_image()
+merge_all_json("components")
+hierarchy_and_code_json_generation("components")
+create_hierarchies("hierarchy_json")
+create_codes("code_json")
+hierarchies_with_codes("individual_results")
+create_merged_hierarchies_json("hierarchy_json")
+create_merged_hierarchies("merged_results")
 create_merged_codes("code_json")
+create_merged_hierarchies_with_codes("merged_results")
