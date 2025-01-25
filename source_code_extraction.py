@@ -455,7 +455,6 @@ def create_merged_hierarchies(merged_hierarchy_json_folder):
                         path = create_structure(item, parent_path)
                     id_to_path[item['id']] = path
     
-
 def create_merge_version(versions):
     genai.configure(api_key="AIzaSyBDg5VSfQ7e1dfcYRzEsJwIZu_Uch5vNm8")
     generation_config = {"temperature": 1,"top_p": 0.95,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
