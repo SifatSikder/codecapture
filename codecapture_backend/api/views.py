@@ -38,22 +38,20 @@ def preprocessing(request):
     extract_images(settings.VIDEOS_DIR, settings.IMAGES_DIR)
     extract_unique_images(settings.IMAGES_DIR)
 
+def generate_notes_core():
+    zip_file_path = os.path.join(settings.BASE_DIR, 'generated_note.zip')
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(settings.IMAGES_DIR):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), settings.IMAGES_DIR))
+    return zip_file_path
+
 @csrf_exempt
 def generate_notes(request):
     if request.method == "POST":
-        preprocessing(request)
-        zip_file_path = os.path.join(settings.BASE_DIR, 'images.zip')
-        with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            for root,_, files in os.walk(settings.IMAGES_DIR):
-                for file in files:
-                    zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), settings.IMAGES_DIR))
-
-        with open(zip_file_path, 'rb') as zip_file:
-            response = HttpResponse(zip_file.read(), content_type='application/zip')
-            response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
-            return response
-
-    return JsonResponse({"error": "Invalid request method"}, status=400)
+        # preprocessing(request)
+        zip_file_path = generate_notes_core()
+        return response_creator(zip_file_path)
 
 def transcribe_video_core():
     # transcribe(settings.VIDEOS_DIR)
