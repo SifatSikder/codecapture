@@ -129,20 +129,24 @@ def extract_source_code(request):
             response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
             return response
 
+def extract_workflow_core():
+    extract_text_from_whole_image("images")
+    workflow_generation("ocr")
+    workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
+    workflows = []
+    for filename in os.listdir(workflow_dir):
+        if filename.endswith(".json"):
+            filepath = os.path.join(workflow_dir, filename)
+            with open(filepath, "r", encoding="utf-8") as file:
+                content = file.read()
+                workflows.append({"filename": filename, "content": content})
+    return workflows
+
 
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
         preprocessing(request)
-        extract_text_from_whole_image("images")
-        workflow_generation("ocr")
-        workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
-        workflows = []
-        for filename in os.listdir(workflow_dir):
-            if filename.endswith(".json"):
-                filepath = os.path.join(workflow_dir, filename)
-                with open(filepath, "r", encoding="utf-8") as file:
-                    content = file.read()
-                    workflows.append({"filename": filename, "content": content})
+        workflows = extract_workflow_core()
         print("Sending workflows....")
         return JsonResponse({"workflows": workflows}, status=200)
