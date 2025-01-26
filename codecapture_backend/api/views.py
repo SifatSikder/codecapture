@@ -10,6 +10,12 @@ from api.source_code_extraction import *
 from api.summary_generation import transcribe , summarize
 from api.workflow_extraction import extract_text_from_whole_image, workflow_generation
 
+def response_creator(zip_file_path):
+    with open(zip_file_path, 'rb') as zip_file:
+        response = HttpResponse(zip_file.read(), content_type='application/zip')
+        response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
+        return response
+
 def preprocessing(request):
     if not os.path.exists(settings.IMAGES_DIR): os.makedirs(settings.IMAGES_DIR)
     if os.path.exists(settings.IMAGES_DIR): 
@@ -49,44 +55,46 @@ def generate_notes(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
+def transcribe_video_core():
+    # transcribe(settings.VIDEOS_DIR)
+    transcriptions_dir = os.path.join(settings.BASE_DIR, "transcriptions")
+    zip_file_path = os.path.join(settings.BASE_DIR, 'generated_transcription.zip')
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(transcriptions_dir):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(transcriptions_dir)))
+    return zip_file_path
 @csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
-        preprocessing(request)
-        transcribe(settings.VIDEOS_DIR)
-        transcriptions_dir = os.path.join(settings.BASE_DIR, "transcriptions")
-        transcriptions = []
-        for filename in os.listdir(transcriptions_dir):
-            if filename.endswith(".txt"):
-                filepath = os.path.join(transcriptions_dir, filename)
-                with open(filepath, "r", encoding="utf-8") as file:
-                    content = file.read()
-                    transcriptions.append({"filename": filename, "content": content})
-        print("Sending transcriptions....")
-        return JsonResponse({"transcriptions": transcriptions}, status=200)
+        # preprocessing(request)
+        zip_file_path = transcribe_video_core()
+        print("Sending Transcriptions....")
+        return response_creator(zip_file_path)
+    
+def summarize_video_core():
+    # summarize(settings.VIDEOS_DIR)
+    summaries_dir = os.path.join(settings.BASE_DIR, "summaries")
+    zip_file_path = os.path.join(settings.BASE_DIR, 'generated_summary.zip')
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(summaries_dir):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(summaries_dir)))
+    return zip_file_path
     
 @csrf_exempt
 def summarize_video(request):
     if request.method == "POST":
-        preprocessing(request)
-        summarize(settings.VIDEOS_DIR)
-        summaries_dir = os.path.join(settings.BASE_DIR, "summaries")
-        summaries = []
-        for filename in os.listdir(summaries_dir):
-            if filename.endswith(".txt"):
-                filepath = os.path.join(summaries_dir, filename)
-                with open(filepath, "r", encoding="utf-8") as file:
-                    content = file.read()
-                    summaries.append({"filename": filename, "content": content})
+        # preprocessing(request)
+        zip_file_path = summarize_video_core()
         print("Sending summaries....")
-        return JsonResponse({"summaries": summaries}, status=200)
+        return response_creator(zip_file_path)
 
 def convert_to_long_path(path):
     """Convert path to extended-length format for Windows if needed."""
     if not path.startswith('\\\\?\\'):
         return f'\\\\?\\{os.path.abspath(path)}'
     return path
-
 
 def extract_source_code_core():
     # extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
@@ -117,7 +125,7 @@ def extract_source_code_core():
     dest_merged = os.path.join(results_path, 'merged_results')
     if not os.path.exists(dest_merged): shutil.copytree(merged_results_path, dest_merged)
     
-    zip_file_path = os.path.join(settings.BASE_DIR, 'results.zip')
+    zip_file_path = os.path.join(settings.BASE_DIR, 'extracted_source_code.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root,_, files in os.walk(results_path):
             for file in files:
@@ -130,16 +138,13 @@ def extract_source_code(request):
         # preprocessing(request)
         zip_file_path = extract_source_code_core()
         print("Sending Source Code....")
-        with open(zip_file_path, 'rb') as zip_file:
-            response = HttpResponse(zip_file.read(), content_type='application/zip')
-            response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
-            return response
+        return response_creator(zip_file_path)
 
 def extract_workflow_core():
-    extract_text_from_whole_image("images")
-    workflow_generation("ocr")
+    # extract_text_from_whole_image("images")
+    # workflow_generation("ocr")
     workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
-    zip_file_path = os.path.join(settings.BASE_DIR, 'workflows.zip')
+    zip_file_path = os.path.join(settings.BASE_DIR, 'generated_workflow.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root,_, files in os.walk(workflow_dir):
             for file in files:
@@ -149,10 +154,7 @@ def extract_workflow_core():
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
-        preprocessing(request)
+        # preprocessing(request)
         zip_file_path = extract_workflow_core()
         print("Sending workflows....")
-        with open(zip_file_path, 'rb') as zip_file:
-            response = HttpResponse(zip_file.read(), content_type='application/zip')
-            response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
-            return response
+        return response_creator(zip_file_path)
