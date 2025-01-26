@@ -1,12 +1,12 @@
 import os
 import zipfile
 import shutil
-from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from api.preprocessing import extract_images, extract_unique_images
+from api.summary_generation import transcribe , summarize
 
 
 def preprocessing(request):
@@ -51,4 +51,32 @@ def generate_notes(request):
 
 @csrf_exempt
 def transcribe_video(request):
-    pass
+    if request.method == "POST":
+        preprocessing(request)
+        transcribe(settings.VIDEOS_DIR)
+        transcriptions_dir = os.path.join(settings.BASE_DIR, "transcriptions")
+        transcriptions = []
+        for filename in os.listdir(transcriptions_dir):
+            if filename.endswith(".txt"):
+                filepath = os.path.join(transcriptions_dir, filename)
+                with open(filepath, "r", encoding="utf-8") as file:
+                    content = file.read()
+                    transcriptions.append({"filename": filename, "content": content})
+        print("Sending transcriptions....")
+        return JsonResponse({"transcriptions": transcriptions}, status=200)
+    
+@csrf_exempt
+def summarize_video(request):
+    if request.method == "POST":
+        preprocessing(request)
+        summarize(settings.VIDEOS_DIR)
+        summaries_dir = os.path.join(settings.BASE_DIR, "summaries")
+        summaries = []
+        for filename in os.listdir(summaries_dir):
+            if filename.endswith(".txt"):
+                filepath = os.path.join(summaries_dir, filename)
+                with open(filepath, "r", encoding="utf-8") as file:
+                    content = file.read()
+                    summaries.append({"filename": filename, "content": content})
+        print("Sending summaries....")
+        return JsonResponse({"summaries": summaries}, status=200)

@@ -51,7 +51,7 @@ def create_summary(transcription_file_path,summary_file_path):
         summary_file.write(response.text)
         print(f"Summary saved to {summary_file_path}")
 
-def transcript_and_summarize(video_folder_path):
+def summarize(video_folder_path):
     video_count = len([f for f in os.listdir(video_folder_path) if os.path.isfile(os.path.join(video_folder_path, f))])
     if video_count > 0 : 
         os.makedirs("transcriptions", exist_ok=True)
@@ -64,6 +64,14 @@ def transcript_and_summarize(video_folder_path):
             summary_file_path = f"summaries/{video.split(".")[0]}.txt"
             create_transcription(video_path,transcription_file_path)
             create_summary(transcription_file_path,summary_file_path)
-            
 
-transcript_and_summarize("videos")
+def transcribe(video_folder_path):
+    video_count = len([f for f in os.listdir(video_folder_path) if os.path.isfile(os.path.join(video_folder_path, f))])
+    if video_count > 0 : 
+        os.makedirs("transcriptions", exist_ok=True)
+    for video in os.listdir(video_folder_path):
+        video_path = os.path.join(video_folder_path, video)
+        if os.path.isfile(video_path):
+            print(f"Found file: {video_path}")
+            transcription_file_path = f"transcriptions/{video.split(".")[0]}.txt"
+            create_transcription(video_path,transcription_file_path)
