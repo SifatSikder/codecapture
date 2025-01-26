@@ -26,7 +26,7 @@ def create_json_file(bboxes, texts,json_path):
     json.dump(result, f, indent=2)
   print(f'{json_path} is created...')
 
-def extract_text_from_image(images_folder_path):
+def extract_text_from_whole_image(images_folder_path):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')
     os.makedirs('ocr', exist_ok=True)
     for image_folder in os.listdir(images_folder_path):
@@ -102,5 +102,4 @@ def workflow_generation (ocr_folders_path):
         else: print("Workflow array not found")
         
 
-# extract_text_from_image("images")
-workflow_generation("ocr")
+

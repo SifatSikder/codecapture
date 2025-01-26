@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from api.preprocessing import extract_images, extract_unique_images
 from api.source_code_extraction import *
 from api.summary_generation import transcribe , summarize
+from api.workflow_extraction import extract_text_from_whole_image, workflow_generation
 
 def preprocessing(request):
     if not os.path.exists(settings.IMAGES_DIR): os.makedirs(settings.IMAGES_DIR)
@@ -127,3 +128,21 @@ def extract_source_code(request):
             response = HttpResponse(zip_file.read(), content_type='application/zip')
             response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
             return response
+
+
+@csrf_exempt
+def extract_workflow(request):
+    if request.method == "POST":
+        preprocessing(request)
+        extract_text_from_whole_image("images")
+        workflow_generation("ocr")
+        workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
+        workflows = []
+        for filename in os.listdir(workflow_dir):
+            if filename.endswith(".json"):
+                filepath = os.path.join(workflow_dir, filename)
+                with open(filepath, "r", encoding="utf-8") as file:
+                    content = file.read()
+                    workflows.append({"filename": filename, "content": content})
+        print("Sending workflows....")
+        return JsonResponse({"workflows": workflows}, status=200)
