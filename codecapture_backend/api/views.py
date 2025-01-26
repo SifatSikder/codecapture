@@ -87,43 +87,49 @@ def convert_to_long_path(path):
         return f'\\\\?\\{os.path.abspath(path)}'
     return path
 
+
+def extract_source_code_core():
+    # extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
+    # extract_text_from_image()
+    # merge_all_json("components")
+    # hierarchy_and_code_json_generation("components")
+    # create_hierarchies("hierarchy_json")
+    # create_codes("code_json")
+    # hierarchies_with_codes("individual_results")
+    # create_merged_hierarchies_json("hierarchy_json")
+    # create_merged_hierarchies("merged_results")
+    # create_merged_codes("code_json")
+    # create_merged_hierarchies_with_codes("merged_results")
+    
+    base_dir = settings.BASE_DIR
+    results_path = os.path.join(base_dir, 'results')
+    individual_results_path = os.path.join(settings.BASE_DIR, 'individual_results')
+    merged_results_path = os.path.join(settings.BASE_DIR, 'merged_results')
+
+    results_path = convert_to_long_path(results_path)
+    individual_results_path = convert_to_long_path(individual_results_path)
+    merged_results_path = convert_to_long_path(merged_results_path)
+    if os.path.exists(f"{merged_results_path}/merged_hierarchy.json"): os.remove(f"{merged_results_path}/merged_hierarchy.json")
+    
+    if not os.path.exists(results_path): os.makedirs(results_path)
+    dest_individual = os.path.join(results_path, 'individual_results')
+    if not os.path.exists(dest_individual): shutil.copytree(individual_results_path, dest_individual)
+    dest_merged = os.path.join(results_path, 'merged_results')
+    if not os.path.exists(dest_merged): shutil.copytree(merged_results_path, dest_merged)
+    
+    zip_file_path = os.path.join(settings.BASE_DIR, 'results.zip')
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(results_path):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), results_path))
+    return zip_file_path
+
 @csrf_exempt
 def extract_source_code(request):
     if request.method == "POST":
-        preprocessing(request)
-        extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
-        extract_text_from_image()
-        merge_all_json("components")
-        hierarchy_and_code_json_generation("components")
-        create_hierarchies("hierarchy_json")
-        create_codes("code_json")
-        hierarchies_with_codes("individual_results")
-        create_merged_hierarchies_json("hierarchy_json")
-        create_merged_hierarchies("merged_results")
-        create_merged_codes("code_json")
-        create_merged_hierarchies_with_codes("merged_results")
-        
-        base_dir = settings.BASE_DIR
-        results_path = os.path.join(base_dir, 'results')
-        individual_results_path = os.path.join(settings.BASE_DIR, 'individual_results')
-        merged_results_path = os.path.join(settings.BASE_DIR, 'merged_results')
-
-        results_path = convert_to_long_path(results_path)
-        individual_results_path = convert_to_long_path(individual_results_path)
-        merged_results_path = convert_to_long_path(merged_results_path)
-        if os.path.exists(f"{merged_results_path}/merged_hierarchy.json"): os.remove(f"{merged_results_path}/merged_hierarchy.json")
-        
-        if not os.path.exists(results_path): os.makedirs(results_path)
-        dest_individual = os.path.join(results_path, 'individual_results')
-        if not os.path.exists(dest_individual): shutil.copytree(individual_results_path, dest_individual)
-        dest_merged = os.path.join(results_path, 'merged_results')
-        if not os.path.exists(dest_merged): shutil.copytree(merged_results_path, dest_merged)
-        
-        zip_file_path = os.path.join(settings.BASE_DIR, 'results.zip')
-        with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            for root,_, files in os.walk(results_path):
-                for file in files:
-                    zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), results_path))
+        # preprocessing(request)
+        zip_file_path = extract_source_code_core()
+        print("Sending Source Code....")
         with open(zip_file_path, 'rb') as zip_file:
             response = HttpResponse(zip_file.read(), content_type='application/zip')
             response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
@@ -139,7 +145,6 @@ def extract_workflow_core():
             for file in files:
                 zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(workflow_dir)))
     return zip_file_path
-
 
 @csrf_exempt
 def extract_workflow(request):
