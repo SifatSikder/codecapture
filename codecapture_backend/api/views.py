@@ -62,6 +62,7 @@ def transcribe_video_core():
             for file in files:
                 zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(transcriptions_dir)))
     return zip_file_path
+
 @csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
@@ -155,4 +156,38 @@ def extract_workflow(request):
         # preprocessing(request)
         zip_file_path = extract_workflow_core()
         print("Sending workflows....")
+        return response_creator(zip_file_path)
+    
+def generate_all_core():
+    zip_file_paths = []
+    source_code_zip_path = extract_source_code_core()    
+    workflow_zip_path = extract_workflow_core()
+    transcription_zip_path = transcribe_video_core()
+    summary_zip_path = summarize_video_core()
+    note_zip_path = generate_notes_core()
+
+    zip_file_paths.append(source_code_zip_path)
+    zip_file_paths.append(workflow_zip_path)
+    zip_file_paths.append(transcription_zip_path)
+    zip_file_paths.append(summary_zip_path)
+    zip_file_paths.append(note_zip_path)
+    
+    all_results_dir = os.path.join(settings.BASE_DIR, "all_results")
+    os.makedirs(all_results_dir,exist_ok=True)
+    for zip_file_path in zip_file_paths:
+        if os.path.exists(zip_file_path): shutil.copy(zip_file_path, all_results_dir)
+    
+    all_results_zip_file_path = os.path.join(settings.BASE_DIR, 'all_results.zip')
+    with zipfile.ZipFile(all_results_zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(all_results_dir):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(all_results_dir)))
+    return all_results_zip_file_path
+
+@csrf_exempt
+def generate_all(request):
+    if request.method == "POST":
+        # preprocessing(request)
+        zip_file_path = generate_all_core()
+        print("Sending all results....")
         return response_creator(zip_file_path)
