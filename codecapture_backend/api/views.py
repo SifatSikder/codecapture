@@ -133,20 +133,21 @@ def extract_workflow_core():
     extract_text_from_whole_image("images")
     workflow_generation("ocr")
     workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
-    workflows = []
-    for filename in os.listdir(workflow_dir):
-        if filename.endswith(".json"):
-            filepath = os.path.join(workflow_dir, filename)
-            with open(filepath, "r", encoding="utf-8") as file:
-                content = file.read()
-                workflows.append({"filename": filename, "content": content})
-    return workflows
+    zip_file_path = os.path.join(settings.BASE_DIR, 'workflows.zip')
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root,_, files in os.walk(workflow_dir):
+            for file in files:
+                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(workflow_dir)))
+    return zip_file_path
 
 
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
         preprocessing(request)
-        workflows = extract_workflow_core()
+        zip_file_path = extract_workflow_core()
         print("Sending workflows....")
-        return JsonResponse({"workflows": workflows}, status=200)
+        with open(zip_file_path, 'rb') as zip_file:
+            response = HttpResponse(zip_file.read(), content_type='application/zip')
+            response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
+            return response
