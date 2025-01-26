@@ -16,7 +16,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 VIDEOS_DIR = os.path.join(BASE_DIR, 'videos')
 IMAGES_DIR = os.path.join(BASE_DIR, 'images')
-
+MODEL_DIR = os.path.join(BASE_DIR, 'model/weights/best.pt')
 # Ensure the directory exists
 if not os.path.exists(VIDEOS_DIR):
     os.makedirs(VIDEOS_DIR)

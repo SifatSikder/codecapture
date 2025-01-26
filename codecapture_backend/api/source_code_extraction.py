@@ -29,9 +29,8 @@ def extract_sidebar(model_path,image_path,image_name,save_path):
     else:
         print("No sidebar with confidence greater than 0.75 found.")
 
-def extract_components():
-    image_folder_path = "images"
-    model = YOLO('model/weights/best.pt')
+def extract_components(image_folder_path,model_path):
+    model = YOLO(model_path)
     classes = model.names
     image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp"}
     directories = [d for d in os.listdir(image_folder_path) if os.path.isdir(os.path.join(image_folder_path, d))]
@@ -532,15 +531,3 @@ def create_merged_hierarchies_with_codes(merged_hierarchy_json_folder):
         if folder_inside_video == 'merged_codes': hierarchy_code_path['code_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
         if folder_inside_video == 'merged_hierarchy_with_code': hierarchy_code_path['hierarchy_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
     replace_matching_files([hierarchy_code_path])
-
-extract_components()
-extract_text_from_image()
-merge_all_json("components")
-hierarchy_and_code_json_generation("components")
-create_hierarchies("hierarchy_json")
-create_codes("code_json")
-hierarchies_with_codes("individual_results")
-create_merged_hierarchies_json("hierarchy_json")
-create_merged_hierarchies("merged_results")
-create_merged_codes("code_json")
-create_merged_hierarchies_with_codes("merged_results")
