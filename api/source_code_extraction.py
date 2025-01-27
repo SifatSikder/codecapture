@@ -94,6 +94,8 @@ def extract_text_from_image():
             create_json_file(bounding_boxes, texts,json_path)
 
 def rectify_code_structures(extracted_code_structures):
+    rectified_code_structures_pattern = r'\\rectified_code_structures\s*\{(\s*\[.*?\]\s*)\}'
+    
     genai.configure(api_key="AIzaSyBM3HtmWkfS-Wu_fsk-JfnGHzoNLsLYjfQ")
     generation_config = {"temperature": 0.85,"top_p": 0.75,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
     model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
@@ -103,7 +105,7 @@ def rectify_code_structures(extracted_code_structures):
     Then carefully check whether the activeFile name corresponds to the code portion. If not, correct the activeFile name.
     Then carefully check whether there is any mistake in the code portion such as missing import,syntax error etc. If found any mistake rectify code portion.
     Put your final extracted rectified_code_structures within \\rectified_code_structures{{''}}.
-    The final extracted rectified_code_structures must be start with \\rectified_code_structures{{ and end with }}.
+    The final extracted rectified_code_structures must be start with \\rectified_code_structures{{ and end with }} and must be extractable using this regex pattern: {rectified_code_structures_pattern}.also the final extracted rectified_code_structures string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     """
     print("Sending API request to rectify existing code structures if there is any mistake...Please wait...")
     response = chat_session.send_message(prompt)
@@ -113,23 +115,24 @@ def rectify_code_structures(extracted_code_structures):
 
 def extract_sidebars_files_codes_codes_structures(response):
     sidebar_pattern = r'\\sidebar\s*\{(\s*\[.*?\]\s*)\}'
+    active_files_pattern = r'\\activeFiles\s*\{(\s*\[.*?\]\s*)\}'
+    codes_pattern = r'\\codes\s*\{(\s*\[.*?\]\s*)\}'
+    code_structures_pattern = r'\\code_structures\s*\{(\s*\[.*?\]\s*)\}'
+    rectified_code_structures_pattern = r'\\rectified_code_structures\s*\{(\s*\[.*?\]\s*)\}'
+    
     extracted_sidebar = re.search(sidebar_pattern, response, re.DOTALL)
     extracted_sidebar = extracted_sidebar.group(1).strip() if extracted_sidebar else "Not found"
     
-    active_files_pattern = r'\\activeFiles\s*\{(\s*\[.*?\]\s*)\}'
     extracted_active_files = re.search(active_files_pattern, response, re.DOTALL)
     extracted_active_files = extracted_active_files.group(1).strip() if extracted_active_files else "Not found"
     
-    codes_pattern = r'\\codes\s*\{(\s*\[.*?\]\s*)\}'
     extracted_codes = re.search(codes_pattern, response, re.DOTALL)
     extracted_codes = extracted_codes.group(1).strip() if extracted_codes else "Not found"
     
-    code_structures_pattern = r'\\code_structures\s*\{(\s*\[.*?\]\s*)\}'
     extracted_code_structures = re.search(code_structures_pattern, response, re.DOTALL)
     extracted_code_structures = extracted_code_structures.group(1).strip() if extracted_code_structures else "Not found"
     
     rectified_code_structures = rectify_code_structures(extracted_code_structures)
-    rectified_code_structures_pattern = r'\\rectified_code_structures\s*\{(\s*\[.*?\]\s*)\}'
     extracted_rectified_code_structures = re.search(rectified_code_structures_pattern, rectified_code_structures, re.DOTALL)
     extracted_rectified_code_structures = extracted_rectified_code_structures.group(1).strip() if extracted_rectified_code_structures else "Not found"
     
@@ -196,6 +199,11 @@ def compile_code_(sidebars,activeFiles,codes):
 
 
 def compile_code(video_texts):
+    sidebar_pattern = r'\\sidebar\s*\{(\s*\[.*?\]\s*)\}'
+    active_files_pattern = r'\\activeFiles\s*\{(\s*\[.*?\]\s*)\}'
+    codes_pattern = r'\\codes\s*\{(\s*\[.*?\]\s*)\}'
+    code_structures_pattern = r'\\code_structures\s*\{(\s*\[.*?\]\s*)\}'
+    
     genai.configure(api_key="AIzaSyDJn8iLuEjbgsbVMog32wdEkWLSELH6-Q4")
     generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
     model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
@@ -211,25 +219,25 @@ def compile_code(video_texts):
     \\sidebar{{'id':4, 'text': 'a.txt', 'level':2, 'parent_id':2, 'type':'file'}},
     \\sidebar{{'id':5, 'text': 'hello.java', 'level':2, 'parent_id':2, 'type':'file'}},
     Put your final extracted structure within \\sidebar{{''}}.
-    The final extracted structure must be start with \\sidebar{{ and end with }}.
+    The final extracted structure must be start with \\sidebar{{ and end with }} and must be extractable using this regex pattern: {sidebar_pattern}.also the final extracted structure string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     
     Next Based on the corrected texts,, generate the potential activeFile lists from the OCR texts: {video_texts}. Consider all possible potential activeFiles and their probabilities.
     An example of generated format of activeFile list is shown below:
     \\activeFiles{['file1.extension', 'file2.extension', 'file3.extension', 'file4.extension']}
     Put your final extracted activeFiles list within \\activeFiles{{''}}.
-    The final extracted activeFiles must be start with \\activeFiles{{ and end with }}.
+    The final extracted activeFiles must be start with \\activeFiles{{ and end with }} and must be extractable using this regex pattern: {active_files_pattern}.also the final extracted activeFiles string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     
     Then Based on the corrected texts, generate the code from the OCR texts: {video_texts}. Recheck again the codes to ensure that they are correct.
     If not then generate the codes again.
     An example of generated format of codes list is shown below:
     \\codes{['extracted_codes', 'extracted_codes',]}
     Put your final extracted codes within \\codes{{''}}.
-    The final extracted codes must be start with \\codes{{ and end with }}.
+    The final extracted codes must be start with \\codes{{ and end with }} and must be extractable using this regex pattern: {codes_pattern}.also the final extracted codes string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     
     finally using the activeFiles and codes, generate the code structure dictionary like this: 
     \\code_structures{[{"activeFile": "file1.extension", "code": "extracted_codes"},{"activeFile": "file2.extension", "code": "extracted_codes"}]}.
     Put your final extracted code_structures within \\code_structures{{''}}.
-    The final extracted code_structures must be start with \\code_structures{{ and end with }}.
+    The final extracted code_structures must be start with \\code_structures{{ and end with }} and must be extractable using this regex pattern: {code_structures_pattern}.also the final extracted code_structures string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     """
     print("Sending API request to generate code...Please wait...")
     response = chat_session.send_message(prompt)
@@ -341,6 +349,13 @@ def create_hierarchy_from_json(json_file):
         item_path = os.path.join(base_folder, item)
         if item_path != hierarchy_folder: shutil.move(item_path, hierarchy_folder)
 
+def correct_json(raw_string):
+    corrected_string = raw_string.replace('\\', '\\\\')
+    corrected_string = re.sub(r"(?<!\\)'", '"', corrected_string)
+    corrected_string = corrected_string.replace("\n", "\\n")
+    corrected_string = re.sub(r'\\\\"', r'\\"', corrected_string)
+    return corrected_string
+
 def create_code_from_json(json_file):
     os.makedirs("individual_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
@@ -352,7 +367,7 @@ def create_code_from_json(json_file):
         print("Raw data:", raw_data)
         print("Type of Raw data:", type(raw_data))
         try:
-            code_data = json.loads(raw_data)
+            code_data = json.loads(correct_json(raw_data))
         except json.JSONDecodeError:
             raise ValueError("Invalid JSON string")
         
@@ -447,6 +462,8 @@ def create_merged_hierarchies_json(hierarchy_folder):
                 json_data = json.load(file)
                 hierarchies.append(json.dumps(json_data))
     
+    mergeability_match_pattern = r"\\mergeability\{(true|false)\}"
+    merged_hierarchy_match_pattern = r"\\merged_hierarchy\{(.*)\}"
     genai.configure(api_key="AIzaSyCdgzxZnTZTemEPy8y3CZBGnCDHY4gnzyM")
     generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
     model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
@@ -455,7 +472,7 @@ def create_merged_hierarchies_json(hierarchy_folder):
     Take the list of hierarchies: {hierarchies}.
     next try to predict whether the hierarchies are mergeable or not.
     Give the mergeability prediction as a boolean value.
-    put the answer within \\mergeability{{''}}.
+    put the answer within \\mergeability{{''}} and the answer must be extracable with this regex pattern: {mergeability_match_pattern}.also the final extracted mergeability string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     Next if it is mergeable then merge the hierarchies. An example of generated format of hierarchies is shown below:
     \\sidebar{{'id':1, 'text': 'The New Boston', 'level':0, 'parent_id':null, 'type':'folder'}},
     \\sidebar{{'id':2, 'text': 'Chapter 1', 'level':1, 'parent_id':1, 'type':'folder'}},
@@ -463,16 +480,17 @@ def create_merged_hierarchies_json(hierarchy_folder):
     \\sidebar{{'id':4, 'text': 'a.txt', 'level':2, 'parent_id':2, 'type':'file'}},
     \\sidebar{{'id':5, 'text': 'hello.java', 'level':2, 'parent_id':2, 'type':'file'}},
     Put your final extracted structure within \\merged_hierarchy{{''}}.
-    The final extracted structure must be start with \\merged_hierarchy{{ and end with }}.
+    The final extracted structure must be start with \\merged_hierarchy{{ and end with }} and the structure must be extracable with this regex pattern: {merged_hierarchy_match_pattern}. also the final extracted structure string must be in such a way that when passing it json.loads function will not raise any errors and we get a valid json.
     """
     response = chat_session.send_message(prompt)
     print("API response received.")
     print(f'Merged Hierarchies: {response.text}')
     
-    mergeability_match = re.search(r"\\mergeability\{(true|false)\}", response.text)
+
+    mergeability_match = re.search(mergeability_match_pattern, response.text)
     mergeability = mergeability_match.group(1) if mergeability_match else None
 
-    merged_hierarchy_match = re.search(r"\\merged_hierarchy\{(.*)\}", response.text, re.DOTALL)
+    merged_hierarchy_match = re.search(merged_hierarchy_match_pattern, response.text, re.DOTALL)
     merged_hierarchy = merged_hierarchy_match.group(1).strip() if merged_hierarchy_match else None
     
     if mergeability:
@@ -581,3 +599,13 @@ def create_merged_hierarchies_with_codes(merged_hierarchy_json_folder):
         if folder_inside_video == 'merged_codes': hierarchy_code_path['code_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
         if folder_inside_video == 'merged_hierarchy_with_code': hierarchy_code_path['hierarchy_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
     replace_matching_files([hierarchy_code_path])
+
+
+# hierarchy_and_code_json_generation("ocr")
+create_hierarchies("hierarchy_json")
+# create_codes("code_json")
+# hierarchies_with_codes("individual_results")
+# create_merged_hierarchies_json("hierarchy_json")
+# create_merged_hierarchies("merged_results")
+# create_merged_codes("code_json")
+# create_merged_hierarchies_with_codes("merged_results")
