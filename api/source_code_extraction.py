@@ -381,7 +381,7 @@ def create_code_from_json(json_file):
         print("Raw data:", raw_data)
         print("Type of Raw data:", type(raw_data))
         try:
-            code_data = json.loads(correct_json(raw_data))
+            code_data = json.loads(raw_data)
         except json.JSONDecodeError:
             raise ValueError("Invalid JSON string")
         
@@ -616,8 +616,8 @@ def create_merged_hierarchies_with_codes(merged_hierarchy_json_folder):
 
 
 # hierarchy_and_code_json_generation("ocr")
-create_hierarchies("hierarchy_json")
-# create_codes("code_json")
+# create_hierarchies("hierarchy_json")
+create_codes("code_json")
 # hierarchies_with_codes("individual_results")
 # create_merged_hierarchies_json("hierarchy_json")
 # create_merged_hierarchies("merged_results")
