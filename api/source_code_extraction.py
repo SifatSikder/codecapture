@@ -513,6 +513,31 @@ def create_merged_hierarchies_json(hierarchy_folder):
 
     print("Mergeability Value:", mergeability)
     print("Merged Hierarchies:\n", merged_hierarchy)
+
+
+def create_hierarchy_from_json(json_file):
+    os.makedirs("individual_results",exist_ok=True)
+    base_name = os.path.splitext(os.path.basename(json_file))[0]
+    base_folder = f"individual_results/{base_name}"
+    os.makedirs(base_folder,exist_ok=True)
+    with open(json_file, 'r') as file:
+        raw_data = file.read()
+        cleaned_list = fix_json(raw_data)
+        cleaned_list = json.loads(cleaned_list)
+        id_to_path = {}
+        for i,item in enumerate(cleaned_list):
+            if item['parent_id'] is None:
+                path = create_structure(item, base_folder)
+            else:
+                parent_path = id_to_path[item['parent_id']]
+                path = create_structure(item, parent_path)
+            id_to_path[item['id']] = path
+    hierarchy_folder = os.path.join(base_folder, "hierarchy")   
+    os.makedirs(hierarchy_folder, exist_ok=True)
+    for item in os.listdir(base_folder):
+        item_path = os.path.join(base_folder, item)
+        if item_path != hierarchy_folder: shutil.move(item_path, hierarchy_folder)
+
     
 def create_merged_hierarchies(merged_hierarchy_json_folder):
     base_folder = f"{merged_hierarchy_json_folder}/merged_hierarchy"
@@ -522,11 +547,8 @@ def create_merged_hierarchies(merged_hierarchy_json_folder):
             file_path = os.path.join(merged_hierarchy_json_folder, filename)
             with open(file_path, 'r') as file:
                 raw_data = file.read()
-                raw_data = raw_data.replace("'", '"').replace("null", "None")
-                regex_pattern = r'\{.*?\}'
-                matches = re.findall(regex_pattern, raw_data)
-                cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
-                print('cleaned_list',cleaned_list)
+                cleaned_list = fix_json(raw_data)
+                cleaned_list = json.loads(cleaned_list)
                 id_to_path = {}
                 for i,item in enumerate(cleaned_list):
                     if item['parent_id'] is None:
@@ -537,9 +559,9 @@ def create_merged_hierarchies(merged_hierarchy_json_folder):
                     id_to_path[item['id']] = path
     
 def create_merge_version(versions):
-    genai.configure(api_key="AIzaSyBDg5VSfQ7e1dfcYRzEsJwIZu_Uch5vNm8")
+    genai.configure(api_key="AIzaSyAvGjs3MuCwEcZECACO3pKJgqZSca82zuo")
     generation_config = {"temperature": 1,"top_p": 0.95,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
-    model = genai.GenerativeModel(model_name="gemini-1.5-pro",generation_config=generation_config)
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
     chat_session = model.start_chat(history=[])
     prompt = f"""
     Take the versions of a code: {versions}.
@@ -613,13 +635,3 @@ def create_merged_hierarchies_with_codes(merged_hierarchy_json_folder):
         if folder_inside_video == 'merged_codes': hierarchy_code_path['code_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
         if folder_inside_video == 'merged_hierarchy_with_code': hierarchy_code_path['hierarchy_path'] = os.path.join(merged_hierarchy_json_folder, folder_inside_video)
     replace_matching_files([hierarchy_code_path])
-
-
-# hierarchy_and_code_json_generation("ocr")
-# create_hierarchies("hierarchy_json")
-create_codes("code_json")
-# hierarchies_with_codes("individual_results")
-# create_merged_hierarchies_json("hierarchy_json")
-# create_merged_hierarchies("merged_results")
-# create_merged_codes("code_json")
-# create_merged_hierarchies_with_codes("merged_results")
