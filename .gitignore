@@ -1,11 +1,3 @@
-__pycache__
-code/
-code_json/
-hierarchy/
-hierarchy_json/
-individual_results/
-merged_results/
-ocr/
-summaries/
-transcriptions/
-workflow/
+__pycache__/
+*.pyc
+*.pyo
