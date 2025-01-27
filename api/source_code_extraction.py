@@ -320,6 +320,26 @@ def create_structure(item, parent_path):
         with open(full_path, 'w') as file: pass
     return full_path
 
+def fix_json(raw_data):
+    genai.configure(api_key="AIzaSyDJn8iLuEjbgsbVMog32wdEkWLSELH6-Q4")
+    generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
+    chat_session = model.start_chat(history=[])
+    prompt = f"""
+    Convert the following string into a valid JSON array of objects. Follow these rules strictly:
+    1. Replace all occurrences of `null` with `None`.
+    2. Ensure the output is a valid JSON array (starts with `[` and ends with `]`).
+    3. Do not include any additional text, comments, or explanations.
+    4. Format the JSON properly with correct indentation and syntax.
+    5. dont use ```json and ```.
+    Input string: {raw_data}
+    Output (valid JSON array):
+    """
+    print("Sending API request to generate code...Please wait...")
+    response = chat_session.send_message(prompt)
+    print("API response received.")
+    return response.text.strip()
+
 def create_hierarchy_from_json(json_file):
     os.makedirs("individual_results",exist_ok=True)
     base_name = os.path.splitext(os.path.basename(json_file))[0]
@@ -327,14 +347,8 @@ def create_hierarchy_from_json(json_file):
     os.makedirs(base_folder,exist_ok=True)
     with open(json_file, 'r') as file:
         raw_data = file.read()
-        raw_data = raw_data.replace("'", '"').replace("null", "None")
-        # print("Raw data:", raw_data)
-        regex_pattern = r'\{.*?\}'
-        matches = re.findall(regex_pattern, raw_data)
-        cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
-        print('cleaned_list',cleaned_list)
-        # print('type(cleaned_list[0])',type(cleaned_list[0]))
-        
+        cleaned_list = fix_json(raw_data)
+        cleaned_list = json.loads(cleaned_list)
         id_to_path = {}
         for i,item in enumerate(cleaned_list):
             if item['parent_id'] is None:
