@@ -191,3 +191,6 @@ def generate_all(request):
         zip_file_path = generate_all_core()
         print("Sending all results....")
         return response_creator(zip_file_path)
+
+def check_api(request):
+    return JsonResponse({"message": "Your API is working!"})
