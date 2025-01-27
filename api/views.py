@@ -96,10 +96,7 @@ def convert_to_long_path(path):
     return path
 
 def extract_source_code_core():
-    # extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
-    # extract_text_from_image()
-    # merge_all_json("components")
-    # extract_text_from_whole_image("images")
+    extract_text_from_whole_image("images")
     hierarchy_and_code_json_generation("ocr")
     create_hierarchies("hierarchy_json")
     create_codes("code_json")
@@ -135,7 +132,7 @@ def extract_source_code_core():
 @csrf_exempt
 def extract_source_code(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = extract_source_code_core()
         print("Sending Source Code....")
         return response_creator(zip_file_path)
