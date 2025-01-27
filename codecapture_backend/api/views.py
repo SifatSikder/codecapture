@@ -49,12 +49,12 @@ def generate_notes_core():
 @csrf_exempt
 def generate_notes(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = generate_notes_core()
         return response_creator(zip_file_path)
 
 def transcribe_video_core():
-    # transcribe(settings.VIDEOS_DIR)
+    transcribe(settings.VIDEOS_DIR)
     transcriptions_dir = os.path.join(settings.BASE_DIR, "transcriptions")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_transcription.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -66,13 +66,13 @@ def transcribe_video_core():
 @csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = transcribe_video_core()
         print("Sending Transcriptions....")
         return response_creator(zip_file_path)
     
 def summarize_video_core():
-    # summarize(settings.VIDEOS_DIR)
+    summarize(settings.VIDEOS_DIR)
     summaries_dir = os.path.join(settings.BASE_DIR, "summaries")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_summary.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -84,7 +84,7 @@ def summarize_video_core():
 @csrf_exempt
 def summarize_video(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = summarize_video_core()
         print("Sending summaries....")
         return response_creator(zip_file_path)
@@ -96,17 +96,17 @@ def convert_to_long_path(path):
     return path
 
 def extract_source_code_core():
-    # extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
-    # extract_text_from_image()
-    # merge_all_json("components")
-    # hierarchy_and_code_json_generation("components")
-    # create_hierarchies("hierarchy_json")
-    # create_codes("code_json")
-    # hierarchies_with_codes("individual_results")
-    # create_merged_hierarchies_json("hierarchy_json")
-    # create_merged_hierarchies("merged_results")
-    # create_merged_codes("code_json")
-    # create_merged_hierarchies_with_codes("merged_results")
+    extract_components(settings.IMAGES_DIR,settings.MODEL_DIR)
+    extract_text_from_image()
+    merge_all_json("components")
+    hierarchy_and_code_json_generation("components")
+    create_hierarchies("hierarchy_json")
+    create_codes("code_json")
+    hierarchies_with_codes("individual_results")
+    create_merged_hierarchies_json("hierarchy_json")
+    create_merged_hierarchies("merged_results")
+    create_merged_codes("code_json")
+    create_merged_hierarchies_with_codes("merged_results")
     
     base_dir = settings.BASE_DIR
     results_path = os.path.join(base_dir, 'results')
@@ -134,14 +134,14 @@ def extract_source_code_core():
 @csrf_exempt
 def extract_source_code(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = extract_source_code_core()
         print("Sending Source Code....")
         return response_creator(zip_file_path)
 
 def extract_workflow_core():
-    # extract_text_from_whole_image("images")
-    # workflow_generation("ocr")
+    extract_text_from_whole_image("images")
+    workflow_generation("ocr")
     workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_workflow.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -153,7 +153,7 @@ def extract_workflow_core():
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = extract_workflow_core()
         print("Sending workflows....")
         return response_creator(zip_file_path)
@@ -187,7 +187,7 @@ def generate_all_core():
 @csrf_exempt
 def generate_all(request):
     if request.method == "POST":
-        # preprocessing(request)
+        preprocessing(request)
         zip_file_path = generate_all_core()
         print("Sending all results....")
         return response_creator(zip_file_path)
