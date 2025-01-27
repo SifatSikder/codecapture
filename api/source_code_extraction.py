@@ -156,7 +156,7 @@ def merge_all_json(root_dir):
                 copied_file_path = os.path.join(all_json_dir, file_name)
                 os.rename(copied_file_path, new_file_path)
 
-def compile_code(sidebars,activeFiles,codes):
+def compile_code_(sidebars,activeFiles,codes):
     genai.configure(api_key="AIzaSyDJn8iLuEjbgsbVMog32wdEkWLSELH6-Q4")
     generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
     model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
@@ -194,6 +194,49 @@ def compile_code(sidebars,activeFiles,codes):
     print("API response received.")
     return response.text
 
+
+def compile_code(video_texts):
+    genai.configure(api_key="AIzaSyDJn8iLuEjbgsbVMog32wdEkWLSELH6-Q4")
+    generation_config = {"temperature": 0.7,"top_p": 0.6,"top_k": 40,"max_output_tokens": 20*1024,"response_mime_type": "text/plain",}
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
+    chat_session = model.start_chat(history=[])
+    prompt = f"""
+    Here are the video texts extracted using OCR: {video_texts}.
+    There are plenty of spelling mistakes while extracting texts using OCR so please correct them first.
+    Based on the corrected texts, Generate the folder structure from the OCR texts: {video_texts}. 
+    An example of generated format of folder structure is shown below:
+    \\sidebar{{'id':1, 'text': 'The New Boston', 'level':0, 'parent_id':null, 'type':'folder'}},
+    \\sidebar{{'id':2, 'text': 'Chapter 1', 'level':1, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':3, 'text': 'Chapter 1.1', 'level':2, 'parent_id':1, 'type':'folder'}},
+    \\sidebar{{'id':4, 'text': 'a.txt', 'level':2, 'parent_id':2, 'type':'file'}},
+    \\sidebar{{'id':5, 'text': 'hello.java', 'level':2, 'parent_id':2, 'type':'file'}},
+    Put your final extracted structure within \\sidebar{{''}}.
+    The final extracted structure must be start with \\sidebar{{ and end with }}.
+    
+    Next Based on the corrected texts,, generate the potential activeFile lists from the OCR texts: {video_texts}. Consider all possible potential activeFiles and their probabilities.
+    An example of generated format of activeFile list is shown below:
+    \\activeFiles{['file1.extension', 'file2.extension', 'file3.extension', 'file4.extension']}
+    Put your final extracted activeFiles list within \\activeFiles{{''}}.
+    The final extracted activeFiles must be start with \\activeFiles{{ and end with }}.
+    
+    Then Based on the corrected texts, generate the code from the OCR texts: {video_texts}. Recheck again the codes to ensure that they are correct.
+    If not then generate the codes again.
+    An example of generated format of codes list is shown below:
+    \\codes{['extracted_codes', 'extracted_codes',]}
+    Put your final extracted codes within \\codes{{''}}.
+    The final extracted codes must be start with \\codes{{ and end with }}.
+    
+    finally using the activeFiles and codes, generate the code structure dictionary like this: 
+    \\code_structures{[{"activeFile": "file1.extension", "code": "extracted_codes"},{"activeFile": "file2.extension", "code": "extracted_codes"}]}.
+    Put your final extracted code_structures within \\code_structures{{''}}.
+    The final extracted code_structures must be start with \\code_structures{{ and end with }}.
+    """
+    print("Sending API request to generate code...Please wait...")
+    response = chat_session.send_message(prompt)
+    print("API response received.")
+    return response.text
+
+
 def create_hierarchy_json(video_name,extracted_sidebar):
     folder_name = "hierarchy_json"
     os.makedirs(folder_name,exist_ok=True)
@@ -208,7 +251,7 @@ def create_code_json(video_name,extracted_rectified_code_structures):
     with open(file_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_rectified_code_structures, json_file, indent=4)    
 
-def hierarchy_and_code_json_generation (components_folder):
+def hierarchy_and_code_json_generation_ (components_folder):
     for root, _ , files in os.walk(components_folder):
         if os.path.basename(root) == 'all_json':
             sidebars = []
@@ -235,6 +278,27 @@ def hierarchy_and_code_json_generation (components_folder):
 
             create_hierarchy_json(video_name,extracted_sidebar)
             create_code_json(video_name,extracted_rectified_code_structures)
+
+def hierarchy_and_code_json_generation (ocr_folder):
+    for folder in os.listdir(ocr_folder):
+        video_texts = []
+        for file in os.listdir(os.path.join(ocr_folder,folder)):
+            file_path = os.path.join(ocr_folder,folder,file)
+            frame_text=read_json_text(file_path)
+            video_texts.append(frame_text)
+        video_name = folder
+        response = compile_code(video_texts)
+        extracted_sidebar, extracted_active_files, extracted_codes, extracted_code_structures,extracted_rectified_code_structures = extract_sidebars_files_codes_codes_structures(response)
+        create_hierarchy_json(video_name,extracted_sidebar)
+        create_code_json(video_name,extracted_rectified_code_structures)
+        
+        print("response",response)
+        print("video_name",video_name)    
+        print("Sidebar:", extracted_sidebar)
+        print("ActiveFiles:", extracted_active_files)
+        print("Codes:", extracted_codes)
+        print("Code Structures:", extracted_code_structures)
+        print("Rectified Code Structures:", extracted_rectified_code_structures)
 
 def add_long_path_prefix(path):
     if os.name == 'nt': return f"\\\\?\\{os.path.abspath(path)}"
