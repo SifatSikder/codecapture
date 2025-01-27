@@ -60,8 +60,8 @@ def summarize(video_folder_path):
         video_path = os.path.join(video_folder_path, video)
         if os.path.isfile(video_path):
             print(f"Found file: {video_path}")
-            transcription_file_path = f"transcriptions/{video.split(".")[0]}.txt"
-            summary_file_path = f"summaries/{video.split(".")[0]}.txt"
+            transcription_file_path = f"transcriptions/{video.split('.')[0]}.txt"
+            summary_file_path = f"summaries/{video.split('.')[0]}.txt"
             create_transcription(video_path,transcription_file_path)
             create_summary(transcription_file_path,summary_file_path)
 
@@ -73,5 +73,5 @@ def transcribe(video_folder_path):
         video_path = os.path.join(video_folder_path, video)
         if os.path.isfile(video_path):
             print(f"Found file: {video_path}")
-            transcription_file_path = f"transcriptions/{video.split(".")[0]}.txt"
+            transcription_file_path = f"transcriptions/{video.split('.')[0]}.txt"
             create_transcription(video_path,transcription_file_path)
