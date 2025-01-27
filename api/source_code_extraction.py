@@ -296,7 +296,6 @@ def create_code_from_json(json_file):
         print("Type of code data:", type(code_data))
         print("Code data:", code_data[:10])
         
-        # pattern = r'"activeFile":\s*"([^"]+)",\s*"code":\s*"([^"]+)"'
         pattern = r'"activeFile":\s*"([^"]+)",\s*"code":\s*"((?:\\.|[^\\"])*)"'
         matches = re.findall(pattern, code_data, re.DOTALL)
         extracted_data = {}
@@ -311,19 +310,6 @@ def create_code_from_json(json_file):
             file_path = os.path.join(code_folder, filename)
             with open(file_path, 'w') as file: file.write(code)
             print(f"Created file: {filename} with code:\n{code}\n")
-            
-        
-        
-        
-        
-        # transformed_data = [{"activeFile": entry["activeFile"], "codes": entry["code"]} for entry in code_data]
-        # print(transformed_data)
-        # return transformed_data
-        # regex_pattern = r'\{.*?\}'
-        # matches = re.findall(regex_pattern, raw_data)
-        # cleaned_list = [json.loads(match.replace("None", "null")) for match in matches]
-        # print('cleaned_list',cleaned_list)
-        # print('type(cleaned_list[0])',type(cleaned_list[0]))
 
 def create_hierarchies(hierarchy_folder):
     for root, _, files in os.walk(hierarchy_folder):
