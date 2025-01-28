@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from api.preprocessing import extract_images, extract_unique_images
+from api.preprocessing import VideoProcessor
 from api.source_code_extraction import CodeExtractor
 from api.summary_generation import TranscriptionAndSummaryGenerator
 from api.workflow_extraction import WorkflowGenerator
@@ -35,8 +35,9 @@ def preprocessing(request):
         video_urls.append(file_path)
 
     print("Note Generation Started")
-    extract_images(settings.VIDEOS_DIR, settings.IMAGES_DIR)
-    extract_unique_images(settings.IMAGES_DIR)
+    video_processor = VideoProcessor()
+    video_processor.extract_images(settings.VIDEOS_DIR, settings.IMAGES_DIR)
+    video_processor.extract_unique_images(settings.IMAGES_DIR)
 
 def generate_notes_core():
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_note.zip')

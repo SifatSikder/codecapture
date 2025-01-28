@@ -5,6 +5,9 @@ import re
 import google.generativeai as genai
 from paddleocr import PaddleOCR
 class WorkflowGenerator :
+    def __init__(self):
+        pass
+    
     def convert_bbox_to_vertice(self, bbox):
         x_min = bbox[0][0]
         y_min = bbox[0][1]
