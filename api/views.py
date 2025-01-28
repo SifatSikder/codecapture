@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from api.preprocessing import extract_images, extract_unique_images
-from api.source_code_extraction import *
+from api.source_code_extraction import CodeExtractor
 from api.summary_generation import TranscriptionAndSummaryGenerator
 from api.workflow_extraction import extract_text_from_whole_image, workflow_generation
 
@@ -99,14 +99,15 @@ def convert_to_long_path(path):
 
 def extract_source_code_core():
     extract_text_from_whole_image("images")
-    hierarchy_and_code_json_generation("ocr")
-    create_hierarchies("hierarchy_json")
-    create_codes("code_json")
-    hierarchies_with_codes("individual_results")
-    create_merged_hierarchies_json("hierarchy_json")
-    create_merged_hierarchies("merged_results")
-    create_merged_codes("code_json")
-    create_merged_hierarchies_with_codes("merged_results")
+    code_extractor = CodeExtractor()
+    code_extractor.hierarchy_and_code_json_generation("ocr")
+    code_extractor.create_hierarchies("hierarchy_json")
+    code_extractor.create_codes("code_json")
+    code_extractor.hierarchies_with_codes("individual_results")
+    code_extractor.create_merged_hierarchies_json("hierarchy_json")
+    code_extractor.create_merged_hierarchies("merged_results")
+    code_extractor.create_merged_codes("code_json")
+    code_extractor.create_merged_hierarchies_with_codes("merged_results")
     
     base_dir = settings.BASE_DIR
     results_path = os.path.join(base_dir, 'results')
