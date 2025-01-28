@@ -1,8 +1,9 @@
 import os
 import shutil
 from django.http import JsonResponse
-from api.preprocessing import VideoProcessor
-class VideoUploader:
+from classes.preprocessing import VideoProcessor
+
+class VideoChecker:
     def __init__(self):
         pass
     def video_upload_with_validity(self,request,image_path,video_path):

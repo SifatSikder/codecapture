@@ -4,6 +4,7 @@ import cv2
 import re
 import google.generativeai as genai
 from paddleocr import PaddleOCR
+
 class WorkflowGenerator :
     def __init__(self):
         pass

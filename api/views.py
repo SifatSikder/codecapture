@@ -1,13 +1,13 @@
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from api.video_uploader import VideoUploader
-from api.output_generation import OutputGenerator
+from api.classes.video_checker import VideoChecker
+from api.classes.output_generation import OutputGenerator
 
 @csrf_exempt
 def generate_notes(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR)
@@ -16,7 +16,7 @@ def generate_notes(request):
 @csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.transcribe_video_core(settings.VIDEOS_DIR,settings.BASE_DIR)
@@ -26,7 +26,7 @@ def transcribe_video(request):
 @csrf_exempt
 def summarize_video(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.summarize_video_core(settings.VIDEOS_DIR,settings.BASE_DIR)
@@ -36,7 +36,7 @@ def summarize_video(request):
 @csrf_exempt
 def extract_source_code(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.extract_source_code_core(settings.BASE_DIR)
@@ -46,7 +46,7 @@ def extract_source_code(request):
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.extract_workflow_core(settings.BASE_DIR)
@@ -56,7 +56,7 @@ def extract_workflow(request):
 @csrf_exempt
 def generate_all(request):
     if request.method == "POST":
-        video_uploader = VideoUploader()
+        video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.generate_all_core(settings.BASE_DIR,settings.VIDEOS_DIR)

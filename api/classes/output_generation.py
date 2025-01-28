@@ -1,9 +1,9 @@
 import os
 import zipfile
 import shutil
-from api.source_code_extraction import CodeExtractor
-from api.summary_generation import TranscriptionAndSummaryGenerator
-from api.workflow_extraction import WorkflowGenerator
+from classes.source_code_extraction import CodeExtractor
+from classes.summary_generation import TranscriptionAndSummaryGenerator
+from classes.workflow_extraction import WorkflowGenerator
 from django.http import HttpResponse
 
 
