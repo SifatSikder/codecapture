@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from api.preprocessing import extract_images, extract_unique_images
 from api.source_code_extraction import *
-from api.summary_generation import transcribe , summarize
+from api.summary_generation import TranscriptionAndSummaryGenerator
 from api.workflow_extraction import extract_text_from_whole_image, workflow_generation
 
 def response_creator(zip_file_path):
@@ -54,7 +54,8 @@ def generate_notes(request):
         return response_creator(zip_file_path)
 
 def transcribe_video_core():
-    transcribe(settings.VIDEOS_DIR)
+    transcription_summary_generator =TranscriptionAndSummaryGenerator()
+    transcription_summary_generator.transcribe(settings.VIDEOS_DIR)
     transcriptions_dir = os.path.join(settings.BASE_DIR, "transcriptions")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_transcription.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -72,7 +73,8 @@ def transcribe_video(request):
         return response_creator(zip_file_path)
     
 def summarize_video_core():
-    summarize(settings.VIDEOS_DIR)
+    transcription_summary_generator =TranscriptionAndSummaryGenerator()
+    transcription_summary_generator.summarize(settings.VIDEOS_DIR)
     summaries_dir = os.path.join(settings.BASE_DIR, "summaries")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_summary.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
