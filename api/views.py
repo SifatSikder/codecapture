@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from api.preprocessing import extract_images, extract_unique_images
 from api.source_code_extraction import CodeExtractor
 from api.summary_generation import TranscriptionAndSummaryGenerator
-from api.workflow_extraction import extract_text_from_whole_image, workflow_generation
+from api.workflow_extraction import WorkflowGenerator
 
 def response_creator(zip_file_path):
     with open(zip_file_path, 'rb') as zip_file:
@@ -98,7 +98,8 @@ def convert_to_long_path(path):
     return path
 
 def extract_source_code_core():
-    extract_text_from_whole_image("images")
+    workflow_generator = WorkflowGenerator()
+    workflow_generator.extract_text_from_whole_image("images")
     code_extractor = CodeExtractor()
     code_extractor.hierarchy_and_code_json_generation("ocr")
     code_extractor.create_hierarchies("hierarchy_json")
@@ -141,8 +142,9 @@ def extract_source_code(request):
         return response_creator(zip_file_path)
 
 def extract_workflow_core():
-    extract_text_from_whole_image("images")
-    workflow_generation("ocr")
+    workflow_generator = WorkflowGenerator()
+    workflow_generator.extract_text_from_whole_image("images")
+    workflow_generator.workflow_generation("ocr")
     workflow_dir = os.path.join(settings.BASE_DIR, "workflow")
     zip_file_path = os.path.join(settings.BASE_DIR, 'generated_workflow.zip')
     with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
