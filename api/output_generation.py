@@ -4,6 +4,8 @@ import shutil
 from api.source_code_extraction import CodeExtractor
 from api.summary_generation import TranscriptionAndSummaryGenerator
 from api.workflow_extraction import WorkflowGenerator
+from django.http import HttpResponse
+
 
 class OutputGenerator:
     def __init__(self):
@@ -110,3 +112,8 @@ class OutputGenerator:
                 for file in files:
                     zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(all_results_dir)))
         return all_results_zip_file_path
+    def response_creator(self,zip_file_path):
+        with open(zip_file_path, 'rb') as zip_file:
+            response = HttpResponse(zip_file.read(), content_type='application/zip')
+            response['Content-Disposition'] = f'attachment; filename={os.path.basename(zip_file_path)}'
+            return response
