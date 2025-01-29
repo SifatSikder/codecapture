@@ -49,7 +49,7 @@ def extract_source_code(request):
         video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
-        zip_file_path = output_generator.extract_source_code_core(settings.BASE_DIR)
+        zip_file_path = output_generator.extract_source_code_core(settings.BASE_DIR,settings.IMAGES_DIR,settings.MODEL_DIR)
         print("Sending Source Code....")
         return output_generator.response_creator(zip_file_path)
 

@@ -41,11 +41,12 @@ class OutputGenerator:
         if not path.startswith('\\\\?\\'):
             return f'\\\\?\\{os.path.abspath(path)}'
         return path
-    def extract_source_code_core(self,base_path):
-        workflow_generator = WorkflowGenerator()
-        workflow_generator.extract_text_from_whole_image("images")
+    def extract_source_code_core(self,base_path,image_path,model_path):
         code_extractor = CodeExtractor()
-        code_extractor.hierarchy_and_code_json_generation("ocr")
+        code_extractor.extract_components(image_path,model_path)
+        code_extractor.extract_text_from_image()
+        code_extractor.merge_all_json("components")
+        code_extractor.hierarchy_and_code_json_generation("components")
         code_extractor.create_hierarchies("hierarchy_json")
         code_extractor.create_codes("code_json")
         code_extractor.hierarchies_with_codes("individual_results")
