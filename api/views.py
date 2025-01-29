@@ -87,6 +87,14 @@ def generate_all(request):
         zip_file_path = output_generator.generate_all_core(settings.BASE_DIR,settings.VIDEOS_DIR)
         print("Sending all results....")
         return output_generator.response_creator(zip_file_path)
+    
+@csrf_exempt
+def generate_all_again(request):
+    if request.method == "GET":
+        output_generator = OutputGenerator()
+        zip_file_path = output_generator.generate_all_again(settings.BASE_DIR,settings.VIDEOS_DIR)
+        print("Sending all results....")
+        return output_generator.response_creator(zip_file_path)
 
 def check_api(request):
     return JsonResponse({"message": "Your API is working!"})

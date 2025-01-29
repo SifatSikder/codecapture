@@ -166,6 +166,34 @@ class OutputGenerator:
                 for file in files:
                     zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(all_results_dir)))
         return all_results_zip_file_path
+    
+    def generate_all_again(self,video_path,base_path):
+        if os.path.exists("all_results.zip"): os.remove("all_results.zip")
+        zip_file_paths = []
+        source_code_zip_path = self.extract_source_code_again(base_path)    
+        workflow_zip_path = self.extract_workflow_again(base_path)
+        transcription_zip_path = self.transcribe_video_core(video_path,base_path)
+        summary_zip_path = self.summarize_video_core(video_path,base_path)
+        note_zip_path = self.generate_notes_core(base_path)
+
+        zip_file_paths.append(source_code_zip_path)
+        zip_file_paths.append(workflow_zip_path)
+        zip_file_paths.append(transcription_zip_path)
+        zip_file_paths.append(summary_zip_path)
+        zip_file_paths.append(note_zip_path)
+        
+        all_results_dir = os.path.join(base_path, "all_results")
+        os.makedirs(all_results_dir,exist_ok=True)
+        for zip_file_path in zip_file_paths:
+            if os.path.exists(zip_file_path): shutil.copy(zip_file_path, all_results_dir)
+        
+        all_results_zip_file_path = os.path.join(base_path, 'all_results.zip')
+        with zipfile.ZipFile(all_results_zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for root,_, files in os.walk(all_results_dir):
+                for file in files:
+                    zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(all_results_dir)))
+        return all_results_zip_file_path
+    
     def response_creator(self,zip_file_path):
         with open(zip_file_path, 'rb') as zip_file:
             response = HttpResponse(zip_file.read(), content_type='application/zip')
