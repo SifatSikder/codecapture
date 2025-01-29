@@ -44,7 +44,7 @@ class VideoProcessor:
         image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp"}
         directories = [d for d in os.listdir(image_folder_path) if os.path.isdir(os.path.join(image_folder_path, d))]
         for directory in directories:
-            for _ in range(3):
+            for _ in range(2):
                 dir_path = os.path.join(image_folder_path, directory)
                 image_list = [file_name for file_name in os.listdir(dir_path) if os.path.splitext(file_name)[1].lower() in image_extensions]
                 image_old = cv2.imread(os.path.join(dir_path,image_list[0]))

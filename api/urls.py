@@ -8,4 +8,10 @@ urlpatterns = [
     path('extract_workflow/', extract_workflow),
     path('generate_all/', generate_all),
     path('check_api/', check_api),
+    path('generate_notes/generate_again', check_api),
+    path('transcribe_video/generate_again', check_api),
+    path('summarize_video/generate_again', check_api),    
+    path('extract_source_code/generate_again', check_api),
+    path('extract_workflow/generate_again', check_api),
+    path('generate_all/generate_again', check_api),
 ]
