@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import extract_workflow_again, generate_notes, generate_notes_again ,generate_all_again,extract_source_code_again, transcribe_video,summarize_video,extract_source_code,extract_workflow,generate_all,check_api, transcribe_video_again
+from .views import extract_workflow_again, generate_notes, generate_notes_again ,generate_all_again,extract_source_code_again, transcribe_video,summarize_video,extract_source_code,extract_workflow,generate_all,check_api
 urlpatterns = [
     path('generate_notes/', generate_notes),
     path('transcribe_video/', transcribe_video),
