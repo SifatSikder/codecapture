@@ -23,7 +23,7 @@ def generate_notes_again(request):
         print("Generating notes again...")
         output_generator = OutputGenerator()
         if os.path.exists("generated_note.zip"): os.remove("generated_note.zip")
-        zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR)
+        zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR,settings.IMAGES_DIR)
         return output_generator.response_creator(zip_file_path)
 
 @csrf_exempt
