@@ -14,6 +14,14 @@ def generate_notes(request):
         return output_generator.response_creator(zip_file_path)
 
 @csrf_exempt
+def generate_notes_again(request):
+    if request.method == "GET":
+        print("Generating notes again...")
+        output_generator = OutputGenerator()
+        zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR)
+        return output_generator.response_creator(zip_file_path)
+
+@csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
         video_uploader = VideoChecker()
