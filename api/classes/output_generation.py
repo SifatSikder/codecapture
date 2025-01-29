@@ -6,7 +6,6 @@ from .summary_generation import TranscriptionAndSummaryGenerator
 from .workflow_extraction import WorkflowGenerator
 from django.http import HttpResponse
 
-
 class OutputGenerator:
     def __init__(self):
         pass
