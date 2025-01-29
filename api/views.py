@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .classes.video_checker import VideoChecker
 from .classes.output_generation import OutputGenerator
 import os
+import shutil
 
 @csrf_exempt
 def generate_notes(request):
@@ -95,6 +96,39 @@ def generate_all_again(request):
         zip_file_path = output_generator.generate_all_again(settings.BASE_DIR,settings.VIDEOS_DIR)
         print("Sending all results....")
         return output_generator.response_creator(zip_file_path)
+
+@csrf_exempt
+def delete_folders(request):
+    if request.method == "POST":
+        base_path = settings.BASE_DIR
+        folders_to_delete = [
+            "images", "videos", "code_json", "hierarchy_json", 
+            "individual_results", "merged_results", "ocr", 
+            "results","all_results", "summaries", "transcriptions","components"
+        ]
+        
+        deleted_folders = []
+        deleted_files = []
+
+        for folder in folders_to_delete:
+            folder_path = os.path.join(base_path, folder)
+            if os.path.exists(folder_path):
+                shutil.rmtree(folder_path)
+                deleted_folders.append(folder)
+
+        for file in os.listdir(base_path):
+            file_path = os.path.join(base_path, file)
+            if file.endswith(".zip") and os.path.isfile(file_path):
+                os.remove(file_path)
+                deleted_files.append(file)
+
+        return JsonResponse({
+            "message": "Folders and zip files deleted",
+            "deleted_folders": deleted_folders,
+            "deleted_files": deleted_files
+        })
+    
+    return JsonResponse({"error": "Invalid request"}, status=400)
 
 def check_api(request):
     return JsonResponse({"message": "Your API is working!"})
