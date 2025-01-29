@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .classes.video_checker import VideoChecker
 from .classes.output_generation import OutputGenerator
+import os
 
 @csrf_exempt
 def generate_notes(request):
@@ -18,6 +19,7 @@ def generate_notes_again(request):
     if request.method == "GET":
         print("Generating notes again...")
         output_generator = OutputGenerator()
+        if os.path.exists("generated_note.zip"): os.remove("generated_note.zip")
         zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR)
         return output_generator.response_creator(zip_file_path)
 
@@ -66,6 +68,13 @@ def extract_workflow(request):
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.extract_workflow_core(settings.BASE_DIR)
+        print("Sending workflows....")
+        return output_generator.response_creator(zip_file_path)
+@csrf_exempt
+def extract_workflow_again(request):
+    if request.method == "GET":
+        output_generator = OutputGenerator()
+        zip_file_path = output_generator.extract_workflow_again(settings.BASE_DIR)
         print("Sending workflows....")
         return output_generator.response_creator(zip_file_path)
 

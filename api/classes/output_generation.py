@@ -81,6 +81,7 @@ class OutputGenerator:
         if os.path.exists("code_json") : shutil.rmtree("code_json")
         if os.path.exists("individual_results") : shutil.rmtree("individual_results")
         if os.path.exists("merged_results") : shutil.rmtree("merged_results")
+        if os.path.exists("extracted_source_code.zip") : os.remove("extracted_source_code.zip")
         
         code_extractor = CodeExtractor()
         code_extractor.hierarchy_and_code_json_generation("ocr")
@@ -126,6 +127,20 @@ class OutputGenerator:
                 for file in files:
                     zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(workflow_dir)))
         return zip_file_path
+    
+    def extract_workflow_again(self,base_path):
+        if os.path.exists("workflow") : shutil.rmtree("workflow")
+        if os.path.exists("generated_workflow.zip") : os.remove("generated_workflow.zip")
+        workflow_generator = WorkflowGenerator()
+        workflow_generator.workflow_generation("ocr")
+        workflow_dir = os.path.join(base_path, "workflow")
+        zip_file_path = os.path.join(base_path, 'generated_workflow.zip')
+        with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for root,_, files in os.walk(workflow_dir):
+                for file in files:
+                    zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.dirname(workflow_dir)))
+        return zip_file_path
+    
     def generate_all_core(self,video_path,base_path):
         zip_file_paths = []
         source_code_zip_path = self.extract_source_code_core(base_path)    
