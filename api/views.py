@@ -12,7 +12,7 @@ def generate_notes(request):
         video_uploader = VideoChecker()
         video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
-        zip_file_path = output_generator.generate_notes_core(settings.BASE_DIR)
+        zip_file_path = output_generator.generate_notes_core(settings.IMAGES_DIR,settings.BASE_DIR)
         return output_generator.response_creator(zip_file_path)
 
 @csrf_exempt
@@ -96,8 +96,6 @@ def generate_all_again(request):
         zip_file_path = output_generator.generate_all_again(settings.BASE_DIR,settings.VIDEOS_DIR)
         print("Sending all results....")
         return output_generator.response_creator(zip_file_path)
-
-
 
 
 @csrf_exempt

@@ -9,8 +9,8 @@ from django.http import HttpResponse
 class OutputGenerator:
     def __init__(self):
         pass
-    def generate_notes_core(self,note_zip_path):
-        zip_file_path = os.path.join(note_zip_path, 'generated_note.zip')
+    def generate_notes_core(self,note_zip_path,base_dir):
+        zip_file_path = os.path.join(base_dir, 'generated_note.zip')
         with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for root,_, files in os.walk(note_zip_path):
                 for file in files:

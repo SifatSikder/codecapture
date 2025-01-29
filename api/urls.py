@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import extract_workflow_again, generate_notes, generate_notes_again ,generate_all_again,extract_source_code_again, transcribe_video,summarize_video,extract_source_code,extract_workflow,generate_all,check_api
+from .views import extract_workflow_again,delete_folders, generate_notes, generate_notes_again ,generate_all_again,extract_source_code_again, transcribe_video,summarize_video,extract_source_code,extract_workflow,generate_all,check_api
 urlpatterns = [
     path('generate_notes/', generate_notes),
     path('transcribe_video/', transcribe_video),
@@ -14,4 +14,5 @@ urlpatterns = [
     path('extract_source_code/generate_again', extract_source_code_again),
     path('extract_workflow/generate_again', extract_workflow_again),
     path('generate_all/generate_again', generate_all_again),
+    path("delete-folders/", delete_folders),
 ]
