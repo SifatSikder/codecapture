@@ -1,7 +1,7 @@
 import os
 import shutil
 from django.http import JsonResponse
-from classes.preprocessing import VideoProcessor
+from .preprocessing import VideoProcessor
 
 class VideoChecker:
     def __init__(self):

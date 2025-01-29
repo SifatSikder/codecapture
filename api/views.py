@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from api.classes.video_checker import VideoChecker
-from api.classes.output_generation import OutputGenerator
+from .classes.video_checker import VideoChecker
+from .classes.output_generation import OutputGenerator
 
 @csrf_exempt
 def generate_notes(request):
