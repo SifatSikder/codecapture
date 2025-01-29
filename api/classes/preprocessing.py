@@ -7,7 +7,7 @@ class VideoProcessor:
     def __init__(self):
         pass
 
-    def rename(self,directory_path):
+    def rename_images(self,directory_path):
         image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp"}
         image_list = [file_name for file_name in os.listdir(directory_path) if os.path.splitext(file_name)[1].lower() in image_extensions]
         image_list.sort()
@@ -56,5 +56,5 @@ class VideoProcessor:
                         print(f"Deleting: {current_image_path}")
                         os.remove(current_image_path)
                     image_old = image.copy()
-                self.rename(dir_path)
+                self.rename_images(dir_path)
 
