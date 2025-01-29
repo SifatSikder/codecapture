@@ -52,6 +52,14 @@ def extract_source_code(request):
         return output_generator.response_creator(zip_file_path)
 
 @csrf_exempt
+def extract_source_code_again(request):
+    if request.method == "GET":
+        output_generator = OutputGenerator()
+        zip_file_path = output_generator.extract_source_code_again(settings.BASE_DIR)
+        print("Sending Source Code....")
+        return output_generator.response_creator(zip_file_path)    
+
+@csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
         video_uploader = VideoChecker()

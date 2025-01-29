@@ -75,6 +75,46 @@ class OutputGenerator:
                 for file in files:
                     zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), results_path))
         return zip_file_path
+    
+    def extract_source_code_again(self,base_path):
+        if os.path.exists("hierarchy_json") : shutil.rmtree("hierarchy_json")
+        if os.path.exists("code_json") : shutil.rmtree("code_json")
+        if os.path.exists("individual_results") : shutil.rmtree("individual_results")
+        if os.path.exists("merged_results") : shutil.rmtree("merged_results")
+        
+        code_extractor = CodeExtractor()
+        code_extractor.hierarchy_and_code_json_generation("ocr")
+        code_extractor.create_hierarchies("hierarchy_json")
+        code_extractor.create_codes("code_json")
+        code_extractor.hierarchies_with_codes("individual_results")
+        code_extractor.create_merged_hierarchies_json("hierarchy_json")
+        code_extractor.create_merged_hierarchies("merged_results")
+        code_extractor.create_merged_codes("code_json")
+        code_extractor.create_merged_hierarchies_with_codes("merged_results")
+        
+        results_path = os.path.join(base_path, 'results')
+        individual_results_path = os.path.join(base_path, 'individual_results')
+        merged_results_path = os.path.join(base_path, 'merged_results')
+
+        results_path = self.convert_to_long_path(results_path)
+        individual_results_path = self.convert_to_long_path(individual_results_path)
+        merged_results_path = self.convert_to_long_path(merged_results_path)
+        if os.path.exists(f"{merged_results_path}/merged_hierarchy.json"): os.remove(f"{merged_results_path}/merged_hierarchy.json")
+        
+        if not os.path.exists(results_path): os.makedirs(results_path)
+        dest_individual = os.path.join(results_path, 'individual_results')
+        if not os.path.exists(dest_individual): shutil.copytree(individual_results_path, dest_individual)
+        dest_merged = os.path.join(results_path, 'merged_results')
+        if not os.path.exists(dest_merged): shutil.copytree(merged_results_path, dest_merged)
+        
+        zip_file_path = os.path.join(base_path, 'extracted_source_code.zip')
+        with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for root,_, files in os.walk(results_path):
+                for file in files:
+                    zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), results_path))
+        return zip_file_path
+    
+    
     def extract_workflow_core(self,base_path):
         workflow_generator = WorkflowGenerator()
         workflow_generator.extract_text_from_whole_image("images")
