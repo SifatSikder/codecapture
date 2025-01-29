@@ -9,6 +9,7 @@ import shutil
 @csrf_exempt
 def generate_notes(request):
     if request.method == "POST":
+        if not os.path.exists(settings.IMAGES_DIR): os.makedirs(settings.IMAGES_DIR)
         if not os.listdir(settings.IMAGES_DIR):
             video_uploader = VideoChecker()
             video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
