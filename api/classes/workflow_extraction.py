@@ -92,18 +92,22 @@ class WorkflowGenerator :
                 texts = self.read_json_text(ocr_file_path)
                 frame_texts.append({"frame_num":ocr_file.split(".")[0],"texts":texts})
             response = self.extract_workflow(frame_texts)
-            workflow_pattern = r"\\workflow\[(.*)\]"
-            extracted_workflow = re.search(workflow_pattern, response, re.DOTALL)
-            extracted_workflow = extracted_workflow.group(1).strip() if extracted_workflow else "Not found"
-            if extracted_workflow :
-                try:
-                    workflow_json = json.loads(f"[{extracted_workflow}]")
-                    workflow_array = [entry["workflow"] for entry in workflow_json]
-                    workflow_path = os.path.join('workflow', f"{ocr_folder}_workflow.json")
-                    with open(workflow_path, 'w', encoding='utf-8') as f: json.dump(workflow_array, f, indent=4, ensure_ascii=False)
-                    print(f"Workflow array saved to {workflow_path}")
-                except json.JSONDecodeError as e: workflow_array = f"Error decoding JSON: {e}"
-            else: print("Workflow array not found")
+            workflow_path = os.path.join('workflow', f"{ocr_folder}_workflow.txt")
+            with open(workflow_path, "w", encoding="utf-8") as file:
+                file.write(response)
+            print(f"Workflow saved to {workflow_path}")
+            # workflow_pattern = r"\\workflow\[(.*)\]"
+            # extracted_workflow = re.search(workflow_pattern, response, re.DOTALL)
+            # extracted_workflow = extracted_workflow.group(1).strip() if extracted_workflow else "Not found"
+            # if extracted_workflow :
+                # try:
+                    # workflow_json = json.loads(f"[{extracted_workflow}]")
+                    # workflow_array = [entry["workflow"] for entry in workflow_json]
+                    # workflow_path = os.path.join('workflow', f"{ocr_folder}_workflow.json")
+                    # with open(workflow_path, 'w', encoding='utf-8') as f: json.dump(workflow_array, f, indent=4, ensure_ascii=False)
+                    # print(f"Workflow array saved to {workflow_path}")
+                # except json.JSONDecodeError as e: workflow_array = f"Error decoding JSON: {e}"
+            # else: print("Workflow array not found")
             
 
 

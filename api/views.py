@@ -64,8 +64,8 @@ def extract_source_code_again(request):
 @csrf_exempt
 def extract_workflow(request):
     if request.method == "POST":
-        video_uploader = VideoChecker()
-        video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
+        # video_uploader = VideoChecker()
+        # video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.extract_workflow_core(settings.BASE_DIR)
         print("Sending workflows....")

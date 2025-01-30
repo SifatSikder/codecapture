@@ -8,8 +8,8 @@ __pycache__/
 code_json/
 components/
 hierarchy_json
-images/
 individual_results/
 merged_results/
 results/
 videos/
+workflow/

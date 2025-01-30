@@ -118,7 +118,7 @@ class OutputGenerator:
     
     def extract_workflow_core(self,base_path):
         workflow_generator = WorkflowGenerator()
-        workflow_generator.extract_text_from_whole_image("images")
+        # workflow_generator.extract_text_from_whole_image("images")
         workflow_generator.workflow_generation("ocr")
         workflow_dir = os.path.join(base_path, "workflow")
         zip_file_path = os.path.join(base_path, 'generated_workflow.zip')
