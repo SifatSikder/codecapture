@@ -1,0 +1,314 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Package:",
+      "vertice": {
+        "x_min": 775.0,
+        "y_min": 10.0,
+        "x_max": 881.0,
+        "y_max": 43.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "com.thenewboston.tr",
+      "vertice": {
+        "x_min": 1021.0,
+        "y_min": 16.0,
+        "x_max": 1276.0,
+        "y_max": 38.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "The New Boston",
+      "vertice": {
+        "x_min": 33.0,
+        "y_min": 73.0,
+        "x_max": 287.0,
+        "y_max": 99.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Enclosing type",
+      "vertice": {
+        "x_min": 779.0,
+        "y_min": 89.0,
+        "x_max": 994.0,
+        "y_max": 119.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "src",
+      "vertice": {
+        "x_min": 93.0,
+        "y_min": 110.0,
+        "x_max": 167.0,
+        "y_max": 137.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "com.thenewboston.travis",
+      "vertice": {
+        "x_min": 131.0,
+        "y_min": 151.0,
+        "x_max": 463.0,
+        "y_max": 173.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "startingPoint.java",
+      "vertice": {
+        "x_min": 138.0,
+        "y_min": 185.0,
+        "x_max": 409.0,
+        "y_max": 216.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Name:",
+      "vertice": {
+        "x_min": 773.0,
+        "y_min": 193.0,
+        "x_max": 854.0,
+        "y_max": 225.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "gen [Generated Java Files]",
+      "vertice": {
+        "x_min": 91.0,
+        "y_min": 220.0,
+        "x_max": 438.0,
+        "y_max": 257.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Modifiers:",
+      "vertice": {
+        "x_min": 774.0,
+        "y_min": 246.0,
+        "x_max": 896.0,
+        "y_max": 277.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "public",
+      "vertice": {
+        "x_min": 1055.0,
+        "y_min": 248.0,
+        "x_max": 1132.0,
+        "y_max": 277.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "Odefa",
+      "vertice": {
+        "x_min": 1192.0,
+        "y_min": 245.0,
+        "x_max": 1279.0,
+        "y_max": 278.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "com.thenewboston.travis",
+      "vertice": {
+        "x_min": 101.0,
+        "y_min": 263.0,
+        "x_max": 467.0,
+        "y_max": 290.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "Android2.2",
+      "vertice": {
+        "x_min": 68.0,
+        "y_min": 299.0,
+        "x_max": 271.0,
+        "y_max": 326.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "abstract",
+      "vertice": {
+        "x_min": 1021.0,
+        "y_min": 300.0,
+        "x_max": 1161.0,
+        "y_max": 327.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "final",
+      "vertice": {
+        "x_min": 1160.0,
+        "y_min": 299.0,
+        "x_max": 1265.0,
+        "y_max": 327.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "assets",
+      "vertice": {
+        "x_min": 92.0,
+        "y_min": 329.0,
+        "x_max": 205.0,
+        "y_max": 371.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "res",
+      "vertice": {
+        "x_min": 93.0,
+        "y_min": 373.0,
+        "x_max": 168.0,
+        "y_max": 405.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "Superclass:",
+      "vertice": {
+        "x_min": 777.0,
+        "y_min": 367.0,
+        "x_max": 909.0,
+        "y_max": 392.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "java.lang.Object",
+      "vertice": {
+        "x_min": 1017.0,
+        "y_min": 365.0,
+        "x_max": 1213.0,
+        "y_max": 393.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "drawable-hdpi",
+      "vertice": {
+        "x_min": 125.0,
+        "y_min": 414.0,
+        "x_max": 341.0,
+        "y_max": 441.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "Interfaces:",
+      "vertice": {
+        "x_min": 776.0,
+        "y_min": 426.0,
+        "x_max": 899.0,
+        "y_max": 450.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "4icon.png",
+      "vertice": {
+        "x_min": 164.0,
+        "y_min": 447.0,
+        "x_max": 308.0,
+        "y_max": 482.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "splash_background.png",
+      "vertice": {
+        "x_min": 167.0,
+        "y_min": 486.0,
+        "x_max": 484.0,
+        "y_max": 519.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "drawable-ldpi",
+      "vertice": {
+        "x_min": 121.0,
+        "y_min": 528.0,
+        "x_max": 333.0,
+        "y_max": 555.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "drawable-mdpi",
+      "vertice": {
+        "x_min": 124.0,
+        "y_min": 565.0,
+        "x_max": 351.0,
+        "y_max": 592.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "layout",
+      "vertice": {
+        "x_min": 156.0,
+        "y_min": 602.0,
+        "x_max": 243.0,
+        "y_max": 630.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "main.xml",
+      "vertice": {
+        "x_min": 168.0,
+        "y_min": 638.0,
+        "x_max": 317.0,
+        "y_max": 670.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "Which method stubs would you like to cre",
+      "vertice": {
+        "x_min": 777.0,
+        "y_min": 631.0,
+        "x_max": 1275.0,
+        "y_max": 654.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "splash.xml",
+      "vertice": {
+        "x_min": 168.0,
+        "y_min": 676.0,
+        "x_max": 335.0,
+        "y_max": 708.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "public static void n",
+      "vertice": {
+        "x_min": 1017.0,
+        "y_min": 676.0,
+        "x_max": 1277.0,
+        "y_max": 700.0
+      }
+    }
+  ]
+}

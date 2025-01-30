@@ -1,0 +1,65 @@
+[00:00:00-00:00:05]: What's up guys welcome to your 12th Android tutorial. What we're gonna do in this
+[00:00:05-00:00:13]: tutorial is set up our own activity from scratch. Homemade Java is what we're gonna
+[00:00:13-00:00:16]: be doing. We're gonna set up a Java class so we're gonna go up to our source
+[00:00:16-00:00:24]: folder and right click and go to new either I'm sorry new class right here hit
+[00:00:24-00:00:31]: ok and we're gonna call this splash with the capital S and again I should get I
+[00:00:31-00:00:34]: should just tell you this because since we're working with Java it's basically
+[00:00:34-00:00:40]: good grammar for your class names to start with the uppercase letter I didn't
+[00:00:40-00:00:43]: do that with the starting point that other there are other class that we have
+[00:00:43-00:00:47]: called starting point but general rule of thumb you want to have it uppercase
+[00:00:47-00:00:52]: not a huge deal but you know whatever and then we're gonna hit finish got our
+[00:00:52-00:00:57]: class started and now as we were just also gonna open our starting point
+[00:00:57-00:01:03]: classes a reference you guys can kind of see what we need to set up here now
+[00:01:03-00:01:07]: right now it's just a Java class it's not an activity and Android uses
+[00:01:07-00:01:13]: activities are basically like different tabs for example this is a tab and then
+[00:01:13-00:01:17]: this is a tab think of this is an activity for the most part and then we
+[00:01:17-00:01:22]: can open up this activity and it'll put that previous activity behind it and
+[00:01:22-00:01:25]: then if we hit the back button our phone it opens this activity I don't know if
+[00:01:25-00:01:29]: that made sense but they're basically like different windows or different tabs
+[00:01:29-00:01:34]: that's what an activity is so we want our splash to be an activity so we're
+[00:01:34-00:01:41]: gonna say is extends activity and what extends means is that we're extending
+[00:01:41-00:01:45]: the activity class so we have to import this activity class which comes from the
+[00:01:45-00:01:51]: Android app package again from the SDK for the most part so we're gonna import
+[00:01:51-00:01:56]: that and what extends means is we're since we're using or extending this
+[00:01:56-00:02:01]: activity class we can use some of the methods from within that activity class
+[00:02:01-00:02:05]: now let's go back to the starting point and we notice that we have this method
+[00:02:05-00:02:09]: called on create so we're gonna add that real quickly by right-clicking within
+[00:02:09-00:02:16]: the brackets going down to the source and then going to override implement
+[00:02:16-00:02:21]: methods click that as you can see here's our activity class that we're
+[00:02:21-00:02:25]: extending and we can use all these methods from within that activity class
+[00:02:25-00:02:30]: there's a method called on create which you guys saw in our starting point
+[00:02:30-00:02:34]: activity so we're gonna click this and make sure it's the one that takes in but
+[00:02:34-00:02:40]: takes a bundle within its parameters click ok and we have our activity for
+[00:02:40-00:02:46]: the most part set up at least our on create method set up and now basically I
+[00:02:46-00:02:50]: kind of want to quickly talk on the Java just kind of give you guys a little bit
+[00:02:50-00:02:55]: better understanding of what's going on public just think of that meaning that
+[00:02:55-00:02:59]: it's accessible by other classes or other yeah for the most part other
+[00:02:59-00:03:04]: classes if it's private for the most part won't be be able to be accessed by
+[00:03:04-00:03:09]: those other classes and again we're setting up a class again that might be
+[00:03:09-00:03:17]: confusing word for new Java programmers but basically a class defines certain
+[00:03:17-00:03:21]: things I'll get into that explanation later as we go just know that this is a
+[00:03:21-00:03:25]: class what we're setting up all these are classes over here under our package
+[00:03:25-00:03:29]: and we're extending the activity class so we can use this method called on
+[00:03:29-00:03:34]: create now anytime you guys see void that basically means that it's going to
+[00:03:34-00:03:38]: be a method we're using a method so when you see void just think of method for
+[00:03:38-00:03:43]: the most part and this method is called on create and what it takes within its
+[00:03:43-00:03:48]: parameters is a bundle so this is just like a variable we set up so we could
+[00:03:48-00:03:54]: change this bundle to something like Travis loves bacon again we're just
+[00:03:54-00:04:00]: renaming the variable and then we're sending that variable to the super
+[00:04:00-00:04:06]: class for the most part and giving some giving it some data so we need to change
+[00:04:06-00:04:13]: our variable down here to Travis love bacon I guess it's supposed to be Travis
+[00:04:13-00:04:18]: loves bacon but it's just Travis love bacon that's my middle name and my last
+[00:04:18-00:04:23]: name love bacon but uh there we go so basically we're sending this bundle into
+[00:04:23-00:04:27]: our super class you guys don't really need to worry about what super is since
+[00:04:27-00:04:32]: again it sets it up for you but as you guys get into Java you'll realize what
+[00:04:32-00:04:37]: that is actually doing it's using the method on create just don't worry about
+[00:04:37-00:04:41]: that okay now the other thing that we want to do for this activity is set up
+[00:04:41-00:04:46]: the content view this is how we're gonna let this activity have the background of
+[00:04:46-00:04:51]: our layout that we just set up called splash so to do that we use the method
+[00:04:51-00:04:58]: called set content view and within the parameters we're gonna resort or
+[00:04:58-00:05:08]: reference that splash layout by going r.layout.splash and then we just need our
+[00:05:08-00:05:13]: semicolon and we're good to go basically our activity will load up that new
+[00:05:13-00:05:20]: splash and I'll show you guys how we can basically well just watch the next
+[00:05:20-00:05:23]: tutorial where we're gonna get into the Android manifest again thanks guys for
+[00:05:23-00:05:27]: watching hope you have a good one hope that somewhat made sense and catch you
+[00:05:27-00:05:30]: then peace

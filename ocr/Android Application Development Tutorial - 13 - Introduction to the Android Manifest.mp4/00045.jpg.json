@@ -1,0 +1,384 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "s/traviscornelius/Documents/thenewboston",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 1.0,
+        "x_max": 1156.0,
+        "y_max": 19.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "1157PM",
+      "vertice": {
+        "x_min": 253.0,
+        "y_min": 30.0,
+        "x_max": 453.0,
+        "y_max": 58.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "The New Boston",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 71.0,
+        "x_max": 159.0,
+        "y_max": 90.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "res/android\"",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 93.0,
+        "x_max": 969.0,
+        "y_max": 106.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "e-1",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 109.0,
+        "x_max": 919.0,
+        "y_max": 118.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Find",
+      "vertice": {
+        "x_min": 1215.0,
+        "y_min": 109.0,
+        "x_max": 1245.0,
+        "y_max": 123.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "CUncat",
+      "vertice": {
+        "x_min": 1233.0,
+        "y_min": 128.0,
+        "x_max": 1279.0,
+        "y_max": 143.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "abel-\"@string/app_name\">",
+      "vertice": {
+        "x_min": 885.0,
+        "y_min": 163.0,
+        "x_max": 1049.0,
+        "y_max": 180.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "@string/app_name\">",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 180.0,
+        "x_max": 1009.0,
+        "y_max": 193.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "tion.MAIN\"",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 209.0,
+        "x_max": 955.0,
+        "y_max": 220.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "/>",
+      "vertice": {
+        "x_min": 952.0,
+        "y_min": 210.0,
+        "x_max": 977.0,
+        "y_max": 220.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "category.LAUNCHER\"/>",
+      "vertice": {
+        "x_min": 883.0,
+        "y_min": 221.0,
+        "x_max": 1025.0,
+        "y_max": 235.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Connect",
+      "vertice": {
+        "x_min": 1235.0,
+        "y_min": 253.0,
+        "x_max": 1279.0,
+        "y_max": 267.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "label-\"@string/app_name\">",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 266.0,
+        "x_max": 1055.0,
+        "y_max": 279.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "tools.",
+      "vertice": {
+        "x_min": 1237.0,
+        "y_min": 267.0,
+        "x_max": 1265.0,
+        "y_max": 278.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "ravis.STARTINGPOINT\"",
+      "vertice": {
+        "x_min": 885.0,
+        "y_min": 294.0,
+        "x_max": 1028.0,
+        "y_max": 307.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "/>",
+      "vertice": {
+        "x_min": 1027.0,
+        "y_min": 296.0,
+        "x_max": 1048.0,
+        "y_max": 306.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "Outline ",
+      "vertice": {
+        "x_min": 1207.0,
+        "y_min": 292.0,
+        "x_max": 1279.0,
+        "y_max": 311.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "category.DEFAULT\"/>",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 310.0,
+        "x_max": 1017.0,
+        "y_max": 323.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "An outline is",
+      "vertice": {
+        "x_min": 1209.0,
+        "y_min": 315.0,
+        "x_max": 1277.0,
+        "y_max": 330.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "THENEWBOSTON",
+      "vertice": {
+        "x_min": 90.0,
+        "y_min": 429.0,
+        "x_max": 362.0,
+        "y_max": 467.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "4",
+      "vertice": {
+        "x_min": 620.0,
+        "y_min": 463.0,
+        "x_max": 631.0,
+        "y_max": 476.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "O",
+      "vertice": {
+        "x_min": 764.0,
+        "y_min": 463.0,
+        "x_max": 773.0,
+        "y_max": 478.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "W",
+      "vertice": {
+        "x_min": 549.0,
+        "y_min": 496.0,
+        "x_max": 564.0,
+        "y_max": 510.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "R",
+      "vertice": {
+        "x_min": 620.0,
+        "y_min": 495.0,
+        "x_max": 632.0,
+        "y_max": 511.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "U",
+      "vertice": {
+        "x_min": 728.0,
+        "y_min": 495.0,
+        "x_max": 740.0,
+        "y_max": 511.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "idManifest.xml",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 504.0,
+        "x_max": 963.0,
+        "y_max": 518.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "D",
+      "vertice": {
+        "x_min": 585.0,
+        "y_min": 531.0,
+        "x_max": 596.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "G",
+      "vertice": {
+        "x_min": 656.0,
+        "y_min": 532.0,
+        "x_max": 668.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "H",
+      "vertice": {
+        "x_min": 692.0,
+        "y_min": 532.0,
+        "x_max": 703.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "N",
+      "vertice": {
+        "x_min": 727.0,
+        "y_min": 565.0,
+        "x_max": 739.0,
+        "y_max": 578.0
+      }
+    },
+    {
+      "id": 31,
+      "text": "M",
+      "vertice": {
+        "x_min": 763.0,
+        "y_min": 568.0,
+        "x_max": 776.0,
+        "y_max": 578.0
+      }
+    },
+    {
+      "id": 32,
+      "text": "r-5554'running compatible AvD 'DroidEmulator",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 568.0,
+        "x_max": 1196.0,
+        "y_max": 581.0
+      }
+    },
+    {
+      "id": 33,
+      "text": "SYM",
+      "vertice": {
+        "x_min": 551.0,
+        "y_min": 604.0,
+        "x_max": 572.0,
+        "y_max": 613.0
+      }
+    },
+    {
+      "id": 34,
+      "text": "a",
+      "vertice": {
+        "x_min": 584.0,
+        "y_min": 602.0,
+        "x_max": 596.0,
+        "y_max": 613.0
+      }
+    },
+    {
+      "id": 35,
+      "text": "ALT",
+      "vertice": {
+        "x_min": 836.0,
+        "y_min": 600.0,
+        "x_max": 855.0,
+        "y_max": 615.0
+      }
+    },
+    {
+      "id": 36,
+      "text": "ice emulator-5554",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 625.0,
+        "x_max": 1005.0,
+        "y_max": 638.0
+      }
+    },
+    {
+      "id": 37,
+      "text": "action.MAIN cat-[android.intent.category.LAUNCHER] cmp=con",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 639.0,
+        "x_max": 1277.0,
+        "y_max": 652.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "euses-sak anarolo:mtnsakverslon",
+      "vertice": {
+        "x_min": 127.0,
+        "y_min": 3.0,
+        "x_max": 784.0,
+        "y_max": 23.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "<application android:icon-\"@drawable/icon\"android:lab",
+      "vertice": {
+        "x_min": 128.0,
+        "y_min": 85.0,
+        "x_max": 1273.0,
+        "y_max": 114.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "<activity android:name-\".startingPoint\"android:la",
+      "vertice": {
+        "x_min": 211.0,
+        "y_min": 130.0,
+        "x_max": 1275.0,
+        "y_max": 160.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "cintent-filters",
+      "vertice": {
+        "x_min": 299.0,
+        "y_min": 177.0,
+        "x_max": 605.0,
+        "y_max": 205.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "caction android:name-\"android.intent.actic",
+      "vertice": {
+        "x_min": 383.0,
+        "y_min": 222.0,
+        "x_max": 1275.0,
+        "y_max": 253.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "<category android:name-\"android.intent.cat",
+      "vertice": {
+        "x_min": 380.0,
+        "y_min": 267.0,
+        "x_max": 1279.0,
+        "y_max": 300.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "</intent-filters",
+      "vertice": {
+        "x_min": 297.0,
+        "y_min": 312.0,
+        "x_max": 631.0,
+        "y_max": 345.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "</activity>",
+      "vertice": {
+        "x_min": 210.0,
+        "y_min": 353.0,
+        "x_max": 438.0,
+        "y_max": 397.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "</application>",
+      "vertice": {
+        "x_min": 127.0,
+        "y_min": 406.0,
+        "x_max": 416.0,
+        "y_max": 438.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "/manifest>",
+      "vertice": {
+        "x_min": 41.0,
+        "y_min": 451.0,
+        "x_max": 267.0,
+        "y_max": 483.0
+      }
+    }
+  ]
+}

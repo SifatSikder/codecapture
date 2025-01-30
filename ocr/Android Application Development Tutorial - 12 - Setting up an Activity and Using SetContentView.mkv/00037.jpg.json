@@ -1,0 +1,154 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "*Splash.java",
+      "vertice": {
+        "x_min": 52.0,
+        "y_min": 15.0,
+        "x_max": 240.0,
+        "y_max": 50.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "J",
+      "vertice": {
+        "x_min": 344.0,
+        "y_min": 18.0,
+        "x_max": 374.0,
+        "y_max": 41.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "startingPoint.javaX",
+      "vertice": {
+        "x_min": 387.0,
+        "y_min": 17.0,
+        "x_max": 721.0,
+        "y_max": 49.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "package com.thenewboston.travis;",
+      "vertice": {
+        "x_min": 85.0,
+        "y_min": 77.0,
+        "x_max": 741.0,
+        "y_max": 112.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "+import android.app.Activity;",
+      "vertice": {
+        "x_min": 49.0,
+        "y_min": 163.0,
+        "x_max": 684.0,
+        "y_max": 199.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "public class startingPoint extends Activity{",
+      "vertice": {
+        "x_min": 89.0,
+        "y_min": 299.0,
+        "x_max": 1015.0,
+        "y_max": 331.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "/** Called when the activityis first created.*/",
+      "vertice": {
+        "x_min": 164.0,
+        "y_min": 337.0,
+        "x_max": 1179.0,
+        "y_max": 375.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "int counter;",
+      "vertice": {
+        "x_min": 168.0,
+        "y_min": 385.0,
+        "x_max": 410.0,
+        "y_max": 421.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Button add, sub",
+      "vertice": {
+        "x_min": 169.0,
+        "y_min": 431.0,
+        "x_max": 493.0,
+        "y_max": 463.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "TextView display;",
+      "vertice": {
+        "x_min": 166.0,
+        "y_min": 470.0,
+        "x_max": 513.0,
+        "y_max": 511.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "e",
+      "vertice": {
+        "x_min": 49.0,
+        "y_min": 611.0,
+        "x_max": 75.0,
+        "y_max": 639.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "@Override",
+      "vertice": {
+        "x_min": 168.0,
+        "y_min": 608.0,
+        "x_max": 352.0,
+        "y_max": 639.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "public void onCreate(Bundle savedInstanceState){",
+      "vertice": {
+        "x_min": 167.0,
+        "y_min": 651.0,
+        "x_max": 1181.0,
+        "y_max": 686.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "Sner",
+      "vertice": {
+        "x_min": 256.0,
+        "y_min": 703.0,
+        "x_max": 344.0,
+        "y_max": 716.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "cestatel",
+      "vertice": {
+        "x_min": 795.0,
+        "y_min": 697.0,
+        "x_max": 959.0,
+        "y_max": 715.0
+      }
+    }
+  ]
+}

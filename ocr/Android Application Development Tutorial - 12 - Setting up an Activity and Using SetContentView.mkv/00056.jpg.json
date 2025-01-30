@@ -1,0 +1,64 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "roid.os.Bundle;",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 7.0,
+        "x_max": 248.0,
+        "y_max": 34.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "ss Splash extends Activity{",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 78.0,
+        "x_max": 459.0,
+        "y_max": 109.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "ide",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 150.0,
+        "x_max": 49.0,
+        "y_max": 180.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "ted void onCreateBundle savedInstanceState){",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 188.0,
+        "x_max": 784.0,
+        "y_max": 217.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "TODo Auto-generated method stub",
+      "vertice": {
+        "x_min": 9.0,
+        "y_min": 225.0,
+        "x_max": 543.0,
+        "y_max": 254.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "oer.onCreate(savedInstanceState);",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 265.0,
+        "x_max": 557.0,
+        "y_max": 291.0
+      }
+    }
+  ]
+}

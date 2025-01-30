@@ -1,0 +1,344 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "pubLic cLass SpLash extends Activity",
+      "vertice": {
+        "x_min": 55.0,
+        "y_min": 1.0,
+        "x_max": 540.0,
+        "y_max": 20.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Undo Import 'Activity'(android.app)",
+      "vertice": {
+        "x_min": 256.0,
+        "y_min": 42.0,
+        "x_max": 740.0,
+        "y_max": 69.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Za6",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 40.0,
+        "x_max": 831.0,
+        "y_max": 70.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "7",
+      "vertice": {
+        "x_min": 51.0,
+        "y_min": 51.0,
+        "x_max": 63.0,
+        "y_max": 73.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Revert File",
+      "vertice": {
+        "x_min": 248.0,
+        "y_min": 79.0,
+        "x_max": 383.0,
+        "y_max": 106.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "HSave",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 115.0,
+        "x_max": 345.0,
+        "y_max": 148.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Open Declaration",
+      "vertice": {
+        "x_min": 248.0,
+        "y_min": 179.0,
+        "x_max": 469.0,
+        "y_max": 205.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "F3",
+      "vertice": {
+        "x_min": 809.0,
+        "y_min": 181.0,
+        "x_max": 839.0,
+        "y_max": 205.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Open Type Hierarchy",
+      "vertice": {
+        "x_min": 248.0,
+        "y_min": 213.0,
+        "x_max": 515.0,
+        "y_max": 242.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "F4",
+      "vertice": {
+        "x_min": 809.0,
+        "y_min": 213.0,
+        "x_max": 838.0,
+        "y_max": 242.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Open Call Hierarchy",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 249.0,
+        "x_max": 503.0,
+        "y_max": 278.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "^TH",
+      "vertice": {
+        "x_min": 760.0,
+        "y_min": 247.0,
+        "x_max": 835.0,
+        "y_max": 277.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Show in Breadcrumb",
+      "vertice": {
+        "x_min": 245.0,
+        "y_min": 283.0,
+        "x_max": 508.0,
+        "y_max": 312.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "CHB",
+      "vertice": {
+        "x_min": 757.0,
+        "y_min": 285.0,
+        "x_max": 829.0,
+        "y_max": 312.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "Quick Outline",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 322.0,
+        "x_max": 423.0,
+        "y_max": 348.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "80",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 319.0,
+        "x_max": 835.0,
+        "y_max": 349.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "Quick Type Hierarchy",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 356.0,
+        "x_max": 520.0,
+        "y_max": 385.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "8T",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 355.0,
+        "x_max": 833.0,
+        "y_max": 385.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "Show In",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 392.0,
+        "x_max": 351.0,
+        "y_max": 422.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "Taw",
+      "vertice": {
+        "x_min": 681.0,
+        "y_min": 392.0,
+        "x_max": 763.0,
+        "y_max": 421.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "Cut",
+      "vertice": {
+        "x_min": 245.0,
+        "y_min": 450.0,
+        "x_max": 297.0,
+        "y_max": 480.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "8X",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 450.0,
+        "x_max": 832.0,
+        "y_max": 480.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "Copy",
+      "vertice": {
+        "x_min": 247.0,
+        "y_min": 484.0,
+        "x_max": 312.0,
+        "y_max": 519.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "8C",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 486.0,
+        "x_max": 832.0,
+        "y_max": 516.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "Copy Qualified Name",
+      "vertice": {
+        "x_min": 248.0,
+        "y_min": 524.0,
+        "x_max": 517.0,
+        "y_max": 552.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "Paste",
+      "vertice": {
+        "x_min": 246.0,
+        "y_min": 555.0,
+        "x_max": 314.0,
+        "y_max": 591.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "9V",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 557.0,
+        "x_max": 832.0,
+        "y_max": 588.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "Quick Fix",
+      "vertice": {
+        "x_min": 248.0,
+        "y_min": 617.0,
+        "x_max": 368.0,
+        "y_max": 645.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "81",
+      "vertice": {
+        "x_min": 783.0,
+        "y_min": 615.0,
+        "x_max": 829.0,
+        "y_max": 646.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "Source",
+      "vertice": {
+        "x_min": 245.0,
+        "y_min": 652.0,
+        "x_max": 335.0,
+        "y_max": 683.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "Taes",
+      "vertice": {
+        "x_min": 681.0,
+        "y_min": 652.0,
+        "x_max": 753.0,
+        "y_max": 682.0
+      }
+    },
+    {
+      "id": 31,
+      "text": "P",
+      "vertice": {
+        "x_min": 816.0,
+        "y_min": 659.0,
+        "x_max": 832.0,
+        "y_max": 678.0
+      }
+    },
+    {
+      "id": 32,
+      "text": "Refactor",
+      "vertice": {
+        "x_min": 246.0,
+        "y_min": 687.0,
+        "x_max": 355.0,
+        "y_max": 719.0
+      }
+    },
+    {
+      "id": 33,
+      "text": "THT",
+      "vertice": {
+        "x_min": 681.0,
+        "y_min": 688.0,
+        "x_max": 757.0,
+        "y_max": 717.0
+      }
+    }
+  ]
+}

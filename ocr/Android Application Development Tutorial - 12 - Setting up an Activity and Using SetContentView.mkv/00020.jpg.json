@@ -1,0 +1,264 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "kage Explorer ",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 43.0,
+        "x_max": 278.0,
+        "y_max": 73.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Splash.java",
+      "vertice": {
+        "x_min": 649.0,
+        "y_min": 42.0,
+        "x_max": 828.0,
+        "y_max": 78.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "J",
+      "vertice": {
+        "x_min": 935.0,
+        "y_min": 41.0,
+        "x_max": 960.0,
+        "y_max": 69.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "startingPoint.java",
+      "vertice": {
+        "x_min": 982.0,
+        "y_min": 42.0,
+        "x_max": 1260.0,
+        "y_max": 77.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "package com.thenewboston.tra",
+      "vertice": {
+        "x_min": 684.0,
+        "y_min": 103.0,
+        "x_max": 1275.0,
+        "y_max": 136.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "The New Boston",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 177.0,
+        "x_max": 249.0,
+        "y_max": 208.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "import android.app.Activity;",
+      "vertice": {
+        "x_min": 675.0,
+        "y_min": 189.0,
+        "x_max": 1266.0,
+        "y_max": 229.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "+",
+      "vertice": {
+        "x_min": 653.0,
+        "y_min": 200.0,
+        "x_max": 689.0,
+        "y_max": 220.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "com.thenewboston.travis",
+      "vertice": {
+        "x_min": 37.0,
+        "y_min": 281.0,
+        "x_max": 491.0,
+        "y_max": 312.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Splash.java",
+      "vertice": {
+        "x_min": 133.0,
+        "y_min": 331.0,
+        "x_max": 315.0,
+        "y_max": 367.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "public class startingPoint",
+      "vertice": {
+        "x_min": 685.0,
+        "y_min": 330.0,
+        "x_max": 1239.0,
+        "y_max": 359.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "e",
+      "vertice": {
+        "x_min": 1227.0,
+        "y_min": 336.0,
+        "x_max": 1272.0,
+        "y_max": 355.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "/** Called when the acti",
+      "vertice": {
+        "x_min": 766.0,
+        "y_min": 368.0,
+        "x_max": 1272.0,
+        "y_max": 408.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "startingPoint.java",
+      "vertice": {
+        "x_min": 136.0,
+        "y_min": 385.0,
+        "x_max": 413.0,
+        "y_max": 413.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "int counter;",
+      "vertice": {
+        "x_min": 768.0,
+        "y_min": 417.0,
+        "x_max": 1016.0,
+        "y_max": 453.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "#gen [Generated Java Files]",
+      "vertice": {
+        "x_min": 8.0,
+        "y_min": 429.0,
+        "x_max": 453.0,
+        "y_max": 470.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "Button add, sub",
+      "vertice": {
+        "x_min": 771.0,
+        "y_min": 465.0,
+        "x_max": 1100.0,
+        "y_max": 496.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "com.thenewboston.travis",
+      "vertice": {
+        "x_min": 37.0,
+        "y_min": 486.0,
+        "x_max": 491.0,
+        "y_max": 516.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "TextView display;",
+      "vertice": {
+        "x_min": 767.0,
+        "y_min": 503.0,
+        "x_max": 1120.0,
+        "y_max": 546.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "Android2.2",
+      "vertice": {
+        "x_min": 35.0,
+        "y_min": 537.0,
+        "x_max": 228.0,
+        "y_max": 565.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "assets",
+      "vertice": {
+        "x_min": 25.0,
+        "y_min": 588.0,
+        "x_max": 140.0,
+        "y_max": 619.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "res",
+      "vertice": {
+        "x_min": 35.0,
+        "y_min": 639.0,
+        "x_max": 91.0,
+        "y_max": 671.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "-",
+      "vertice": {
+        "x_min": 651.0,
+        "y_min": 652.0,
+        "x_max": 671.0,
+        "y_max": 672.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "@Override",
+      "vertice": {
+        "x_min": 768.0,
+        "y_min": 643.0,
+        "x_max": 957.0,
+        "y_max": 675.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "-drawable-hdpi",
+      "vertice": {
+        "x_min": 71.0,
+        "y_min": 685.0,
+        "x_max": 324.0,
+        "y_max": 718.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "public void onCreateBun",
+      "vertice": {
+        "x_min": 768.0,
+        "y_min": 687.0,
+        "x_max": 1275.0,
+        "y_max": 717.0
+      }
+    }
+  ]
+}

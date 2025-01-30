@@ -1,0 +1,404 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "s/traviscornelius/Documents/thenewboston",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 5.0,
+        "x_max": 1156.0,
+        "y_max": 19.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "11:57PM",
+      "vertice": {
+        "x_min": 314.0,
+        "y_min": 30.0,
+        "x_max": 453.0,
+        "y_max": 57.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Task List",
+      "vertice": {
+        "x_min": 1212.0,
+        "y_min": 58.0,
+        "x_max": 1276.0,
+        "y_max": 73.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "res/android\"",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 93.0,
+        "x_max": 969.0,
+        "y_max": 106.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "e-1",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 109.0,
+        "x_max": 919.0,
+        "y_max": 118.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Find",
+      "vertice": {
+        "x_min": 1215.0,
+        "y_min": 109.0,
+        "x_max": 1245.0,
+        "y_max": 123.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Google",
+      "vertice": {
+        "x_min": 94.0,
+        "y_min": 128.0,
+        "x_max": 184.0,
+        "y_max": 164.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Uncat",
+      "vertice": {
+        "x_min": 1233.0,
+        "y_min": 128.0,
+        "x_max": 1279.0,
+        "y_max": 143.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "abel-\"@string/app_name\">",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 161.0,
+        "x_max": 1048.0,
+        "y_max": 180.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "@string/app_name\">",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 180.0,
+        "x_max": 1009.0,
+        "y_max": 193.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "cion.MAIN\"",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 208.0,
+        "x_max": 955.0,
+        "y_max": 221.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "/>",
+      "vertice": {
+        "x_min": 952.0,
+        "y_min": 210.0,
+        "x_max": 977.0,
+        "y_max": 220.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "category.LAUNCHER\"/>",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 222.0,
+        "x_max": 1024.0,
+        "y_max": 236.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "Connect",
+      "vertice": {
+        "x_min": 1235.0,
+        "y_min": 253.0,
+        "x_max": 1279.0,
+        "y_max": 267.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "See all your apps.",
+      "vertice": {
+        "x_min": 23.0,
+        "y_min": 263.0,
+        "x_max": 185.0,
+        "y_max": 286.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "label-\"@string/app_name\">",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 266.0,
+        "x_max": 1055.0,
+        "y_max": 279.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "tools.",
+      "vertice": {
+        "x_min": 1236.0,
+        "y_min": 267.0,
+        "x_max": 1265.0,
+        "y_max": 278.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "Touch the Launcher icon",
+      "vertice": {
+        "x_min": 24.0,
+        "y_min": 291.0,
+        "x_max": 241.0,
+        "y_max": 312.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "raVis.STARTINGPOINT\"",
+      "vertice": {
+        "x_min": 885.0,
+        "y_min": 295.0,
+        "x_max": 1028.0,
+        "y_max": 306.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "/>",
+      "vertice": {
+        "x_min": 1027.0,
+        "y_min": 296.0,
+        "x_max": 1048.0,
+        "y_max": 306.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "Outline ",
+      "vertice": {
+        "x_min": 1207.0,
+        "y_min": 292.0,
+        "x_max": 1279.0,
+        "y_max": 311.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "category.DEFAULT\">",
+      "vertice": {
+        "x_min": 884.0,
+        "y_min": 308.0,
+        "x_max": 1019.0,
+        "y_max": 326.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "An outline is",
+      "vertice": {
+        "x_min": 1209.0,
+        "y_min": 315.0,
+        "x_max": 1277.0,
+        "y_max": 330.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "1of6",
+      "vertice": {
+        "x_min": 304.0,
+        "y_min": 347.0,
+        "x_max": 337.0,
+        "y_max": 356.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "4",
+      "vertice": {
+        "x_min": 620.0,
+        "y_min": 463.0,
+        "x_max": 631.0,
+        "y_max": 476.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "O",
+      "vertice": {
+        "x_min": 764.0,
+        "y_min": 463.0,
+        "x_max": 773.0,
+        "y_max": 478.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "W",
+      "vertice": {
+        "x_min": 549.0,
+        "y_min": 496.0,
+        "x_max": 563.0,
+        "y_max": 510.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "R",
+      "vertice": {
+        "x_min": 617.0,
+        "y_min": 494.0,
+        "x_max": 633.0,
+        "y_max": 512.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "I",
+      "vertice": {
+        "x_min": 657.0,
+        "y_min": 495.0,
+        "x_max": 667.0,
+        "y_max": 510.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "U",
+      "vertice": {
+        "x_min": 725.0,
+        "y_min": 494.0,
+        "x_max": 741.0,
+        "y_max": 512.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "idManifest.xml",
+      "vertice": {
+        "x_min": 888.0,
+        "y_min": 504.0,
+        "x_max": 963.0,
+        "y_max": 518.0
+      }
+    },
+    {
+      "id": 31,
+      "text": "G",
+      "vertice": {
+        "x_min": 656.0,
+        "y_min": 532.0,
+        "x_max": 668.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 32,
+      "text": "H",
+      "vertice": {
+        "x_min": 692.0,
+        "y_min": 532.0,
+        "x_max": 703.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 33,
+      "text": "Ex",
+      "vertice": {
+        "x_min": 1253.0,
+        "y_min": 531.0,
+        "x_max": 1277.0,
+        "y_max": 548.0
+      }
+    },
+    {
+      "id": 34,
+      "text": "N",
+      "vertice": {
+        "x_min": 727.0,
+        "y_min": 565.0,
+        "x_max": 737.0,
+        "y_max": 578.0
+      }
+    },
+    {
+      "id": 35,
+      "text": "V",
+      "vertice": {
+        "x_min": 765.0,
+        "y_min": 565.0,
+        "x_max": 771.0,
+        "y_max": 581.0
+      }
+    },
+    {
+      "id": 36,
+      "text": "r-5554'running compatible AvD 'DroidEmulator",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 568.0,
+        "x_max": 1195.0,
+        "y_max": 581.0
+      }
+    },
+    {
+      "id": 37,
+      "text": "a",
+      "vertice": {
+        "x_min": 584.0,
+        "y_min": 602.0,
+        "x_max": 596.0,
+        "y_max": 613.0
+      }
+    },
+    {
+      "id": 38,
+      "text": "ice emulator-5554",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 625.0,
+        "x_max": 1005.0,
+        "y_max": 638.0
+      }
+    },
+    {
+      "id": 39,
+      "text": "action.MAIN cat-[android.intent.category.LAUNCHER] cmp=con",
+      "vertice": {
+        "x_min": 887.0,
+        "y_min": 639.0,
+        "x_max": 1277.0,
+        "y_max": 652.0
+      }
+    }
+  ]
+}

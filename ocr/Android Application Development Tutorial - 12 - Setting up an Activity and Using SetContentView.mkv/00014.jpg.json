@@ -1,0 +1,354 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Package:",
+      "vertice": {
+        "x_min": 473.0,
+        "y_min": 17.0,
+        "x_max": 566.0,
+        "y_max": 47.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "com.thenewboston.travis",
+      "vertice": {
+        "x_min": 684.0,
+        "y_min": 20.0,
+        "x_max": 939.0,
+        "y_max": 42.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "ioston",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 71.0,
+        "x_max": 63.0,
+        "y_max": 95.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Enclosing type",
+      "vertice": {
+        "x_min": 476.0,
+        "y_min": 86.0,
+        "x_max": 661.0,
+        "y_max": 109.0
+      }
+    },
+    {
+      "id": 4,
+      "text": ".thenewboston.travis",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 135.0,
+        "x_max": 212.0,
+        "y_max": 159.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "tartingPoint.java",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 171.0,
+        "x_max": 163.0,
+        "y_max": 189.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Name:",
+      "vertice": {
+        "x_min": 473.0,
+        "y_min": 175.0,
+        "x_max": 544.0,
+        "y_max": 199.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Splash",
+      "vertice": {
+        "x_min": 677.0,
+        "y_min": 172.0,
+        "x_max": 752.0,
+        "y_max": 202.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "nerated Java Files]",
+      "vertice": {
+        "x_min": 3.0,
+        "y_min": 202.0,
+        "x_max": 187.0,
+        "y_max": 221.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Modifiers:",
+      "vertice": {
+        "x_min": 473.0,
+        "y_min": 221.0,
+        "x_max": 577.0,
+        "y_max": 244.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Opublic",
+      "vertice": {
+        "x_min": 680.0,
+        "y_min": 217.0,
+        "x_max": 780.0,
+        "y_max": 245.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "Odefault",
+      "vertice": {
+        "x_min": 829.0,
+        "y_min": 217.0,
+        "x_max": 937.0,
+        "y_max": 245.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "O private",
+      "vertice": {
+        "x_min": 980.0,
+        "y_min": 216.0,
+        "x_max": 1084.0,
+        "y_max": 244.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "O protected",
+      "vertice": {
+        "x_min": 1131.0,
+        "y_min": 220.0,
+        "x_max": 1260.0,
+        "y_max": 244.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "thenewboston.travis",
+      "vertice": {
+        "x_min": 4.0,
+        "y_min": 234.0,
+        "x_max": 211.0,
+        "y_max": 253.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "12.2",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 263.0,
+        "x_max": 51.0,
+        "y_max": 289.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "abstract final",
+      "vertice": {
+        "x_min": 680.0,
+        "y_min": 262.0,
+        "x_max": 892.0,
+        "y_max": 289.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "static",
+      "vertice": {
+        "x_min": 944.0,
+        "y_min": 262.0,
+        "x_max": 1036.0,
+        "y_max": 290.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "Superclass:",
+      "vertice": {
+        "x_min": 475.0,
+        "y_min": 319.0,
+        "x_max": 589.0,
+        "y_max": 343.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "java.lang.Object",
+      "vertice": {
+        "x_min": 679.0,
+        "y_min": 315.0,
+        "x_max": 848.0,
+        "y_max": 346.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "vable-hdpi",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 359.0,
+        "x_max": 105.0,
+        "y_max": 382.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "Interfaces:",
+      "vertice": {
+        "x_min": 475.0,
+        "y_min": 369.0,
+        "x_max": 581.0,
+        "y_max": 393.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "con.png",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 390.0,
+        "x_max": 77.0,
+        "y_max": 421.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "plash_background.png",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 423.0,
+        "x_max": 228.0,
+        "y_max": 449.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "vable-ldpi",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 457.0,
+        "x_max": 100.0,
+        "y_max": 480.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "vable-mdpi",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 488.0,
+        "x_max": 115.0,
+        "y_max": 512.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "ut",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 520.0,
+        "x_max": 25.0,
+        "y_max": 545.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "Which method stubs would you like to create?",
+      "vertice": {
+        "x_min": 473.0,
+        "y_min": 543.0,
+        "x_max": 940.0,
+        "y_max": 566.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "nain.xml",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 553.0,
+        "x_max": 85.0,
+        "y_max": 576.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "plash.xml",
+      "vertice": {
+        "x_min": 1.0,
+        "y_min": 585.0,
+        "x_max": 100.0,
+        "y_max": 609.0
+      }
+    },
+    {
+      "id": 30,
+      "text": " public static void main(String args)",
+      "vertice": {
+        "x_min": 680.0,
+        "y_min": 582.0,
+        "x_max": 1079.0,
+        "y_max": 609.0
+      }
+    },
+    {
+      "id": 31,
+      "text": "ut-land",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 617.0,
+        "x_max": 76.0,
+        "y_max": 641.0
+      }
+    },
+    {
+      "id": 32,
+      "text": "Constructors from superclass",
+      "vertice": {
+        "x_min": 683.0,
+        "y_min": 627.0,
+        "x_max": 1012.0,
+        "y_max": 650.0
+      }
+    },
+    {
+      "id": 33,
+      "text": "plashsound.mp3",
+      "vertice": {
+        "x_min": 0.0,
+        "y_min": 677.0,
+        "x_max": 168.0,
+        "y_max": 707.0
+      }
+    },
+    {
+      "id": 34,
+      "text": "Inherited abstract methods",
+      "vertice": {
+        "x_min": 683.0,
+        "y_min": 670.0,
+        "x_max": 987.0,
+        "y_max": 692.0
+      }
+    }
+  ]
+}

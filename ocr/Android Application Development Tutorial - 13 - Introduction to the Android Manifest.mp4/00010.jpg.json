@@ -1,0 +1,154 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "1004PL4",
+      "vertice": {
+        "x_min": 177.0,
+        "y_min": 0.0,
+        "x_max": 324.0,
+        "y_max": 22.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "X",
+      "vertice": {
+        "x_min": 210.0,
+        "y_min": 49.0,
+        "x_max": 230.0,
+        "y_max": 88.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "main.xml",
+      "vertice": {
+        "x_min": 254.0,
+        "y_min": 48.0,
+        "x_max": 447.0,
+        "y_max": 83.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "X",
+      "vertice": {
+        "x_min": 208.0,
+        "y_min": 113.0,
+        "x_max": 234.0,
+        "y_max": 151.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "splash.xml",
+      "vertice": {
+        "x_min": 250.0,
+        "y_min": 113.0,
+        "x_max": 479.0,
+        "y_max": 151.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "layout-land",
+      "vertice": {
+        "x_min": 196.0,
+        "y_min": 179.0,
+        "x_max": 431.0,
+        "y_max": 216.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "raw",
+      "vertice": {
+        "x_min": 188.0,
+        "y_min": 248.0,
+        "x_max": 271.0,
+        "y_max": 282.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "splashsound.mp3",
+      "vertice": {
+        "x_min": 256.0,
+        "y_min": 308.0,
+        "x_max": 615.0,
+        "y_max": 345.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "values",
+      "vertice": {
+        "x_min": 171.0,
+        "y_min": 373.0,
+        "x_max": 319.0,
+        "y_max": 410.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "AndroidManifest.xml",
+      "vertice": {
+        "x_min": 129.0,
+        "y_min": 438.0,
+        "x_max": 557.0,
+        "y_max": 472.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "default.properties",
+      "vertice": {
+        "x_min": 134.0,
+        "y_min": 502.0,
+        "x_max": 496.0,
+        "y_max": 544.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "proguard.cfg",
+      "vertice": {
+        "x_min": 131.0,
+        "y_min": 562.0,
+        "x_max": 395.0,
+        "y_max": 612.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Manifest",
+      "vertice": {
+        "x_min": 923.0,
+        "y_min": 602.0,
+        "x_max": 1096.0,
+        "y_max": 639.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "A",
+      "vertice": {
+        "x_min": 1132.0,
+        "y_min": 596.0,
+        "x_max": 1183.0,
+        "y_max": 642.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "App",
+      "vertice": {
+        "x_min": 1199.0,
+        "y_min": 597.0,
+        "x_max": 1279.0,
+        "y_max": 651.0
+      }
+    }
+  ]
+}

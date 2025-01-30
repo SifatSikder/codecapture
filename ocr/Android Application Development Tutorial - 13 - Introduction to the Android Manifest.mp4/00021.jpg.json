@@ -1,0 +1,94 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "<application android:icon-\"@drawable/iconandroid:lab",
+      "vertice": {
+        "x_min": 127.0,
+        "y_min": 82.0,
+        "x_max": 1275.0,
+        "y_max": 115.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "<activity android:name-\".startingPoint\" android:lc",
+      "vertice": {
+        "x_min": 213.0,
+        "y_min": 130.0,
+        "x_max": 1273.0,
+        "y_max": 161.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "cintent-filter>",
+      "vertice": {
+        "x_min": 296.0,
+        "y_min": 173.0,
+        "x_max": 608.0,
+        "y_max": 207.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "<action android:name-\"android.intent.actio",
+      "vertice": {
+        "x_min": 383.0,
+        "y_min": 222.0,
+        "x_max": 1275.0,
+        "y_max": 253.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "<category android:name-\"android.intent.cat",
+      "vertice": {
+        "x_min": 381.0,
+        "y_min": 267.0,
+        "x_max": 1279.0,
+        "y_max": 299.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "/intent-filters",
+      "vertice": {
+        "x_min": 299.0,
+        "y_min": 314.0,
+        "x_max": 633.0,
+        "y_max": 344.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "/activity>",
+      "vertice": {
+        "x_min": 206.0,
+        "y_min": 355.0,
+        "x_max": 454.0,
+        "y_max": 397.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "</application>",
+      "vertice": {
+        "x_min": 127.0,
+        "y_min": 406.0,
+        "x_max": 416.0,
+        "y_max": 438.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "</manifest:",
+      "vertice": {
+        "x_min": 41.0,
+        "y_min": 451.0,
+        "x_max": 267.0,
+        "y_max": 483.0
+      }
+    }
+  ]
+}

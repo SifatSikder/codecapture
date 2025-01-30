@@ -1,0 +1,164 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "Enclosingtype",
+      "vertice": {
+        "x_min": 167.0,
+        "y_min": 1.0,
+        "x_max": 371.0,
+        "y_max": 20.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Name:",
+      "vertice": {
+        "x_min": 121.0,
+        "y_min": 111.0,
+        "x_max": 213.0,
+        "y_max": 140.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Modifiers:",
+      "vertice": {
+        "x_min": 123.0,
+        "y_min": 171.0,
+        "x_max": 260.0,
+        "y_max": 199.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "public",
+      "vertice": {
+        "x_min": 442.0,
+        "y_min": 170.0,
+        "x_max": 532.0,
+        "y_max": 199.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "default",
+      "vertice": {
+        "x_min": 647.0,
+        "y_min": 171.0,
+        "x_max": 745.0,
+        "y_max": 200.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "private",
+      "vertice": {
+        "x_min": 844.0,
+        "y_min": 171.0,
+        "x_max": 944.0,
+        "y_max": 201.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "protected",
+      "vertice": {
+        "x_min": 1048.0,
+        "y_min": 171.0,
+        "x_max": 1184.0,
+        "y_max": 202.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "abstract",
+      "vertice": {
+        "x_min": 427.0,
+        "y_min": 230.0,
+        "x_max": 561.0,
+        "y_max": 258.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "0final",
+      "vertice": {
+        "x_min": 576.0,
+        "y_min": 229.0,
+        "x_max": 685.0,
+        "y_max": 261.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "0static",
+      "vertice": {
+        "x_min": 760.0,
+        "y_min": 228.0,
+        "x_max": 879.0,
+        "y_max": 261.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Superclass:",
+      "vertice": {
+        "x_min": 123.0,
+        "y_min": 304.0,
+        "x_max": 277.0,
+        "y_max": 336.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "java.lang.Object",
+      "vertice": {
+        "x_min": 401.0,
+        "y_min": 304.0,
+        "x_max": 625.0,
+        "y_max": 336.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "L",
+      "vertice": {
+        "x_min": 1268.0,
+        "y_min": 307.0,
+        "x_max": 1277.0,
+        "y_max": 324.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "Interfaces:",
+      "vertice": {
+        "x_min": 122.0,
+        "y_min": 372.0,
+        "x_max": 265.0,
+        "y_max": 404.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "Which method stubs would you like to create?",
+      "vertice": {
+        "x_min": 123.0,
+        "y_min": 607.0,
+        "x_max": 749.0,
+        "y_max": 637.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "public static void main(Stringll args)",
+      "vertice": {
+        "x_min": 408.0,
+        "y_min": 662.0,
+        "x_max": 939.0,
+        "y_max": 692.0
+      }
+    }
+  ]
+}

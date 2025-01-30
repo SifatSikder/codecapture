@@ -1,0 +1,314 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "pubLic cLass SpLash extends Activity{",
+      "vertice": {
+        "x_min": 55.0,
+        "y_min": 1.0,
+        "x_max": 540.0,
+        "y_max": 20.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "T",
+      "vertice": {
+        "x_min": 157.0,
+        "y_min": 25.0,
+        "x_max": 179.0,
+        "y_max": 52.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "Undo Import'Activity'(android.app)",
+      "vertice": {
+        "x_min": 249.0,
+        "y_min": 33.0,
+        "x_max": 737.0,
+        "y_max": 62.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Za6",
+      "vertice": {
+        "x_min": 780.0,
+        "y_min": 32.0,
+        "x_max": 828.0,
+        "y_max": 62.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Revert File",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 71.0,
+        "x_max": 377.0,
+        "y_max": 99.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "HSave",
+      "vertice": {
+        "x_min": 245.0,
+        "y_min": 110.0,
+        "x_max": 340.0,
+        "y_max": 139.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Open Declaration",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 170.0,
+        "x_max": 465.0,
+        "y_max": 194.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "F3",
+      "vertice": {
+        "x_min": 805.0,
+        "y_min": 173.0,
+        "x_max": 837.0,
+        "y_max": 199.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Open Type Hierarchy",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 205.0,
+        "x_max": 511.0,
+        "y_max": 233.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "F4",
+      "vertice": {
+        "x_min": 804.0,
+        "y_min": 206.0,
+        "x_max": 837.0,
+        "y_max": 234.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Open Call Hierarchy",
+      "vertice": {
+        "x_min": 243.0,
+        "y_min": 241.0,
+        "x_max": 500.0,
+        "y_max": 270.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "^TH",
+      "vertice": {
+        "x_min": 755.0,
+        "y_min": 238.0,
+        "x_max": 832.0,
+        "y_max": 271.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Show in Breadcrumb",
+      "vertice": {
+        "x_min": 243.0,
+        "y_min": 278.0,
+        "x_max": 504.0,
+        "y_max": 304.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "B",
+      "vertice": {
+        "x_min": 752.0,
+        "y_min": 277.0,
+        "x_max": 827.0,
+        "y_max": 304.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "Quick Outline",
+      "vertice": {
+        "x_min": 243.0,
+        "y_min": 311.0,
+        "x_max": 418.0,
+        "y_max": 342.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "90",
+      "vertice": {
+        "x_min": 780.0,
+        "y_min": 311.0,
+        "x_max": 831.0,
+        "y_max": 343.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "Quick Type Hierarchy",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 349.0,
+        "x_max": 517.0,
+        "y_max": 377.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "Show In",
+      "vertice": {
+        "x_min": 242.0,
+        "y_min": 382.0,
+        "x_max": 345.0,
+        "y_max": 415.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "Cut",
+      "vertice": {
+        "x_min": 241.0,
+        "y_min": 442.0,
+        "x_max": 293.0,
+        "y_max": 472.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "96X",
+      "vertice": {
+        "x_min": 779.0,
+        "y_min": 441.0,
+        "x_max": 828.0,
+        "y_max": 472.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "Copy",
+      "vertice": {
+        "x_min": 243.0,
+        "y_min": 476.0,
+        "x_max": 309.0,
+        "y_max": 513.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "9C",
+      "vertice": {
+        "x_min": 779.0,
+        "y_min": 478.0,
+        "x_max": 829.0,
+        "y_max": 508.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "Copy Qualified Name",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 516.0,
+        "x_max": 513.0,
+        "y_max": 544.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "Paste",
+      "vertice": {
+        "x_min": 242.0,
+        "y_min": 548.0,
+        "x_max": 312.0,
+        "y_max": 581.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "#V",
+      "vertice": {
+        "x_min": 779.0,
+        "y_min": 549.0,
+        "x_max": 829.0,
+        "y_max": 580.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "Quick Fix",
+      "vertice": {
+        "x_min": 244.0,
+        "y_min": 611.0,
+        "x_max": 364.0,
+        "y_max": 635.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "81",
+      "vertice": {
+        "x_min": 779.0,
+        "y_min": 608.0,
+        "x_max": 828.0,
+        "y_max": 639.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "Source",
+      "vertice": {
+        "x_min": 241.0,
+        "y_min": 643.0,
+        "x_max": 331.0,
+        "y_max": 675.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "Tas",
+      "vertice": {
+        "x_min": 677.0,
+        "y_min": 645.0,
+        "x_max": 751.0,
+        "y_max": 674.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "Refactor",
+      "vertice": {
+        "x_min": 241.0,
+        "y_min": 677.0,
+        "x_max": 353.0,
+        "y_max": 712.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "THT",
+      "vertice": {
+        "x_min": 676.0,
+        "y_min": 679.0,
+        "x_max": 755.0,
+        "y_max": 712.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "=",
+      "vertice": {
+        "x_min": 333.0,
+        "y_min": 32.0,
+        "x_max": 355.0,
+        "y_max": 48.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "The New Boston",
+      "vertice": {
+        "x_min": 33.0,
+        "y_min": 73.0,
+        "x_max": 287.0,
+        "y_max": 99.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "src",
+      "vertice": {
+        "x_min": 91.0,
+        "y_min": 108.0,
+        "x_max": 169.0,
+        "y_max": 139.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "Newt",
+      "vertice": {
+        "x_min": 217.0,
+        "y_min": 167.0,
+        "x_max": 305.0,
+        "y_max": 201.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "Go Into",
+      "vertice": {
+        "x_min": 220.0,
+        "y_min": 212.0,
+        "x_max": 332.0,
+        "y_max": 245.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Open in New Window",
+      "vertice": {
+        "x_min": 224.0,
+        "y_min": 283.0,
+        "x_max": 537.0,
+        "y_max": 311.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "Anc",
+      "vertice": {
+        "x_min": 83.0,
+        "y_min": 299.0,
+        "x_max": 175.0,
+        "y_max": 327.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "ass",
+      "vertice": {
+        "x_min": 90.0,
+        "y_min": 326.0,
+        "x_max": 175.0,
+        "y_max": 368.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "Open TypeHierarchy",
+      "vertice": {
+        "x_min": 224.0,
+        "y_min": 327.0,
+        "x_max": 532.0,
+        "y_max": 355.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "F4",
+      "vertice": {
+        "x_min": 736.0,
+        "y_min": 324.0,
+        "x_max": 775.0,
+        "y_max": 357.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "Show In",
+      "vertice": {
+        "x_min": 220.0,
+        "y_min": 365.0,
+        "x_max": 340.0,
+        "y_max": 398.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "Taw",
+      "vertice": {
+        "x_min": 587.0,
+        "y_min": 365.0,
+        "x_max": 683.0,
+        "y_max": 398.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "Copy",
+      "vertice": {
+        "x_min": 221.0,
+        "y_min": 437.0,
+        "x_max": 344.0,
+        "y_max": 474.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "ECopy Qualified Name",
+      "vertice": {
+        "x_min": 223.0,
+        "y_min": 484.0,
+        "x_max": 581.0,
+        "y_max": 515.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "Paste",
+      "vertice": {
+        "x_min": 222.0,
+        "y_min": 531.0,
+        "x_max": 346.0,
+        "y_max": 561.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "9eV",
+      "vertice": {
+        "x_min": 708.0,
+        "y_min": 529.0,
+        "x_max": 764.0,
+        "y_max": 561.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "XDelete",
+      "vertice": {
+        "x_min": 224.0,
+        "y_min": 576.0,
+        "x_max": 363.0,
+        "y_max": 609.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "Remove from Context",
+      "vertice": {
+        "x_min": 227.0,
+        "y_min": 651.0,
+        "x_max": 596.0,
+        "y_max": 682.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "BuildPath",
+      "vertice": {
+        "x_min": 223.0,
+        "y_min": 694.0,
+        "x_max": 371.0,
+        "y_max": 719.0
+      }
+    }
+  ]
+}

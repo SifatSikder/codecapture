@@ -26,8 +26,8 @@ def generate_notes_again(request):
 @csrf_exempt
 def transcribe_video(request):
     if request.method == "POST":
-        video_uploader = VideoChecker()
-        video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
+        # video_uploader = VideoChecker()
+        # video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.transcribe_video_core(settings.VIDEOS_DIR,settings.BASE_DIR)
         print("Sending Transcriptions....")
@@ -36,8 +36,8 @@ def transcribe_video(request):
 @csrf_exempt
 def summarize_video(request):
     if request.method == "POST":
-        video_uploader = VideoChecker()
-        video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
+        # video_uploader = VideoChecker()
+        # video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.summarize_video_core(settings.VIDEOS_DIR,settings.BASE_DIR)
         print("Sending summaries....")
@@ -46,8 +46,8 @@ def summarize_video(request):
 @csrf_exempt
 def extract_source_code(request):
     if request.method == "POST":
-        video_uploader = VideoChecker()
-        video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
+        # video_uploader = VideoChecker()
+        # video_uploader.video_upload_with_validity(request,settings.IMAGES_DIR,settings.VIDEOS_DIR)
         output_generator = OutputGenerator()
         zip_file_path = output_generator.extract_source_code_core(settings.BASE_DIR)
         print("Sending Source Code....")

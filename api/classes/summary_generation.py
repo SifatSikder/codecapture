@@ -72,7 +72,7 @@ class TranscriptionAndSummaryGenerator:
                 print(f"Found file: {video_path}")
                 transcription_file_path = f"transcriptions/{video.split('.')[0]}.txt"
                 summary_file_path = f"summaries/{video.split('.')[0]}.txt"
-                self.create_transcription(video_path, transcription_file_path)
+                # self.create_transcription(video_path, transcription_file_path)
                 self.create_summary(transcription_file_path, summary_file_path)
 
     def transcribe(self, video_folder_path):

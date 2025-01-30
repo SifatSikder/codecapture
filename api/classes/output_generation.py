@@ -18,7 +18,7 @@ class OutputGenerator:
         return zip_file_path
     def transcribe_video_core(self,video_path,base_path):
         transcription_summary_generator = TranscriptionAndSummaryGenerator()
-        transcription_summary_generator.transcribe(video_path)
+        # transcription_summary_generator.transcribe(video_path)
         transcriptions_dir = os.path.join(base_path, "transcriptions")
         zip_file_path = os.path.join(base_path, 'generated_transcription.zip')
         with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -42,8 +42,8 @@ class OutputGenerator:
             return f'\\\\?\\{os.path.abspath(path)}'
         return path
     def extract_source_code_core(self,base_path):
-        workflow_generator = WorkflowGenerator()
-        workflow_generator.extract_text_from_whole_image("images")
+        # workflow_generator = WorkflowGenerator()
+        # workflow_generator.extract_text_from_whole_image("images")
         code_extractor = CodeExtractor()
         code_extractor.hierarchy_and_code_json_generation("ocr")
         code_extractor.create_hierarchies("hierarchy_json")

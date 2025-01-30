@@ -1,0 +1,324 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "text": "assets",
+      "vertice": {
+        "x_min": 415.0,
+        "y_min": 5.0,
+        "x_max": 504.0,
+        "y_max": 40.0
+      }
+    },
+    {
+      "id": 1,
+      "text": "Super.oncredteeThavlsLovebaconn",
+      "vertice": {
+        "x_min": 903.0,
+        "y_min": 4.0,
+        "x_max": 1271.0,
+        "y_max": 13.0
+      }
+    },
+    {
+      "id": 2,
+      "text": "setContentView(R.layout.splash);",
+      "vertice": {
+        "x_min": 899.0,
+        "y_min": 19.0,
+        "x_max": 1275.0,
+        "y_max": 42.0
+      }
+    },
+    {
+      "id": 3,
+      "text": "res",
+      "vertice": {
+        "x_min": 413.0,
+        "y_min": 36.0,
+        "x_max": 476.0,
+        "y_max": 65.0
+      }
+    },
+    {
+      "id": 4,
+      "text": "}",
+      "vertice": {
+        "x_min": 848.0,
+        "y_min": 45.0,
+        "x_max": 867.0,
+        "y_max": 68.0
+      }
+    },
+    {
+      "id": 5,
+      "text": "Subtract",
+      "vertice": {
+        "x_min": 203.0,
+        "y_min": 73.0,
+        "x_max": 337.0,
+        "y_max": 105.0
+      }
+    },
+    {
+      "id": 6,
+      "text": "drawable-hdpi",
+      "vertice": {
+        "x_min": 425.0,
+        "y_min": 71.0,
+        "x_max": 604.0,
+        "y_max": 90.0
+      }
+    },
+    {
+      "id": 7,
+      "text": "Hicon.png",
+      "vertice": {
+        "x_min": 471.0,
+        "y_min": 95.0,
+        "x_max": 578.0,
+        "y_max": 123.0
+      }
+    },
+    {
+      "id": 8,
+      "text": "}",
+      "vertice": {
+        "x_min": 801.0,
+        "y_min": 95.0,
+        "x_max": 819.0,
+        "y_max": 118.0
+      }
+    },
+    {
+      "id": 9,
+      "text": "Tosplash_background.png",
+      "vertice": {
+        "x_min": 472.0,
+        "y_min": 127.0,
+        "x_max": 713.0,
+        "y_max": 150.0
+      }
+    },
+    {
+      "id": 10,
+      "text": "drawable-ldpi",
+      "vertice": {
+        "x_min": 424.0,
+        "y_min": 158.0,
+        "x_max": 599.0,
+        "y_max": 176.0
+      }
+    },
+    {
+      "id": 11,
+      "text": "drawable-mdpi",
+      "vertice": {
+        "x_min": 423.0,
+        "y_min": 184.0,
+        "x_max": 612.0,
+        "y_max": 206.0
+      }
+    },
+    {
+      "id": 12,
+      "text": "layout",
+      "vertice": {
+        "x_min": 423.0,
+        "y_min": 213.0,
+        "x_max": 531.0,
+        "y_max": 236.0
+      }
+    },
+    {
+      "id": 13,
+      "text": "main.xml",
+      "vertice": {
+        "x_min": 472.0,
+        "y_min": 241.0,
+        "x_max": 587.0,
+        "y_max": 265.0
+      }
+    },
+    {
+      "id": 14,
+      "text": "xsplash.xml",
+      "vertice": {
+        "x_min": 473.0,
+        "y_min": 270.0,
+        "x_max": 597.0,
+        "y_max": 292.0
+      }
+    },
+    {
+      "id": 15,
+      "text": "layout-land",
+      "vertice": {
+        "x_min": 444.0,
+        "y_min": 299.0,
+        "x_max": 577.0,
+        "y_max": 322.0
+      }
+    },
+    {
+      "id": 16,
+      "text": "raw",
+      "vertice": {
+        "x_min": 424.0,
+        "y_min": 328.0,
+        "x_max": 508.0,
+        "y_max": 351.0
+      }
+    },
+    {
+      "id": 17,
+      "text": "splashsound.mp3",
+      "vertice": {
+        "x_min": 471.0,
+        "y_min": 355.0,
+        "x_max": 657.0,
+        "y_max": 377.0
+      }
+    },
+    {
+      "id": 18,
+      "text": "values",
+      "vertice": {
+        "x_min": 424.0,
+        "y_min": 386.0,
+        "x_max": 529.0,
+        "y_max": 405.0
+      }
+    },
+    {
+      "id": 19,
+      "text": "CAndroidManifest.xm",
+      "vertice": {
+        "x_min": 420.0,
+        "y_min": 414.0,
+        "x_max": 632.0,
+        "y_max": 433.0
+      }
+    },
+    {
+      "id": 20,
+      "text": "default.properties",
+      "vertice": {
+        "x_min": 420.0,
+        "y_min": 442.0,
+        "x_max": 608.0,
+        "y_max": 465.0
+      }
+    },
+    {
+      "id": 21,
+      "text": "proguard.cfg",
+      "vertice": {
+        "x_min": 419.0,
+        "y_min": 470.0,
+        "x_max": 561.0,
+        "y_max": 492.0
+      }
+    },
+    {
+      "id": 22,
+      "text": "Problems",
+      "vertice": {
+        "x_min": 361.0,
+        "y_min": 533.0,
+        "x_max": 480.0,
+        "y_max": 557.0
+      }
+    },
+    {
+      "id": 23,
+      "text": "@Javadoc",
+      "vertice": {
+        "x_min": 495.0,
+        "y_min": 537.0,
+        "x_max": 592.0,
+        "y_max": 556.0
+      }
+    },
+    {
+      "id": 24,
+      "text": "Declaration",
+      "vertice": {
+        "x_min": 608.0,
+        "y_min": 535.0,
+        "x_max": 748.0,
+        "y_max": 557.0
+      }
+    },
+    {
+      "id": 25,
+      "text": "Console ",
+      "vertice": {
+        "x_min": 755.0,
+        "y_min": 533.0,
+        "x_max": 896.0,
+        "y_max": 556.0
+      }
+    },
+    {
+      "id": 26,
+      "text": "Android",
+      "vertice": {
+        "x_min": 357.0,
+        "y_min": 569.0,
+        "x_max": 433.0,
+        "y_max": 592.0
+      }
+    },
+    {
+      "id": 27,
+      "text": "[2011-06-11 23:52:27 - The New Boston] Automatic Target Mode: using existing e",
+      "vertice": {
+        "x_min": 363.0,
+        "y_min": 598.0,
+        "x_max": 1276.0,
+        "y_max": 617.0
+      }
+    },
+    {
+      "id": 28,
+      "text": "[2011-06-11 23:52:27 -The New Boston] Uploading The New Boston.apk onto devic",
+      "vertice": {
+        "x_min": 360.0,
+        "y_min": 619.0,
+        "x_max": 1279.0,
+        "y_max": 643.0
+      }
+    },
+    {
+      "id": 29,
+      "text": "[2011-06-11 23:52:27 -The New Boston Installing The New Boston.apk..",
+      "vertice": {
+        "x_min": 363.0,
+        "y_min": 649.0,
+        "x_max": 1191.0,
+        "y_max": 667.0
+      }
+    },
+    {
+      "id": 30,
+      "text": "[2011-06-11 23:52:31-The New Boston] Success!",
+      "vertice": {
+        "x_min": 361.0,
+        "y_min": 671.0,
+        "x_max": 913.0,
+        "y_max": 694.0
+      }
+    },
+    {
+      "id": 31,
+      "text": "[2011-06-11 23:52:31 -The New Boston] Starting activity com.thenewboston.trav",
+      "vertice": {
+        "x_min": 363.0,
+        "y_min": 698.0,
+        "x_max": 1275.0,
+        "y_max": 716.0
+      }
+    }
+  ]
+}
